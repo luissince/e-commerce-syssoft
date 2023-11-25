@@ -15,6 +15,8 @@ const config: Config = {
       },
       backgroundImage: {
         'portada': "url('/assets/section-category-1.jpg')",
+        'postBrandLeft': "url('/assets/campaign-cover-countdown.jpg')",
+        'postBrandRight': "download-app-cover.png"
       },
       colors: {
         primary: "#00040f",
@@ -26,7 +28,8 @@ const config: Config = {
         guindaOscuro: "#9b0d13",
         grisClaro: "#636363",
         qblack: "rgb(34 34 34/1)",
-        qgray: "rgb(121 121 121/1)"
+        qgray: "rgb(121 121 121/1)",
+        qblacktext: "rgb(29 29 29/1)"
       },
       fontFamily: {
         poppins: ["Roboto", "sans-serif"],
