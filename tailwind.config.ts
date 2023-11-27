@@ -16,7 +16,24 @@ const config: Config = {
       backgroundImage: {
         'portada': "url('/assets/section-category-1.jpg')",
         'postBrandLeft': "url('/assets/campaign-cover-countdown.jpg')",
-        'postBrandRight': "download-app-cover.png"
+        'postBrandRight': "url('/assets/download-app-cover.png')",
+        'popularSaleLeft': "url('/assets/section-category-2.jpg')",
+        'popularSaleRightOne': "url('/assets/product-img-5.jpg')",
+        'popularSaleRightTwo': "url('/assets/product-img-6.jpg')",
+        'popularSaleRightThree': "url('/assets/product-img-7.jpg')",
+        'newArrivals1': "url('/assets/product-img-1.jpg')",
+        'newArrivals2': "url('/assets/product-img-2.jpg')",
+        'newArrivals3': "url('/assets/product-img-3.jpg')",
+        'newArrivals4': "url('/assets/product-img-4.jpg')",
+        'newArrivals5': "url('/assets/product-img-5.jpg')",
+        'newArrivals6': "url('/assets/product-img-6.jpg')",
+        'newArrivals7': "url('/assets/product-img-7.jpg')",
+        'newArrivals8': "url('/assets/product-img-8.jpg')",
+        'newArrivals9': "url('/assets/product-img-9.jpg')",
+        'newArrivals10': "url('/assets/product-img-10.jpg')",
+        'newArrivals11': "url('/assets/product-img-1.jpg')",
+        'newArrivals12': "url('/assets/product-img-2.jpg')",
+        'discount': "url('/assets/discount-banner-1.jpg')"
       },
       colors: {
         primary: "#00040f",
