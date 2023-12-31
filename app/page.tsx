@@ -2,233 +2,237 @@ import Image from "next/image";
 
 function Banner() {
   return (
-    <div className="main-wrapper w-full mb-[60px]">
-      <div className="banner-card xl:flex xl:space-x-[30px] xl:h-[600px] mb-[30px]">
-        <div className="xl:w-[740px] w-full h-full">
-          <Image
-            src="/assets/banner-1.2.png"
-            width={740}
-            height={600}
-            alt=""
-            className="w-full max-w-full h-auto object-cover"
-          />
-        </div>
-
-        <div className="flex-1 flex xl:flex-col flex-row xl:space-y-[30px] h-full">
-          <div className="w-full xl:h-1/2">
-            <Image
-              src="/assets/banner-2.png"
-              width={398}
-              height={285}
-              alt=""
-              className="w-full h-full"
-            />
-          </div>
-          <div className="w-full xl:h-1/2">
-            <Image
-              src="/assets/banner-3.png"
-              width={398}
-              height={285}
-              alt=""
-              className="w-full h-full"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div
-        data-aos="fade-up"
-        className="w-full bg-white flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between lg:items-center lg:h-[110px] px-10 lg:py-0 py-10"
-      >
-        <div>
-          <div className="flex space-x-5 items-center">
-            <div>
-              <span>
-                <svg
-                  width="36"
-                  height="36"
-                  viewBox="0 0 36 36"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 1H5.63636V24.1818H35"
-                    stroke="#FFBB38"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                    stroke-linecap="square"
-                  ></path>
-                  <path
-                    d="M8.72763 35.0002C10.4347 35.0002 11.8185 33.6163 11.8185 31.9093C11.8185 30.2022 10.4347 28.8184 8.72763 28.8184C7.02057 28.8184 5.63672 30.2022 5.63672 31.9093C5.63672 33.6163 7.02057 35.0002 8.72763 35.0002Z"
-                    stroke="#FFBB38"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                    stroke-linecap="square"
-                  ></path>
-                  <path
-                    d="M31.9073 35.0002C33.6144 35.0002 34.9982 33.6163 34.9982 31.9093C34.9982 30.2022 33.6144 28.8184 31.9073 28.8184C30.2003 28.8184 28.8164 30.2022 28.8164 31.9093C28.8164 33.6163 30.2003 35.0002 31.9073 35.0002Z"
-                    stroke="#FFBB38"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                    stroke-linecap="square"
-                  ></path>
-                  <path
-                    d="M34.9982 1H11.8164V18H34.9982V1Z"
-                    stroke="#FFBB38"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                    stroke-linecap="square"
-                  ></path>
-                  <path
-                    d="M11.8164 7.18164H34.9982"
-                    stroke="#FFBB38"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                    stroke-linecap="square"
-                  ></path>
-                </svg>
-              </span>
+    <div className="w-full banner-wrapper mb-[60px]">
+      <div className="container max-w-screen-x mx-auto md:px-6">
+        <div className="main-wrapper w-full">
+          <div className="banner-card xl:flex xl:space-x-[30px] xl:h-[600px] mb-[30px]">
+            <div className="xl:w-[740px] w-full h-full">
+              <Image
+                src="/assets/banner-1.2.png"
+                width={740}
+                height={600}
+                alt=""
+                className="w-full max-w-full h-auto object-cover"
+              />
             </div>
-            <div>
-              <p className="text-black text-[15px] font-bold tracking-tight mb-1">
-                Free Shipping
-              </p>
-              <p className="text-sm text-qgray">When ordering over $100</p>
+
+            <div className="flex-1 flex xl:flex-col flex-row xl:space-y-[30px] h-full">
+              <div className="w-full xl:h-1/2">
+                <Image
+                  src="/assets/banner-2.png"
+                  width={398}
+                  height={285}
+                  alt=""
+                  className="w-full h-full"
+                />
+              </div>
+              <div className="w-full xl:h-1/2">
+                <Image
+                  src="/assets/banner-3.png"
+                  width={398}
+                  height={285}
+                  alt=""
+                  className="w-full h-full"
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div>
-          <div className="flex space-x-5 items-center">
+          <div
+            data-aos="fade-up"
+            className="w-full bg-white flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between lg:items-center lg:h-[110px] px-10 lg:py-0 py-10"
+          >
             <div>
-              <span>
-                <svg
-                  width="32"
-                  height="34"
-                  viewBox="0 0 32 34"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M31 17.4502C31 25.7002 24.25 32.4502 16 32.4502C7.75 32.4502 1 25.7002 1 17.4502C1 9.2002 7.75 2.4502 16 2.4502C21.85 2.4502 26.95 5.7502 29.35 10.7002"
-                    stroke="#FFBB38"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                  ></path>
-                  <path
-                    d="M30.7 2L29.5 10.85L20.5 9.65"
-                    stroke="#FFBB38"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                    stroke-linecap="square"
-                  ></path>
-                </svg>
-              </span>
+              <div className="flex space-x-5 items-center">
+                <div>
+                  <span>
+                    <svg
+                      width="36"
+                      height="36"
+                      viewBox="0 0 36 36"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1 1H5.63636V24.1818H35"
+                        stroke="#FFBB38"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="square"
+                      ></path>
+                      <path
+                        d="M8.72763 35.0002C10.4347 35.0002 11.8185 33.6163 11.8185 31.9093C11.8185 30.2022 10.4347 28.8184 8.72763 28.8184C7.02057 28.8184 5.63672 30.2022 5.63672 31.9093C5.63672 33.6163 7.02057 35.0002 8.72763 35.0002Z"
+                        stroke="#FFBB38"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="square"
+                      ></path>
+                      <path
+                        d="M31.9073 35.0002C33.6144 35.0002 34.9982 33.6163 34.9982 31.9093C34.9982 30.2022 33.6144 28.8184 31.9073 28.8184C30.2003 28.8184 28.8164 30.2022 28.8164 31.9093C28.8164 33.6163 30.2003 35.0002 31.9073 35.0002Z"
+                        stroke="#FFBB38"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="square"
+                      ></path>
+                      <path
+                        d="M34.9982 1H11.8164V18H34.9982V1Z"
+                        stroke="#FFBB38"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="square"
+                      ></path>
+                      <path
+                        d="M11.8164 7.18164H34.9982"
+                        stroke="#FFBB38"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="square"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+                <div>
+                  <p className="text-black text-[15px] font-bold tracking-wide mb-1">
+                    Free Shipping
+                  </p>
+                  <p className="text-sm text-qgray">When ordering over $100</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <p className="text-black text-[15px] font-bold tracking-tight mb-1">
-                Free Shipping
-              </p>
-              <p className="text-sm text-qgray">When ordering over $100</p>
-            </div>
-          </div>
-        </div>
 
-        <div>
-          <div className="flex space-x-5 items-center">
             <div>
-              <span>
-                <svg
-                  width="32"
-                  height="38"
-                  viewBox="0 0 32 38"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M22.6654 18.667H9.33203V27.0003H22.6654V18.667Z"
-                    stroke="#FFBB38"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                    stroke-linecap="square"
-                  ></path>
-                  <path
-                    d="M12.668 18.6663V13.6663C12.668 11.833 14.168 10.333 16.0013 10.333C17.8346 10.333 19.3346 11.833 19.3346 13.6663V18.6663"
-                    stroke="#FFBB38"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                    stroke-linecap="square"
-                  ></path>
-                  <path
-                    d="M31 22C31 30.3333 24.3333 37 16 37C7.66667 37 1 30.3333 1 22V5.33333L16 2L31 5.33333V22Z"
-                    stroke="#FFBB38"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                    stroke-linecap="square"
-                  ></path>
-                </svg>
-              </span>
+              <div className="flex space-x-5 items-center">
+                <div>
+                  <span>
+                    <svg
+                      width="32"
+                      height="34"
+                      viewBox="0 0 32 34"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M31 17.4502C31 25.7002 24.25 32.4502 16 32.4502C7.75 32.4502 1 25.7002 1 17.4502C1 9.2002 7.75 2.4502 16 2.4502C21.85 2.4502 26.95 5.7502 29.35 10.7002"
+                        stroke="#FFBB38"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                      ></path>
+                      <path
+                        d="M30.7 2L29.5 10.85L20.5 9.65"
+                        stroke="#FFBB38"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="square"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+                <div>
+                  <p className="text-black text-[15px] font-bold tracking-wide mb-1">
+                    Free Return
+                  </p>
+                  <p className="text-sm text-qgray">Get Return within 30 days</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <p className="text-black text-[15px] font-bold tracking-tight mb-1">
-                Free Shipping
-              </p>
-              <p className="text-sm text-qgray">When ordering over $100</p>
-            </div>
-          </div>
-        </div>
 
-        <div>
-          <div className="flex space-x-5 items-center">
             <div>
-              <span>
-                <svg
-                  width="32"
-                  height="35"
-                  viewBox="0 0 32 35"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 13H5.5C2.95 13 1 11.05 1 8.5V1H7"
-                    stroke="#FFBB38"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                  ></path>
-                  <path
-                    d="M25 13H26.5C29.05 13 31 11.05 31 8.5V1H25"
-                    stroke="#FFBB38"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                  ></path>
-                  <path
-                    d="M16 28V22"
-                    stroke="#FFBB38"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                  ></path>
-                  <path
-                    d="M16 22C11.05 22 7 17.95 7 13V1H25V13C25 17.95 20.95 22 16 22Z"
-                    stroke="#FFBB38"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                    stroke-linecap="square"
-                  ></path>
-                  <path
-                    d="M25 34H7C7 30.7 9.7 28 13 28H19C22.3 28 25 30.7 25 34Z"
-                    stroke="#FFBB38"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                    stroke-linecap="square"
-                  ></path>
-                </svg>
-              </span>
+              <div className="flex space-x-5 items-center">
+                <div>
+                  <span>
+                    <svg
+                      width="32"
+                      height="38"
+                      viewBox="0 0 32 38"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M22.6654 18.667H9.33203V27.0003H22.6654V18.667Z"
+                        stroke="#FFBB38"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="square"
+                      ></path>
+                      <path
+                        d="M12.668 18.6663V13.6663C12.668 11.833 14.168 10.333 16.0013 10.333C17.8346 10.333 19.3346 11.833 19.3346 13.6663V18.6663"
+                        stroke="#FFBB38"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="square"
+                      ></path>
+                      <path
+                        d="M31 22C31 30.3333 24.3333 37 16 37C7.66667 37 1 30.3333 1 22V5.33333L16 2L31 5.33333V22Z"
+                        stroke="#FFBB38"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="square"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+                <div>
+                  <p className="text-black text-[15px] font-bold tracking-wide mb-1">
+                    Secure Payment
+                  </p>
+                  <p className="text-sm text-qgray">100% Secure Online Payment</p>
+                </div>
+              </div>
             </div>
+
             <div>
-              <p className="text-black text-[15px] font-bold tracking-tight mb-1">
-                Free Shipping
-              </p>
-              <p className="text-sm text-qgray">When ordering over $100</p>
+              <div className="flex space-x-5 items-center">
+                <div>
+                  <span>
+                    <svg
+                      width="32"
+                      height="35"
+                      viewBox="0 0 32 35"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7 13H5.5C2.95 13 1 11.05 1 8.5V1H7"
+                        stroke="#FFBB38"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                      ></path>
+                      <path
+                        d="M25 13H26.5C29.05 13 31 11.05 31 8.5V1H25"
+                        stroke="#FFBB38"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                      ></path>
+                      <path
+                        d="M16 28V22"
+                        stroke="#FFBB38"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                      ></path>
+                      <path
+                        d="M16 22C11.05 22 7 17.95 7 13V1H25V13C25 17.95 20.95 22 16 22Z"
+                        stroke="#FFBB38"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="square"
+                      ></path>
+                      <path
+                        d="M25 34H7C7 30.7 9.7 28 13 28H19C22.3 28 25 30.7 25 34Z"
+                        stroke="#FFBB38"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="square"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+                <div>
+                  <p className="text-black text-[15px] font-bold tracking-wide mb-1">
+                    Best Quality
+                  </p>
+                  <p className="text-sm text-qgray">Original Product Guarenteed</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -239,19 +243,20 @@ function Banner() {
 
 function GameStore() {
   return (
-    <div className="section-style-one category-products mb-[60px] aos-init aos-animate">
+    <div className="section-style-one category-products mb-[60px]">
       <div className="section-wrapper w-full ">
-        <div className="container-x mx-auto">
+        <div className="container max-w-screen-x mx-auto md:px-6">
           <div className="section-title flex justify-between items-center mb-5">
             <div>
-              <h1 className="sm:text-3xl text-xl font-600 text-qblacktext leading-none">
+              <h1 className="sm:text-3xl text-xl font-semibold text-qblacktext leading-none">
                 Gamer World
               </h1>
             </div>
+
             <div>
               <a href="/all-products">
                 <div className="flex space-x-2 items-center">
-                  <p className="text-base font-600 text-qblack">View More</p>
+                  <p className="text-base font-semibold text-qblack">View More</p>
                   <span className="animate-right-dir">
                     <svg
                       width="17"
@@ -281,7 +286,7 @@ function GameStore() {
                 <div className="category-card hidden xl:block w-full ">
                   <div className="category-card-wrappwer w-full h-full p-[30px] bg-portada bg-cover bg-no-repeat">
                     <div>
-                      <h1 className="text-base font-600 tracking-wide mb-2">
+                      <h1 className="text-base font-semibold tracking-wide mb-2">
                         Mobile &amp; Tablet
                       </h1>
 
@@ -311,7 +316,7 @@ function GameStore() {
                       </div>
 
                       <div className="flex space-x-2 items-center">
-                        <span className="text-qblack font-600 text-sm">
+                        <span className="text-qblack font-semibold text-sm">
                           Shop Now
                         </span>
                         <span>
@@ -346,7 +351,7 @@ function GameStore() {
                 </div>
 
                 <div className="item">
-                  <div className="product-card-one w-full h-full bg-white relative group overflow-hidden">
+                  <div className="product-card-one w-full h-full bg-white relative group overflow-hidden shadow-2xl shadow-black/10">
                     <div className="product-card-img w-full h-[300px] flex items-center justify-center">
                       <Image
                         src={"/assets/product-img-1.jpg"}
@@ -423,14 +428,14 @@ function GameStore() {
                           </svg>
                         </span>
                       </div>
-                      <p className="">
+                      <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                         Xoggle aute et pariatur adipisicing nostrud et excepteur
                       </p>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold	text-[18px]">
                           $27.27
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $18.73
                         </span>
                       </p>
@@ -506,20 +511,20 @@ function GameStore() {
                 </div>
 
                 <div className="item">
-                  <div className="product-card-one w-full h-full bg-white relative group overflow-hidden">
+                  <div className="product-card-one w-full h-full bg-white relative group overflow-hidden shadow-2xl shadow-black/10">
                     <div className="product-card-img w-full h-[300px] flex items-center justify-center">
                       <Image
                         src={"/assets/product-img-2.jpg"}
                         alt=""
-                        width={196}
-                        height={196}
+                        width={316}
+                        height={222}
                       />
                       <div className="px-[30px] absolute left-0 top-3 w-full">
                         <div className="progress-title flex justify-between ">
                           <p className="text-xs text-qblack font-400 leading-6">
                             Prodcuts Available
                           </p>
-                          <span className="text-sm text-qblack font-600 leading-6">
+                          <span className="text-sm text-qblack font-semibold leading-6">
                             20
                           </span>
                         </div>
@@ -595,13 +600,41 @@ function GameStore() {
                             ></path>
                           </svg>
                         </span>
+                        <span>
+                          <svg
+                            width="18"
+                            height="17"
+                            viewBox="0 0 18 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z"
+                              fill="#FFA800"
+                            ></path>
+                          </svg>
+                        </span>
+                        <span>
+                          <svg
+                            width="18"
+                            height="17"
+                            viewBox="0 0 18 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z"
+                              fill="#FFA800"
+                            ></path>
+                          </svg>
+                        </span>
                       </div>
-                      <p className="">Geeky ipsum esse repreh est consequat</p>
+                      <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">Geeky ipsum esse repreh est consequat</p>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $24.55
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $17.79
                         </span>
                       </p>
@@ -677,16 +710,16 @@ function GameStore() {
                 </div>
 
                 <div className="item">
-                  <div className="product-card-one w-full h-full bg-white relative group overflow-hidden">
+                  <div className="product-card-one w-full h-full bg-white relative group overflow-hidden shadow-2xl shadow-black/10">
                     <div className="product-card-img w-full h-[300px] flex items-center justify-center">
                       <Image
                         src={"/assets/product-img-3.jpg"}
                         alt=""
-                        width={196}
-                        height={196}
+                        width={210}
+                        height={210}
                       />
                       <div className="product-type absolute right-[14px] top-[17px]">
-                        <span className="text-[9px] font-700 leading-none py-[6px] px-3 uppercase text-white rounded-full tracking-wider bg-[#19CC40]">
+                        <span className="text-[9px] font-bold leading-none py-[6px] px-3 uppercase text-white rounded-full tracking-wider bg-[#19CC40]">
                           popular
                         </span>
                       </div>
@@ -758,15 +791,43 @@ function GameStore() {
                             ></path>
                           </svg>
                         </span>
+                        <span>
+                          <svg
+                            width="18"
+                            height="17"
+                            viewBox="0 0 18 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z"
+                              fill="#FFA800"
+                            ></path>
+                          </svg>
+                        </span>
+                        <span>
+                          <svg
+                            width="18"
+                            height="17"
+                            viewBox="0 0 18 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z"
+                              fill="#FFA800"
+                            ></path>
+                          </svg>
+                        </span>
                       </div>
-                      <p className="">
+                      <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                         Conjurica ea magna eiusmod esse cupt anim aliquip
                       </p>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $32.63
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $18.03
                         </span>
                       </p>
@@ -853,75 +914,76 @@ function Brands() {
   return (
     <div
       data-aos="fade-up"
-      className="w-full brand-section-wrapper mb-[60px] aos-init aos-animate"
-    >
-      <div className="container-x mx-auto">
+      className="w-full brand-section-wrapper mb-[60px] aos-init aos-animate">
+      <div className="container max-w-screen-x mx-auto md:px-6">
+
         <div className=" section-title flex justify-between items-center mb-5">
           <div>
-            <h1 className="sm:text-3xl text-xl font-600 text-qblacktext">
+            <h1 className="sm:text-3xl text-xl font-semibold text-qblacktext">
               Shop by Brand
             </h1>
           </div>
         </div>
+
         <div className="grid lg:grid-cols-6 sm:grid-cols-4 grid-cols-2">
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
-              <img src="/assets/brand-1.png" alt="logo" />
+              <Image src="/assets/brand-1.png" width={128} height={32} alt="logo" />
             </div>
           </div>
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
-              <img src="/assets/brand-2.png" alt="logo" />
+              <Image src="/assets/brand-2.png" width={110} height={19} alt="logo" />
             </div>
           </div>
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
-              <img src="/assets/brand-3.png" alt="logo" />
+              <Image src="/assets/brand-3.png" width={88} height={30} alt="logo" />
             </div>
           </div>
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
-              <img src="/assets/brand-4.png" alt="logo" />
+              <Image src="/assets/brand-4.png" width={141} height={30} alt="logo" />
             </div>
           </div>
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
-              <img src="/assets/brand-5.png" alt="logo" />
+              <Image src="/assets/brand-5.png" width={90} height={30} alt="logo" />
             </div>
           </div>
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
-              <img src="/assets/brand-6.png" alt="logo" />
+              <Image src="/assets/brand-6.png" width={138} height={30} alt="logo" />
             </div>
           </div>
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
-              <img src="/assets/brand-7.png" alt="logo" />
+              <Image src="/assets/brand-7.png" width={111} height={21} alt="logo" />
             </div>
           </div>
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
-              <img src="/assets/brand-8.png" alt="logo" />
+              <Image src="/assets/brand-8.png" width={92} height={31} alt="logo" />
             </div>
           </div>
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
-              <img src="/assets/brand-9.png" alt="logo" />
+              <Image src="/assets/brand-9.png" width={110} height={30} alt="logo" />
             </div>
           </div>
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
-              <img src="/assets/brand-10.png" alt="logo" />
+              <Image src="/assets/brand-10.png" width={120} height={16} alt="logo" />
             </div>
           </div>
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
-              <img src="/assets/brand-11.png" alt="logo" />
+              <Image src="/assets/brand-11.png" width={98} height={30} alt="logo" />
             </div>
           </div>
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
-              <img src="/assets/brand-12.png" alt="logo" />
+              <Image src="/assets/brand-12.png" width={105} height={30} alt="logo" />
             </div>
           </div>
         </div>
@@ -934,18 +996,18 @@ function PostBrands() {
   return (
     <div>
       <div className="w-full lg:h-[460px] mb-[60px]">
-        <div className="container-x mx-auto h-full">
+        <div className="container max-w-screen-x mx-auto md:px-6  h-full">
           <div className="lg:flex xl:space-x-[30px] lg:space-x-5 items-center h-full">
             <div
               data-aos="fade-right"
-              className="campaign-countdown lg:w-1/2 h-full w-full mb-5 lg:mb-0 aos-init aos-animate bg-postBrandLeft bg-cover bg-no-repeat"
+              className="campaign-countdown lg:w-1/2 h-full w-full mb-5 lg:mb-0 bg-postBrandLeft bg-left bg-cover bg-no-repeat  aos-init aos-animate"
             >
               <a href="/flash-sale">
                 <div className="w-full xl:p-12 p-5">
                   <div className="countdown-wrapper w-full flex lg:justify-between justify-evenly mb-10">
                     <div className="countdown-item">
                       <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center">
-                        <span className="font-700 sm:text-[30px] text-[14px] text-[#EB5757]">
+                        <span className="font-bold sm:text-[30px] text-[14px] text-[#EB5757]">
                           0
                         </span>
                       </div>
@@ -955,7 +1017,7 @@ function PostBrands() {
                     </div>
                     <div className="countdown-item">
                       <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center">
-                        <span className="font-700 sm:text-[30px] text-[14px] text-[#2F80ED]">
+                        <span className="font-bold sm:text-[30px] text-[14px] text-[#2F80ED]">
                           0
                         </span>
                       </div>
@@ -965,7 +1027,7 @@ function PostBrands() {
                     </div>
                     <div className="countdown-item">
                       <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center">
-                        <span className="font-700 sm:text-[30px] text-[14px] text-[#219653]">
+                        <span className="font-bold sm:text-[30px] text-[14px] text-[#219653]">
                           0
                         </span>
                       </div>
@@ -975,7 +1037,7 @@ function PostBrands() {
                     </div>
                     <div className="countdown-item">
                       <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center">
-                        <span className="font-700 sm:text-[30px] text-[14px] text-[#EF5DA8]">
+                        <span className="font-bold sm:text-[30px] text-[14px] text-[#EF5DA8]">
                           0
                         </span>
                       </div>
@@ -985,12 +1047,12 @@ function PostBrands() {
                     </div>
                   </div>
                   <div className="countdown-title mb-4">
-                    <h1 className="text-[44px] text-qblack font-600">
+                    <h1 className="text-[44px] text-qblack font-semibold">
                       WOO! Flash Sale
                     </h1>
                   </div>
                   <div className="inline-flex space-x-2 items-center border-b border-qyellow">
-                    <span className="text-sm font-600 tracking-wide leading-7">
+                    <span className="text-sm font-semibold tracking-wide leading-7">
                       Shop Now
                     </span>
                     <span>
@@ -1023,16 +1085,17 @@ function PostBrands() {
                 </div>
               </a>
             </div>
+
             <div
               data-aos="fade-left"
-              className="download-app flex-1 lg:h-full h-[430px] xl:p-12 p-5 aos-init aos-animate bg-postBrandRight bg-cover bg-no-repeat"
+              className="download-app flex-1 lg:h-full h-[430px] xl:p-12 p-5 bg-postBrandRight bg-left bg-cover bg-no-repeat aos-init aos-animate "
             >
               <div className="flex flex-col h-full justify-between">
                 <div className="get-app">
-                  <p className="text-[13px] font-600 text-qblack mb-3">
+                  <p className="text-[13px] font-semibold text-qblack mb-3">
                     MOBILE APP VERSION
                   </p>
-                  <h1 className="text-[30px] font-600 text-qblack leading-10 mb-8">
+                  <h1 className="text-[30px] font-semibold text-qblack leading-10 mb-8">
                     Get Our
                     <span className="text-qred border-b-2 border-qred mx-2">
                       Mobile App
@@ -1042,7 +1105,7 @@ function PostBrands() {
                   <div className="flex space-x-5 items-center">
                     <div>
                       <a href="#">
-                        <img
+                        <Image
                           width="170"
                           height="69"
                           src="/assets/play-store.png"
@@ -1052,7 +1115,7 @@ function PostBrands() {
                     </div>
                     <div>
                       <a href="#">
-                        <img
+                        <Image
                           width="170"
                           height="69"
                           src="/assets/apple-store.png"
@@ -1063,7 +1126,7 @@ function PostBrands() {
                   </div>
                 </div>
                 <div className="app-screen">
-                  <img src="/assets/app-screen.png" alt="" />
+                  <Image src="/assets/app-screen.png" width="458" height="126" alt="" />
                 </div>
               </div>
             </div>
@@ -1077,17 +1140,17 @@ function PostBrands() {
 function SellingProducts() {
   return (
     <div className="section-wrapper w-full top-selling-product mb-[60px]">
-      <div className="container-x mx-auto">
-        <div className=" section-title flex justify-between items-center mb-5">
+      <div className="container max-w-screen-x mx-auto md:px-6">
+        <div className="section-title flex justify-between items-center mb-5">
           <div>
-            <h1 className="sm:text-3xl text-xl font-600 text-qblacktext leading-none">
+            <h1 className="sm:text-3xl text-xl font-semibold text-qblacktext leading-none">
               Top Selling Products
             </h1>
           </div>
           <div>
             <a href="/all-products">
               <div className="flex space-x-2 items-center">
-                <p className="text-base font-600 text-qblack">View More</p>
+                <p className="text-base font-semibold text-qblack">View More</p>
                 <span className="animate-right-dir">
                   <svg
                     width="17"
@@ -1110,6 +1173,7 @@ function SellingProducts() {
             </a>
           </div>
         </div>
+
         <div className="section-content">
           <div className="section-content w-full grid sm:grid-cols-2 grid-cols-1 xl:gap-[30px] gap-5 ">
             <div className="item w-full">
@@ -1119,12 +1183,15 @@ function SellingProducts() {
               >
                 <div className="flex space-x-5 items-center w-full h-full lg:p-[30px] sm:p-5 p-2">
                   <div className="lg:w-1/2 w-1/3 h-full">
-                    <img
+                    <Image
                       src="/assets/product-img-4.jpg"
+                      width={255}
+                      height={190}
                       alt=""
                       className="w-full h-full object-contain"
                     />
                   </div>
+
                   <div className="flex-1 flex flex-col justify-center h-full">
                     <div>
                       <div className="flex space-x-1 mb-3">
@@ -1200,20 +1267,20 @@ function SellingProducts() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 sm:text-[15px] text-[13px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Senmei ipsum dolore eiusmod dolor officia do nisi
                         </p>
                       </a>
                       <p className="price mb-[26px]">
-                        <span className="main-price text-qgray line-through font-600 sm:text-[18px] text-base">
+                        <span className="main-price text-qgray line-through font-semibold sm:text-[18px] text-base">
                           $20.64
                         </span>
-                        <span className="offer-price text-qred font-600 sm:text-[18px] text-base ml-2">
+                        <span className="offer-price text-qred font-semibold sm:text-[18px] text-base ml-2">
                           $27.61
                         </span>
                       </p>
                       <button type="button" className="w-[110px] h-[30px]">
-                        <span className="bg-qyellow items-center flex h-full justify-center w-full font-bold text-xs leading-none">
+                        <span className="yellow-btn">
                           {" "}
                           Add To Cart
                         </span>
@@ -1221,6 +1288,7 @@ function SellingProducts() {
                     </div>
                   </div>
                 </div>
+
                 <div className="quick-access-btns flex flex-col space-y-2 absolute group-hover:right-4 -right-10 top-[30px]  transition-all duration-300 ease-in-out">
                   <a href="#">
                     <span className="w-10 h-10 flex justify-center items-center bg-primarygray rounded">
@@ -1289,6 +1357,7 @@ function SellingProducts() {
                 </div>
               </div>
             </div>
+
             <div className="item w-full">
               <div
                 data-aos="fade-left"
@@ -1296,12 +1365,15 @@ function SellingProducts() {
               >
                 <div className="flex space-x-5 items-center w-full h-full lg:p-[30px] sm:p-5 p-2">
                   <div className="lg:w-1/2 w-1/3 h-full">
-                    <img
+                    <Image
                       src="/assets/product-img-5.jpg"
+                      width={255}
+                      height={190}
                       alt=""
                       className="w-full h-full object-contain"
                     />
                   </div>
+
                   <div className="flex-1 flex flex-col justify-center h-full">
                     <div>
                       <div className="flex space-x-1 mb-3">
@@ -1377,20 +1449,20 @@ function SellingProducts() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 sm:text-[15px] text-[13px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Canopoly duis voluptate dolor sunt sit adipisicing in
                         </p>
                       </a>
                       <p className="price mb-[26px]">
-                        <span className="main-price text-qgray line-through font-600 sm:text-[18px] text-base">
+                        <span className="main-price text-qgray line-through font-semibold sm:text-[18px] text-base">
                           $39.27
                         </span>
-                        <span className="offer-price text-qred font-600 sm:text-[18px] text-base ml-2">
+                        <span className="offer-price text-qred font-semibold sm:text-[18px] text-base ml-2">
                           $10.42
                         </span>
                       </p>
                       <button type="button" className="w-[110px] h-[30px]">
-                        <span className="bg-qyellow items-center flex h-full justify-center w-full font-bold text-xs leading-none">
+                        <span className="yellow-btn">
                           {" "}
                           Add To Cart
                         </span>
@@ -1398,6 +1470,7 @@ function SellingProducts() {
                     </div>
                   </div>
                 </div>
+
                 <div className="quick-access-btns flex flex-col space-y-2 absolute group-hover:right-4 -right-10 top-[30px]  transition-all duration-300 ease-in-out">
                   <a href="#">
                     <span className="w-10 h-10 flex justify-center items-center bg-primarygray rounded">
@@ -1466,6 +1539,7 @@ function SellingProducts() {
                 </div>
               </div>
             </div>
+
             <div className="item w-full">
               <div
                 data-aos="fade-left"
@@ -1473,12 +1547,15 @@ function SellingProducts() {
               >
                 <div className="flex space-x-5 items-center w-full h-full lg:p-[30px] sm:p-5 p-2">
                   <div className="lg:w-1/2 w-1/3 h-full">
-                    <img
+                    <Image
                       src="/assets/product-img-6.jpg"
+                      width={255}
+                      height={190}
                       alt=""
                       className="w-full h-full object-contain"
                     />
                   </div>
+
                   <div className="flex-1 flex flex-col justify-center h-full">
                     <div>
                       <div className="flex space-x-1 mb-3">
@@ -1554,20 +1631,20 @@ function SellingProducts() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 sm:text-[15px] text-[13px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Unisure aliqua repreh ex cupt qui elit officia
                         </p>
                       </a>
                       <p className="price mb-[26px]">
-                        <span className="main-price text-qgray line-through font-600 sm:text-[18px] text-base">
+                        <span className="main-price text-qgray line-through font-semibold sm:text-[18px] text-base">
                           $36.90
                         </span>
-                        <span className="offer-price text-qred font-600 sm:text-[18px] text-base ml-2">
+                        <span className="offer-price text-qred font-semibold sm:text-[18px] text-base ml-2">
                           $16.43
                         </span>
                       </p>
                       <button type="button" className="w-[110px] h-[30px]">
-                        <span className="bg-qyellow items-center flex h-full justify-center w-full font-bold text-xs leading-none">
+                        <span className="yellow-btn">
                           {" "}
                           Add To Cart
                         </span>
@@ -1575,6 +1652,7 @@ function SellingProducts() {
                     </div>
                   </div>
                 </div>
+
                 <div className="quick-access-btns flex flex-col space-y-2 absolute group-hover:right-4 -right-10 top-[30px]  transition-all duration-300 ease-in-out">
                   <a href="#">
                     <span className="w-10 h-10 flex justify-center items-center bg-primarygray rounded">
@@ -1643,6 +1721,7 @@ function SellingProducts() {
                 </div>
               </div>
             </div>
+
             <div className="item w-full">
               <div
                 data-aos="fade-left"
@@ -1650,12 +1729,15 @@ function SellingProducts() {
               >
                 <div className="flex space-x-5 items-center w-full h-full lg:p-[30px] sm:p-5 p-2">
                   <div className="lg:w-1/2 w-1/3 h-full">
-                    <img
+                    <Image
                       src="/assets/product-img-7.jpg"
+                      width={255}
+                      height={190}
                       alt=""
                       className="w-full h-full object-contain"
                     />
                   </div>
+
                   <div className="flex-1 flex flex-col justify-center h-full">
                     <div>
                       <div className="flex space-x-1 mb-3">
@@ -1731,20 +1813,20 @@ function SellingProducts() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 sm:text-[15px] text-[13px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Kenegy consectetur id ex nulla in adipisicing deserunt
                         </p>
                       </a>
                       <p className="price mb-[26px]">
-                        <span className="main-price text-qgray line-through font-600 sm:text-[18px] text-base">
+                        <span className="main-price text-qgray line-through font-semibold sm:text-[18px] text-base">
                           $26.62
                         </span>
-                        <span className="offer-price text-qred font-600 sm:text-[18px] text-base ml-2">
+                        <span className="offer-price text-qred font-semibold sm:text-[18px] text-base ml-2">
                           $11.92
                         </span>
                       </p>
                       <button type="button" className="w-[110px] h-[30px]">
-                        <span className="bg-qyellow items-center flex h-full justify-center w-full font-bold text-xs leading-none">
+                        <span className="yellow-btn">
                           {" "}
                           Add To Cart
                         </span>
@@ -1752,6 +1834,7 @@ function SellingProducts() {
                     </div>
                   </div>
                 </div>
+
                 <div className="quick-access-btns flex flex-col space-y-2 absolute group-hover:right-4 -right-10 top-[30px]  transition-all duration-300 ease-in-out">
                   <a href="#">
                     <span className="w-10 h-10 flex justify-center items-center bg-primarygray rounded">
@@ -1820,6 +1903,7 @@ function SellingProducts() {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -1830,17 +1914,17 @@ function SellingProducts() {
 function BestSeller() {
   return (
     <div className="section-wrapper w-full best-sallers-section mb-[60px]">
-      <div className="container-x mx-auto">
-        <div className=" section-title flex justify-between items-center mb-5">
+      <div className="container max-w-screen-x mx-auto md:px-6">
+        <div className="section-title flex justify-between items-center mb-5">
           <div>
-            <h1 className="sm:text-3xl text-xl font-600 text-qblacktext leading-none">
+            <h1 className="sm:text-3xl text-xl font-semibold text-qblacktext leading-none">
               Best Saller
             </h1>
           </div>
           <div>
             <a href="/sallers">
               <div className="flex space-x-2 items-center">
-                <p className="text-base font-600 text-qblack">View More</p>
+                <p className="text-base font-semibold text-qblack">View More</p>
                 <span className="animate-right-dir">
                   <svg
                     width="17"
@@ -1863,8 +1947,9 @@ function BestSeller() {
             </a>
           </div>
         </div>
+
         <div className="section-content">
-          <div className="w-full ">
+          <div className="w-full">
             <div className="grid xl:grid-cols-6 lg:grid-cols-5 sm:grid-cols-3 grid-cols-1 xl:gap-[30px] gap-5">
               <div
                 data-aos="fade-left"
@@ -1872,72 +1957,79 @@ function BestSeller() {
                 className="item w-full flex flex-col items-center aos-init aos-animate"
               >
                 <div className="w-[170px] h-[170px] rounded-full bg-white flex justify-center items-center overflow-hidden mb-2">
-                  <img src="/assets/saller-1.png" alt="" />
+                  <Image src="/assets/saller-1.png" width={96} height={99} alt="" />
                 </div>
                 <a href="/saller-page">
-                  <p className="text-base font-500 text-center">Shopno BD</p>
+                  <p className="text-base font-medium text-center">Shopno BD</p>
                 </a>
               </div>
+
               <div
                 data-aos="fade-left"
-                data-aos-duration="400"
+                data-aos-duration="500"
                 className="item w-full flex flex-col items-center aos-init aos-animate"
               >
                 <div className="w-[170px] h-[170px] rounded-full bg-white flex justify-center items-center overflow-hidden mb-2">
-                  <img src="/assets/saller-2.png" alt="" />
+                  <Image src="/assets/saller-2.png" width={98} height={73} alt="" />
                 </div>
                 <a href="/saller-page">
-                  <p className="text-base font-500 text-center">Eecoms Shop</p>
+                  <p className="text-base font-medium text-center">Eecoms Shop</p>
                 </a>
               </div>
+
               <div
                 data-aos="fade-left"
-                data-aos-duration="300"
+                data-aos-duration="500"
                 className="item w-full flex flex-col items-center aos-init aos-animate"
               >
                 <div className="w-[170px] h-[170px] rounded-full bg-white flex justify-center items-center overflow-hidden mb-2">
-                  <img src="/assets/saller-3.png" alt="" />
+                  <Image src="/assets/saller-3.png" width={95} height={85} alt="" />
                 </div>
                 <a href="/saller-page">
-                  <p className="text-base font-500 text-center">Fusion X</p>
+                  <p className="text-base font-medium text-center">Fusion X</p>
                 </a>
               </div>
+
               <div
                 data-aos="fade-left"
-                data-aos-duration="200"
+                data-aos-duration="500"
                 className="item w-full flex flex-col items-center aos-init aos-animate"
               >
                 <div className="w-[170px] h-[170px] rounded-full bg-white flex justify-center items-center overflow-hidden mb-2">
-                  <img src="/assets/saller-4.png" alt="" />
+                  <Image src="/assets/saller-4.png" width={77} height={89} alt="" />
                 </div>
                 <a href="/saller-page">
-                  <p className="text-base font-500 text-center">Rikayi Rox</p>
+                  <p className="text-base font-medium text-center">Rikayi Rox</p>
                 </a>
               </div>
+
               <div
                 data-aos="fade-left"
-                data-aos-duration="100"
+                data-aos-duration="500"
                 className="item w-full flex flex-col items-center aos-init aos-animate"
               >
                 <div className="w-[170px] h-[170px] rounded-full bg-white flex justify-center items-center overflow-hidden mb-2">
-                  <img src="/assets/saller-5.png" alt="" />
+                  <Image src="/assets/saller-5.png" width={97} height={94} alt="" />
                 </div>
                 <a href="/saller-page">
-                  <p className="text-base font-500 text-center">Habbriyi</p>
+                  <p className="text-base font-medium text-center">Habbriyi</p>
                 </a>
               </div>
+
               <div
                 data-aos="fade-left"
-                data-aos-duration="100"
+                data-aos-duration="500"
                 className="item w-full flex flex-col items-center aos-init aos-animate"
               >
                 <div className="w-[170px] h-[170px] rounded-full bg-white flex justify-center items-center overflow-hidden mb-2">
-                  <img src="/assets/saller-6.png" alt="" />
+                  <Image src="/assets/saller-6.png" width={115} height={96} alt="" />
                 </div>
                 <a href="/saller-page">
-                  <p className="text-base font-500 text-center">Rayhans</p>
+                  <p className="text-base font-medium text-center">Rayhans</p>
                 </a>
               </div>
+
+
             </div>
           </div>
         </div>
@@ -1949,26 +2041,34 @@ function BestSeller() {
 function ProductAds() {
   return (
     <div className="w-full products-ads-section mb-[60px]">
-      <div className="container-x mx-auto">
+      <div className="container max-w-screen-x mx-auto md:px-6">
         <div className="sm:h-[295px] h-full sm:flex xl:space-x-[30px] sm:space-x-5 items-center w-full  overflow-hidden">
           <div
             data-aos="fade-right"
             className="h-full sm:mb-0 mb-5 sm:w-1/2 w-full aos-init aos-animate"
           >
             <a href="/single-product">
-              <img
+              <Image
                 src="/assets/ads-1.png"
+                width={584}
+                height={295}
                 alt=""
                 className="w-full sm:h-full h-auto"
               />
             </a>
           </div>
+
           <div
             data-aos="fade-left"
             className="flex-1 h-full aos-init aos-animate"
           >
             <a href="/single-product">
-              <img src="/assets/ads-2.png" alt="" className="w-full h-full" />
+              <Image
+                src="/assets/ads-2.png"
+                width={554}
+                height={295}
+                alt=""
+                className="w-full h-full" />
             </a>
           </div>
         </div>
@@ -1981,20 +2081,20 @@ function PopularSales() {
   return (
     <div
       data-aos="fade-up"
-      className="section-style-one category-products mb-[60px] aos-init aos-animate"
-    >
-      <div className="section-wrapper w-full ">
-        <div className="container-x mx-auto">
-          <div className=" section-title flex justify-between items-center mb-5">
+      className="section-style-one category-products mb-[60px] aos-init aos-animate" >
+      <div className="section-wrapper w-full">
+        <div className="container max-w-screen-x mx-auto md:px-6">
+          <div className="section-title flex justify-between items-center mb-5">
             <div>
-              <h1 className="sm:text-3xl text-xl font-600 text-qblacktext leading-none">
+              <h1 className="sm:text-3xl text-xl font-semibold text-qblacktext leading-none">
                 Popular Sales
               </h1>
             </div>
+
             <div>
               <a href="/all-products">
                 <div className="flex space-x-2 items-center">
-                  <p className="text-base font-600 text-qblack">View More</p>
+                  <p className="text-base font-semibold text-qblack">View More</p>
                   <span className="animate-right-dir">
                     <svg
                       width="17"
@@ -2017,13 +2117,14 @@ function PopularSales() {
               </a>
             </div>
           </div>
+
           <div className="section-content">
             <div className="products-section w-full">
               <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-[30px] gap-5">
                 <div className="category-card hidden xl:block w-full">
                   <div className="category-card-wrappwer w-full h-full p-[30px] bg-popularSaleLeft bg-cover bg-no-repeat">
                     <div>
-                      <h1 className="text-base font-600 tracking-wide mb-2">
+                      <h1 className="text-base font-semibold tracking-wide mb-2">
                         Electronics
                       </h1>
                       <div className="brands-list mb-[7px]">
@@ -2060,7 +2161,7 @@ function PopularSales() {
                       </div>
                       <a href="#">
                         <div className="flex space-x-2 items-center">
-                          <span className="text-qblack font-600 text-sm">
+                          <span className="text-qblack font-semibold text-sm">
                             Shop Now
                           </span>
                           <span>
@@ -2094,15 +2195,16 @@ function PopularSales() {
                     </div>
                   </div>
                 </div>
+
                 <div className="item">
-                  <div className="product-card-one w-full h-full bg-white relative group overflow-hidden">
+                  <div className="product-card-one w-full h-full bg-white relative group overflow-hidden shadow-2xl shadow-black/10">
                     <div className="product-card-img w-full h-[300px] bg-popularSaleRightOne bg-center bg-no-repeat">
                       <div className="px-[30px] absolute left-0 top-3 w-full">
                         <div className="progress-title flex justify-between ">
                           <p className="text-xs text-qblack font-400 leading-6">
                             Prodcuts Available
                           </p>
-                          <span className="text-sm text-qblack font-600 leading-6">
+                          <span className="text-sm text-qblack font-semibold leading-6">
                             12
                           </span>
                         </div>
@@ -2207,15 +2309,15 @@ function PopularSales() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Canopoly duis voluptate dolor sunt sit adipisicing in
                         </p>
                       </a>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $39.27
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $10.42
                         </span>
                       </p>
@@ -2288,8 +2390,9 @@ function PopularSales() {
                     </div>
                   </div>
                 </div>
+
                 <div className="item">
-                  <div className="product-card-one w-full h-full bg-white relative group overflow-hidden">
+                  <div className="product-card-one w-full h-full bg-white relative group overflow-hidden shadow-2xl shadow-black/10">
                     <div className="product-card-img w-full h-[300px] bg-popularSaleRightTwo bg-center bg-no-repeat"></div>
                     <div className="product-card-details px-[30px] pb-[30px] relative">
                       <div className="absolute w-full h-10 px-[30px] left-0 top-40 group-hover:top-[85px] transition-all duration-300 ease-in-out">
@@ -2387,15 +2490,15 @@ function PopularSales() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Unisure aliqua repreh ex cupt qui elit officia
                         </p>
                       </a>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $36.90
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $16.43
                         </span>
                       </p>
@@ -2468,11 +2571,12 @@ function PopularSales() {
                     </div>
                   </div>
                 </div>
+
                 <div className="item">
-                  <div className="product-card-one w-full h-full bg-white relative group overflow-hidden">
+                  <div className="product-card-one w-full h-full bg-white relative group overflow-hidden shadow-2xl shadow-black/10">
                     <div className="product-card-img w-full h-[300px] bg-popularSaleRightThree bg-center bg-no-repeat">
                       <div className="product-type absolute right-[14px] top-[17px]">
-                        <span className="text-[9px] font-700 leading-none py-[6px] px-3 uppercase text-white rounded-full tracking-wider bg-qyellow">
+                        <span className="text-[9px] font-bold leading-none py-[6px] px-3 uppercase text-white rounded-full tracking-wider bg-qyellow">
                           new
                         </span>
                       </div>
@@ -2573,15 +2677,15 @@ function PopularSales() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Kenegy consectetur id ex nulla in adipisicing deserunt
                         </p>
                       </a>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $26.62
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $11.92
                         </span>
                       </p>
@@ -2666,15 +2770,17 @@ function PopularSales() {
 function BannerTwo() {
   return (
     <div className="w-full products-ads-section mb-[60px]">
-      <div className="container-x mx-auto">
+      <div className="container max-w-screen-x mx-auto md:px-6">
         <div className="undefined  items-center w-full  overflow-hidden">
           <div
             data-aos="fade-right"
             className="h-full sm:mb-0 mb-5 w-full aos-init aos-animate"
           >
             <a href="/single-product">
-              <img
+              <Image
                 src="/assets/ads-3.png"
+                width={1168}
+                height={292}
                 alt=""
                 className="w-full sm:h-full h-auto"
               />
@@ -2689,18 +2795,19 @@ function BannerTwo() {
 function NewArrivals() {
   return (
     <div className="section-style-one new-products mb-[60px]">
-      <div className="section-wrapper w-full ">
-        <div className="container-x mx-auto">
-          <div className=" section-title flex justify-between items-center mb-5">
+      <div className="section-wrapper w-full">
+        <div className="container max-w-screen-x mx-auto md:px-6">
+          <div className="section-title flex justify-between items-center mb-5">
             <div>
-              <h1 className="sm:text-3xl text-xl font-600 text-qblacktext leading-none">
+              <h1 className="sm:text-3xl text-xl font-semibold text-qblacktext leading-none">
                 New Arrivals
               </h1>
             </div>
+
             <div>
               <a href="/all-products">
                 <div className="flex space-x-2 items-center">
-                  <p className="text-base font-600 text-qblack">View More</p>
+                  <p className="text-base font-semibold text-qblack">View More</p>
                   <span className="animate-right-dir">
                     <svg
                       width="17"
@@ -2723,6 +2830,7 @@ function NewArrivals() {
               </a>
             </div>
           </div>
+
           <div className="section-content">
             <div className="products-section w-full">
               <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-[30px] gap-5">
@@ -2797,16 +2905,16 @@ function NewArrivals() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Xoggle aute et pariatur adipisicing nostrud et
                           excepteur
                         </p>
                       </a>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $27.27
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $18.73
                         </span>
                       </p>
@@ -2887,7 +2995,7 @@ function NewArrivals() {
                           <p className="text-xs text-qblack font-400 leading-6">
                             Prodcuts Available
                           </p>
-                          <span className="text-sm text-qblack font-600 leading-6">
+                          <span className="text-sm text-qblack font-semibold leading-6">
                             20
                           </span>
                         </div>
@@ -2992,15 +3100,15 @@ function NewArrivals() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Geeky ipsum esse repreh est consequat
                         </p>
                       </a>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $24.55
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $17.79
                         </span>
                       </p>
@@ -3077,7 +3185,7 @@ function NewArrivals() {
                   <div className="product-card-one w-full h-full bg-white relative group overflow-hidden">
                     <div className="product-card-img w-full h-[300px] bg-newArrivals3 bg-center bg-no-repeat">
                       <div className="product-type absolute right-[14px] top-[17px]">
-                        <span className="text-[9px] font-700 leading-none py-[6px] px-3 uppercase text-white rounded-full tracking-wider bg-[#19CC40]">
+                        <span className="text-[9px] font-bold leading-none py-[6px] px-3 uppercase text-white rounded-full tracking-wider bg-[#19CC40]">
                           popular
                         </span>
                       </div>
@@ -3178,15 +3286,15 @@ function NewArrivals() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Conjurica ea magna eiusmod esse cupt anim aliquip
                         </p>
                       </a>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $32.63
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $18.03
                         </span>
                       </p>
@@ -3267,7 +3375,7 @@ function NewArrivals() {
                           <p className="text-xs text-qblack font-400 leading-6">
                             Prodcuts Available
                           </p>
-                          <span className="text-sm text-qblack font-600 leading-6">
+                          <span className="text-sm text-qblack font-semibold leading-6">
                             48
                           </span>
                         </div>
@@ -3372,15 +3480,15 @@ function NewArrivals() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Senmei ipsum dolore eiusmod dolor officia do nisi
                         </p>
                       </a>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $20.64
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $27.61
                         </span>
                       </p>
@@ -3461,7 +3569,7 @@ function NewArrivals() {
                           <p className="text-xs text-qblack font-400 leading-6">
                             Prodcuts Available
                           </p>
-                          <span className="text-sm text-qblack font-600 leading-6">
+                          <span className="text-sm text-qblack font-semibold leading-6">
                             12
                           </span>
                         </div>
@@ -3566,15 +3674,15 @@ function NewArrivals() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Canopoly duis voluptate dolor sunt sit adipisicing in
                         </p>
                       </a>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $39.27
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $10.42
                         </span>
                       </p>
@@ -3746,15 +3854,15 @@ function NewArrivals() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Unisure aliqua repreh ex cupt qui elit officia
                         </p>
                       </a>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $36.90
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $16.43
                         </span>
                       </p>
@@ -3831,7 +3939,7 @@ function NewArrivals() {
                   <div className="product-card-one w-full h-full bg-white relative group overflow-hidden">
                     <div className="product-card-img w-full h-[300px] bg-newArrivals7 bg-center bg-no-repeat">
                       <div className="product-type absolute right-[14px] top-[17px]">
-                        <span className="text-[9px] font-700 leading-none py-[6px] px-3 uppercase text-white rounded-full tracking-wider bg-qyellow">
+                        <span className="text-[9px] font-bold leading-none py-[6px] px-3 uppercase text-white rounded-full tracking-wider bg-qyellow">
                           new
                         </span>
                       </div>
@@ -3932,15 +4040,15 @@ function NewArrivals() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Kenegy consectetur id ex nulla in adipisicing deserunt
                         </p>
                       </a>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $26.62
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $11.92
                         </span>
                       </p>
@@ -4021,7 +4129,7 @@ function NewArrivals() {
                           <p className="text-xs text-qblack font-400 leading-6">
                             Prodcuts Available
                           </p>
-                          <span className="text-sm text-qblack font-600 leading-6">
+                          <span className="text-sm text-qblack font-semibold leading-6">
                             19
                           </span>
                         </div>
@@ -4126,15 +4234,15 @@ function NewArrivals() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Bizmatic consequat enim quis sit et est eiusmod
                         </p>
                       </a>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $26.38
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $21.93
                         </span>
                       </p>
@@ -4306,16 +4414,16 @@ function NewArrivals() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Anarco consectetur magna nostrud commodo tempor aliqua
                           laborum
                         </p>
                       </a>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $32.61
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $22.13
                         </span>
                       </p>
@@ -4396,7 +4504,7 @@ function NewArrivals() {
                           <p className="text-xs text-qblack font-400 leading-6">
                             Prodcuts Available
                           </p>
-                          <span className="text-sm text-qblack font-600 leading-6">
+                          <span className="text-sm text-qblack font-semibold leading-6">
                             19
                           </span>
                         </div>
@@ -4501,15 +4609,15 @@ function NewArrivals() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Plasto cillum ad minim elit fugiat esse dolore
                         </p>
                       </a>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $26.83
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $26.50
                         </span>
                       </p>
@@ -4586,7 +4694,7 @@ function NewArrivals() {
                   <div className="product-card-one w-full h-full bg-white relative group overflow-hidden">
                     <div className="product-card-img w-full h-[300px] bg-newArrivals11 bg-center bg-no-repeat">
                       <div className="product-type absolute right-[14px] top-[17px]">
-                        <span className="text-[9px] font-700 leading-none py-[6px] px-3 uppercase text-white rounded-full tracking-wider bg-[#19CC40]">
+                        <span className="text-[9px] font-bold leading-none py-[6px] px-3 uppercase text-white rounded-full tracking-wider bg-[#19CC40]">
                           popular
                         </span>
                       </div>
@@ -4687,15 +4795,15 @@ function NewArrivals() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Conjurica ea magna eiusmod esse cupt anim aliquip
                         </p>
                       </a>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $32.63
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $18.03
                         </span>
                       </p>
@@ -4776,7 +4884,7 @@ function NewArrivals() {
                           <p className="text-xs text-qblack font-400 leading-6">
                             Prodcuts Available
                           </p>
-                          <span className="text-sm text-qblack font-600 leading-6">
+                          <span className="text-sm text-qblack font-semibold leading-6">
                             25
                           </span>
                         </div>
@@ -4881,15 +4989,15 @@ function NewArrivals() {
                         </span>
                       </div>
                       <a href="/single-product">
-                        <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
+                        <p className="title mb-2 text-[15px] font-semibold text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
                           Empirica deserunt laborum ad quis labore labore eu
                         </p>
                       </a>
                       <p className="price">
-                        <span className="main-price text-qgray line-through font-600 text-[18px]">
+                        <span className="main-price text-qgray line-through font-semibold text-[18px]">
                           $26.87
                         </span>
-                        <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                        <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                           $29.14
                         </span>
                       </p>
@@ -4974,15 +5082,17 @@ function NewArrivals() {
 function BannerThree() {
   return (
     <div className="w-full products-ads-section mb-[60px]">
-      <div className="container-x mx-auto">
+      <div className="container max-w-screen-x mx-auto md:px-6">
         <div className="164  items-center w-full  overflow-hidden">
           <div
             data-aos="fade-right"
             className="h-full sm:mb-0 mb-5 w-full aos-init aos-animate"
           >
             <a href="/single-product">
-              <img
+              <Image
                 src="/assets/ads-4.png"
+                width={1168}
+                height={164}
                 alt=""
                 className="w-full sm:h-full h-auto"
               />
@@ -4998,17 +5108,18 @@ function PopularSalesTwo() {
   return (
     <div className="section-style-one category-products mb-[60px]">
       <div className="section-wrapper w-full ">
-        <div className="container-x mx-auto">
+        <div className="container max-w-screen-x mx-auto md:px-6">
           <div className=" section-title flex justify-between items-center mb-5">
             <div>
-              <h1 className="sm:text-3xl text-xl font-600 text-qblacktext leading-none">
+              <h1 className="sm:text-3xl text-xl font-semibold text-qblacktext leading-none">
                 Popular Sales
               </h1>
             </div>
+
             <div>
               <a href="/all-products">
                 <div className="flex space-x-2 items-center">
-                  <p className="text-base font-600 text-qblack">View More</p>
+                  <p className="text-base font-semibold text-qblack">View More</p>
                   <span className="animate-right-dir">
                     <svg
                       width="17"
@@ -5031,6 +5142,7 @@ function PopularSalesTwo() {
               </a>
             </div>
           </div>
+
           <div className="section-content">
             <div className="products-section w-full">
               <div className="grid lg:grid-cols-3 grid-cols-1 xl:gap-[30px] lg:gap-5">
@@ -5042,24 +5154,26 @@ function PopularSalesTwo() {
                     <div className="w-full h-[105px] bg-white border border-primarygray px-5 ">
                       <div className="w-full h-full flex space-x-5 justify-center items-center">
                         <div className="w-[75px] h-[75px]">
-                          <img
+                          <Image
                             src="/assets/product-img-1.jpg"
+                            width={75}
+                            height={75}
                             alt=""
                             className="w-full h-full object-cover"
                           />
                         </div>
                         <div className="flex-1 h-full flex flex-col justify-center ">
                           <a href="/single-product">
-                            <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
+                            <p className="title mb-2 sm:text-[15px] text-[13px] font-semibold text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
                               Xoggle aute et pariatur adipisicing nostrud et
                               excepteur
                             </p>
                           </a>
                           <p className="price">
-                            <span className="main-price text-qgray line-through font-600 text-[18px]">
+                            <span className="main-price text-qgray line-through font-semibold text-[18px]">
                               $27.27
                             </span>
-                            <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                            <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                               $18.73
                             </span>
                           </p>
@@ -5067,6 +5181,7 @@ function PopularSalesTwo() {
                       </div>
                     </div>
                   </div>
+                
                   <div
                     data-aos="fade-up"
                     className="product-card-row-two w-full aos-init aos-animate"
@@ -5074,23 +5189,25 @@ function PopularSalesTwo() {
                     <div className="w-full h-[105px] bg-white border border-primarygray px-5 ">
                       <div className="w-full h-full flex space-x-5 justify-center items-center">
                         <div className="w-[75px] h-[75px]">
-                          <img
+                          <Image
                             src="/assets/product-img-2.jpg"
+                            width={75}
+                            height={75}
                             alt=""
                             className="w-full h-full object-cover"
                           />
                         </div>
                         <div className="flex-1 h-full flex flex-col justify-center ">
                           <a href="/single-product">
-                            <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
+                            <p className="title mb-2 sm:text-[15px] text-[13px] font-semibold text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
                               Geeky ipsum esse repreh est consequat
                             </p>
                           </a>
                           <p className="price">
-                            <span className="main-price text-qgray line-through font-600 text-[18px]">
+                            <span className="main-price text-qgray line-through font-semibold text-[18px]">
                               $24.55
                             </span>
-                            <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                            <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                               $17.79
                             </span>
                           </p>
@@ -5098,6 +5215,7 @@ function PopularSalesTwo() {
                       </div>
                     </div>
                   </div>
+
                   <div
                     data-aos="fade-up"
                     className="product-card-row-two w-full aos-init aos-animate"
@@ -5105,23 +5223,25 @@ function PopularSalesTwo() {
                     <div className="w-full h-[105px] bg-white border border-primarygray px-5 ">
                       <div className="w-full h-full flex space-x-5 justify-center items-center">
                         <div className="w-[75px] h-[75px]">
-                          <img
+                          <Image
                             src="/assets/product-img-3.jpg"
+                            width={75}
+                            height={75}
                             alt=""
                             className="w-full h-full object-cover"
                           />
                         </div>
                         <div className="flex-1 h-full flex flex-col justify-center ">
                           <a href="/single-product">
-                            <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
+                            <p className="title mb-2 sm:text-[15px] text-[13px] font-semibold text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
                               Conjurica ea magna eiusmod esse cupt anim aliquip
                             </p>
                           </a>
                           <p className="price">
-                            <span className="main-price text-qgray line-through font-600 text-[18px]">
+                            <span className="main-price text-qgray line-through font-semibold text-[18px]">
                               $32.63
                             </span>
-                            <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                            <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                               $18.03
                             </span>
                           </p>
@@ -5129,6 +5249,7 @@ function PopularSalesTwo() {
                       </div>
                     </div>
                   </div>
+
                   <div
                     data-aos="fade-up"
                     className="product-card-row-two w-full aos-init aos-animate"
@@ -5136,23 +5257,25 @@ function PopularSalesTwo() {
                     <div className="w-full h-[105px] bg-white border border-primarygray px-5 ">
                       <div className="w-full h-full flex space-x-5 justify-center items-center">
                         <div className="w-[75px] h-[75px]">
-                          <img
+                          <Image
                             src="/assets/product-img-4.jpg"
+                            width={75}
+                            height={75}
                             alt=""
                             className="w-full h-full object-cover"
                           />
                         </div>
                         <div className="flex-1 h-full flex flex-col justify-center ">
                           <a href="/single-product">
-                            <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
+                            <p className="title mb-2 sm:text-[15px] text-[13px] font-semibold text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
                               Senmei ipsum dolore eiusmod dolor officia do nisi
                             </p>
                           </a>
                           <p className="price">
-                            <span className="main-price text-qgray line-through font-600 text-[18px]">
+                            <span className="main-price text-qgray line-through font-semibold text-[18px]">
                               $20.64
                             </span>
-                            <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                            <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                               $27.61
                             </span>
                           </p>
@@ -5161,6 +5284,7 @@ function PopularSalesTwo() {
                     </div>
                   </div>
                 </div>
+
                 <div className="item-col">
                   <div
                     data-aos="fade-up"
@@ -5169,24 +5293,26 @@ function PopularSalesTwo() {
                     <div className="w-full h-[105px] bg-white border border-primarygray px-5 ">
                       <div className="w-full h-full flex space-x-5 justify-center items-center">
                         <div className="w-[75px] h-[75px]">
-                          <img
+                          <Image
                             src="/assets/product-img-5.jpg"
+                            width={75}
+                            height={75}
                             alt=""
                             className="w-full h-full object-cover"
                           />
                         </div>
                         <div className="flex-1 h-full flex flex-col justify-center ">
                           <a href="/single-product">
-                            <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
+                            <p className="title mb-2 sm:text-[15px] text-[13px] font-semibold text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
                               Canopoly duis voluptate dolor sunt sit adipisicing
                               in
                             </p>
                           </a>
                           <p className="price">
-                            <span className="main-price text-qgray line-through font-600 text-[18px]">
+                            <span className="main-price text-qgray line-through font-semibold text-[18px]">
                               $39.27
                             </span>
-                            <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                            <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                               $10.42
                             </span>
                           </p>
@@ -5194,6 +5320,7 @@ function PopularSalesTwo() {
                       </div>
                     </div>
                   </div>
+
                   <div
                     data-aos="fade-up"
                     className="product-card-row-two w-full aos-init aos-animate"
@@ -5201,23 +5328,25 @@ function PopularSalesTwo() {
                     <div className="w-full h-[105px] bg-white border border-primarygray px-5 ">
                       <div className="w-full h-full flex space-x-5 justify-center items-center">
                         <div className="w-[75px] h-[75px]">
-                          <img
+                          <Image
                             src="/assets/product-img-6.jpg"
+                            width={75}
+                            height={75}
                             alt=""
                             className="w-full h-full object-cover"
                           />
                         </div>
                         <div className="flex-1 h-full flex flex-col justify-center ">
                           <a href="/single-product">
-                            <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
+                            <p className="title mb-2 sm:text-[15px] text-[13px] font-semibold text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
                               Unisure aliqua repreh ex cupt qui elit officia
                             </p>
                           </a>
                           <p className="price">
-                            <span className="main-price text-qgray line-through font-600 text-[18px]">
+                            <span className="main-price text-qgray line-through font-semibold text-[18px]">
                               $36.90
                             </span>
-                            <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                            <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                               $16.43
                             </span>
                           </p>
@@ -5225,6 +5354,7 @@ function PopularSalesTwo() {
                       </div>
                     </div>
                   </div>
+
                   <div
                     data-aos="fade-up"
                     className="product-card-row-two w-full aos-init aos-animate"
@@ -5232,24 +5362,26 @@ function PopularSalesTwo() {
                     <div className="w-full h-[105px] bg-white border border-primarygray px-5 ">
                       <div className="w-full h-full flex space-x-5 justify-center items-center">
                         <div className="w-[75px] h-[75px]">
-                          <img
+                          <Image
                             src="/assets/product-img-7.jpg"
+                            width={75}
+                            height={75}
                             alt=""
                             className="w-full h-full object-cover"
                           />
                         </div>
                         <div className="flex-1 h-full flex flex-col justify-center ">
                           <a href="/single-product">
-                            <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
+                            <p className="title mb-2 sm:text-[15px] text-[13px] font-semibold text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
                               Kenegy consectetur id ex nulla in adipisicing
                               deserunt
                             </p>
                           </a>
                           <p className="price">
-                            <span className="main-price text-qgray line-through font-600 text-[18px]">
+                            <span className="main-price text-qgray line-through font-semibold text-[18px]">
                               $26.62
                             </span>
-                            <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                            <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                               $11.92
                             </span>
                           </p>
@@ -5257,6 +5389,7 @@ function PopularSalesTwo() {
                       </div>
                     </div>
                   </div>
+
                   <div
                     data-aos="fade-up"
                     className="product-card-row-two w-full aos-init aos-animate"
@@ -5264,23 +5397,25 @@ function PopularSalesTwo() {
                     <div className="w-full h-[105px] bg-white border border-primarygray px-5 ">
                       <div className="w-full h-full flex space-x-5 justify-center items-center">
                         <div className="w-[75px] h-[75px]">
-                          <img
+                          <Image
                             src="/assets/product-img-8.jpg"
+                            width={75}
+                            height={75}
                             alt=""
                             className="w-full h-full object-cover"
                           />
                         </div>
                         <div className="flex-1 h-full flex flex-col justify-center ">
                           <a href="/single-product">
-                            <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
+                            <p className="title mb-2 sm:text-[15px] text-[13px] font-semibold text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
                               Bizmatic consequat enim quis sit et est eiusmod
                             </p>
                           </a>
                           <p className="price">
-                            <span className="main-price text-qgray line-through font-600 text-[18px]">
+                            <span className="main-price text-qgray line-through font-semibold text-[18px]">
                               $26.38
                             </span>
-                            <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                            <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                               $21.93
                             </span>
                           </p>
@@ -5289,6 +5424,7 @@ function PopularSalesTwo() {
                     </div>
                   </div>
                 </div>
+
                 <div className="item-col">
                   <div
                     data-aos="fade-up"
@@ -5297,24 +5433,26 @@ function PopularSalesTwo() {
                     <div className="w-full h-[105px] bg-white border border-primarygray px-5 ">
                       <div className="w-full h-full flex space-x-5 justify-center items-center">
                         <div className="w-[75px] h-[75px]">
-                          <img
+                          <Image
                             src="/assets/product-img-9.jpg"
+                            width={75}
+                            height={75}
                             alt=""
                             className="w-full h-full object-cover"
                           />
                         </div>
                         <div className="flex-1 h-full flex flex-col justify-center ">
                           <a href="/single-product">
-                            <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
+                            <p className="title mb-2 sm:text-[15px] text-[13px] font-semibold text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
                               Anarco consectetur magna nostrud commodo tempor
                               aliqua laborum
                             </p>
                           </a>
                           <p className="price">
-                            <span className="main-price text-qgray line-through font-600 text-[18px]">
+                            <span className="main-price text-qgray line-through font-semibold text-[18px]">
                               $32.61
                             </span>
-                            <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                            <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                               $22.13
                             </span>
                           </p>
@@ -5322,6 +5460,7 @@ function PopularSalesTwo() {
                       </div>
                     </div>
                   </div>
+
                   <div
                     data-aos="fade-up"
                     className="product-card-row-two w-full aos-init aos-animate"
@@ -5329,23 +5468,25 @@ function PopularSalesTwo() {
                     <div className="w-full h-[105px] bg-white border border-primarygray px-5 ">
                       <div className="w-full h-full flex space-x-5 justify-center items-center">
                         <div className="w-[75px] h-[75px]">
-                          <img
+                          <Image
                             src="/assets/product-img-10.jpg"
+                            width={75}
+                            height={75}
                             alt=""
                             className="w-full h-full object-cover"
                           />
                         </div>
                         <div className="flex-1 h-full flex flex-col justify-center ">
                           <a href="/single-product">
-                            <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
+                            <p className="title mb-2 sm:text-[15px] text-[13px] font-semibold text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
                               Plasto cillum ad minim elit fugiat esse dolore
                             </p>
                           </a>
                           <p className="price">
-                            <span className="main-price text-qgray line-through font-600 text-[18px]">
+                            <span className="main-price text-qgray line-through font-semibold text-[18px]">
                               $26.83
                             </span>
-                            <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                            <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                               $26.50
                             </span>
                           </p>
@@ -5353,6 +5494,7 @@ function PopularSalesTwo() {
                       </div>
                     </div>
                   </div>
+
                   <div
                     data-aos="fade-up"
                     className="product-card-row-two w-full aos-init aos-animate"
@@ -5360,23 +5502,25 @@ function PopularSalesTwo() {
                     <div className="w-full h-[105px] bg-white border border-primarygray px-5 ">
                       <div className="w-full h-full flex space-x-5 justify-center items-center">
                         <div className="w-[75px] h-[75px]">
-                          <img
+                          <Image
                             src="/assets/product-img-1.jpg"
+                            width={75}
+                            height={75}
                             alt=""
                             className="w-full h-full object-cover"
                           />
                         </div>
                         <div className="flex-1 h-full flex flex-col justify-center ">
                           <a href="/single-product">
-                            <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
+                            <p className="title mb-2 sm:text-[15px] text-[13px] font-semibold text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
                               Conjurica ea magna eiusmod esse cupt anim aliquip
                             </p>
                           </a>
                           <p className="price">
-                            <span className="main-price text-qgray line-through font-600 text-[18px]">
+                            <span className="main-price text-qgray line-through font-semibold text-[18px]">
                               $32.63
                             </span>
-                            <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                            <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                               $18.03
                             </span>
                           </p>
@@ -5384,6 +5528,7 @@ function PopularSalesTwo() {
                       </div>
                     </div>
                   </div>
+
                   <div
                     data-aos="fade-up"
                     className="product-card-row-two w-full aos-init aos-animate"
@@ -5391,23 +5536,25 @@ function PopularSalesTwo() {
                     <div className="w-full h-[105px] bg-white border border-primarygray px-5 ">
                       <div className="w-full h-full flex space-x-5 justify-center items-center">
                         <div className="w-[75px] h-[75px]">
-                          <img
+                          <Image
                             src="/assets/product-img-2.jpg"
+                            width={75}
+                            height={75}
                             alt=""
                             className="w-full h-full object-cover"
                           />
                         </div>
                         <div className="flex-1 h-full flex flex-col justify-center ">
                           <a href="/single-product">
-                            <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
+                            <p className="title mb-2 sm:text-[15px] text-[13px] font-semibold text-qblack leading-[24px] line-clamp-1 hover:text-blue-600">
                               Empirica deserunt laborum ad quis labore labore eu
                             </p>
                           </a>
                           <p className="price">
-                            <span className="main-price text-qgray line-through font-600 text-[18px]">
+                            <span className="main-price text-qgray line-through font-semibold text-[18px]">
                               $26.87
                             </span>
-                            <span className="offer-price text-qred font-600 text-[18px] ml-2">
+                            <span className="offer-price text-qred font-semibold text-[18px] ml-2">
                               $29.14
                             </span>
                           </p>
@@ -5430,10 +5577,7 @@ function Discount() {
     <div className="discount-banner w-full h-[307px] bg-cover flex justify-center items-center bg-discount bg-no-repeat">
       <div>
         <div data-aos="fade-up" className="aos-init aos-animate">
-          <h1 className="sm:text-3xl text-xl font-700 text-qblack mb-2 text-center">
-            Get <span className="mx-1 text-qyellow">20%</span> Off Discount
-            Coupon
-          </h1>
+          <h1 className="sm:text-3xl text-xl font-bold text-qblack mb-2 text-center">Get <span className="mx-1 text-qyellow">20%</span> Off Discount Coupon</h1>
           <p className="text-center sm:text-[18px] text-sm font-400">
             by Subscribe our Newsletter
           </p>
@@ -5476,7 +5620,7 @@ function Discount() {
           </div>
           <button
             type="button"
-            className="sm:w-[158px] w-[80px]  h-full bg-qyellow text-sm font-600"
+            className="sm:w-[158px] w-[80px]  h-full bg-qyellow text-sm font-semibold"
           >
             Get the Coupon
           </button>
@@ -5488,36 +5632,37 @@ function Discount() {
 
 export default function Home() {
   return (
-    <div className="w-full pt-[30px] pb-[60px]">
-      <div className="w-full banner-wrapper mb-[60px]">
-        <div className="container max-w-screen-x mx-auto md:px-4">
-          <Banner />
+    <>
+      <div className="w-full  pt-[30px] pb-[60px]">
+        <div className="btn w-5 h-5 "></div>
 
-          <GameStore />
+        <Banner />
 
-          <Brands />
+        <GameStore />
 
-          <PostBrands />
+        <Brands />
 
-          <SellingProducts />
+        <PostBrands />
 
-          <BestSeller />
+        <SellingProducts />
 
-          <ProductAds />
+        <BestSeller />
 
-          <PopularSales />
+        <ProductAds />
 
-          <BannerTwo />
+        <PopularSales />
 
-          <NewArrivals />
+        <BannerTwo />
 
-          <BannerThree />
+        <NewArrivals />
 
-          <PopularSalesTwo />          
-        </div>
+        <BannerThree />
 
-        <Discount />
+        <PopularSalesTwo />
+
       </div>
-    </div>
+
+      <Discount />
+    </>
   );
 }
