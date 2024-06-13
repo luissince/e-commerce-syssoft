@@ -241,17 +241,18 @@ export const CloseIcon = () => {
     );
 }
 
-export const ChevronDownIcon = () => {
+export const ChevronDownIcon = ({ width = 11, height = 7, fill = "#222", ...props }) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="11"
-            height="7"
+            width={width}
+            height={height}
             fill="none"
             viewBox="0 0 11 7"
+            {...props}
         >
             <path
-                fill="#222"
+                fill={fill}
                 d="M5.4 6.8L0 1.4 1.4 0l4 4 4-4 1.4 1.4-5.4 5.4z"
             ></path>
         </svg>

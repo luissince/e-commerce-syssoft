@@ -1,5 +1,5 @@
 'use client'
-import { BagIcon, CloseIcon, CompareIcon, HeartIcon, UserIcon } from "@/src/helper/icons";
+import { BagIcon, ChevronDownIcon, CloseIcon, CompareIcon, HeartIcon, UserIcon } from "@/src/helper/icons";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
@@ -341,11 +341,14 @@ export default function Header() {
                             <div className="flex space-x-6">
                                 <div className="country-select flex space-x-1 items-center">
                                     <div>
-                                        <Image src="/assets/country-logo-16x16.png" width={16} height={16} alt="country logo" className="overflow-hidden rounded-full" />
+                                        <Image src="/assets/country-logo-16x16.png"
+                                            width={16} height={16}
+                                            alt="country logo"
+                                            className="overflow-hidden rounded-full text-transparent" />
                                     </div>
-                                    <div className="my-select-box w-fit">
+                                    <div className=" w-fit">
                                         <button type="button" className="my-select-box-btn">
-                                            <span>United State</span>
+                                            <span className="text-[#222222] text-xs font-medium">United State</span>
                                         </button>
                                         {/* <div className="my-select-box-section text-xs">
                                             <ul className="list">
@@ -356,15 +359,13 @@ export default function Header() {
                                         </div> */}
                                     </div>
                                     <div>
-                                        <svg width="10" height="5" viewBox="0 0 10 5" fill="none" className="fill-current qblack" xmlns="http://www.w3.org/2000/svg">
-                                            <rect x="9.18359" y="0.90918" width="5.78538" height="1.28564" transform="rotate(135 9.18359 0.90918)"></rect>
-                                            <rect x="5.08984" y="5" width="5.78538" height="1.28564" transform="rotate(-135 5.08984 5)"></rect>
-                                        </svg>
+                                        <ChevronDownIcon width={10} height={5} />
                                     </div>
                                 </div>
                                 <div className="currency-select flex space-x-1 items-center">
-                                    <div className="my-select-box w-fit">
-                                        <button type="button" className="my-select-box-btn text-xs"><span>USD</span>
+                                    <div className=" w-fit">
+                                        <button type="button" className="my-select-box-btn">
+                                            <span className="text-[#222222] text-xs font-medium">USD</span>
                                         </button>
                                         {/* <div className="my-select-box-section ">
                                             <ul className="list text-xs">
@@ -373,15 +374,14 @@ export default function Header() {
                                             </ul>
                                         </div> */}
                                     </div>
-                                    <svg width="10" height="5" viewBox="0 0 10 5" fill="none" className="fill-current qblack" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="9.18359" y="0.90918" width="5.78538" height="1.28564" transform="rotate(135 9.18359 0.90918)"></rect>
-                                        <rect x="5.08984" y="5" width="5.78538" height="1.28564" transform="rotate(-135 5.08984 5)"></rect>
-                                    </svg>
+                                    <div>
+                                        <ChevronDownIcon width={10} height={5} />
+                                    </div>
                                 </div>
                                 <div className="language-select flex space-x-1 items-center">
-                                    <div className="my-select-box w-fit">
-                                        <button type="button" className="my-select-box-btn text-xs">
-                                            <span>Bangla</span>
+                                    <div className=" w-fit">
+                                        <button type="button" className="my-select-box-btn">
+                                            <span className="text-[#222222] text-xs font-medium">Bangla</span>
                                         </button>
                                         {/* <div className="my-select-box-section ">
                                             <ul className="list text-xs">
@@ -390,11 +390,9 @@ export default function Header() {
                                             </ul>
                                         </div> */}
                                     </div>
-                                    <svg width="10" height="5" viewBox="0 0 10 5" fill="none" className="fill-current qblack" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="9.18359" y="0.90918" width="5.78538" height="1.28564" transform="rotate(135 9.18359 0.90918)">
-                                        </rect>
-                                        <rect x="5.08984" y="5" width="5.78538" height="1.28564" transform="rotate(-135 5.08984 5)"></rect>
-                                    </svg>
+                                    <div>
+                                        <ChevronDownIcon width={10} height={5} />
+                                    </div>
                                 </div>
                             </div>
 
