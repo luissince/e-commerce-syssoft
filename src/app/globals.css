@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    background-color: #f8f8f8;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    cursor: pointer;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    background: #ffffff;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    border: 1px solid #fff;
+    box-shadow: 0 3px 10px 0 #ccc;
+}
+
+input[type="range"]::-moz-range-thumb {
+    cursor: pointer;
+    height: 17px;
+    width: 17px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background: #ffffff;
+    pointer-events: auto;
+    -moz-appearance: none;
+    box-shadow: 0 3px 10px 0 #ccc;
+}
+
+.my-select-box {
+    font-size: 14px;
+    font-weight: 400;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.black-btn {
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+    background-color: rgb(34 34 34/var(--tw-bg-opacity));
+    color: rgb(255 255 255/var(--tw-text-opacity));
+}
+
+.my-select-box .my-select-box-btn {
+    color: #999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* .my-select-box .my-select-box-btn span {
+    --tw-text-opacity: 1;
+    color: rgb(34 34 34/var(--tw-text-opacity));
+    font-size: .75rem;
+    font-weight: 500;
+    line-height: 1rem;
+    text-transform: capitalize;
+} */
+
+.my-select-box .my-select-box-section {
+    background-color: #fff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 4px;
+    opacity: 0;
+    padding: 0;
+    transition: all .2s cubic-bezier(.5, 0, 0, 1.25), opacity .15s ease-out;
+    visibility: hidden;
+    width: 100%;
+    z-index: 9999;
+}
+
+.my-select-box .my-select-box-section ul {
+    padding: 0;
+}
+
+.my-select-box .my-select-box-section li {
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 40px;
+    list-style: none;
+    min-height: 40px;
+    outline: none;
+    padding-left: 18px;
+    padding-right: 29px;
+    text-align: left;
+    transition: all .2s;
+}
+
+.my-select-box .my-select-box-section li.selected,
+.my-select-box .my-select-box-section li:hover {
+    background-color: #f6f6f6;
+    font-weight: 700;
+}
+
+.my-select-box .my-select-box-section.open {
+    opacity: 1;
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    visibility: visible;
+}
+
+.search-input {
+    color: rgb(107 114 128 / 1);
+    font-size: .75rem;
+    font-weight: 500;
+    height: 100%;
+    line-height: 1rem;
+    padding-left: 1.25rem;
+    width: 100%;
+    outline: 0;
+}
+
+.blue-btn,
+.yellow-btn {
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+    align-items: center;
+    display: flex;
+    font-size: 13px;
+    font-weight: 600;
+    height: 100%;
+    justify-content: center;
+    line-height: 0;
+    width: 100%;
+}
+
+.yellow-btn {
+    background-color: rgb(255 187 56/1);
+    color: rgb(29 29 29/1);
+}
+
+.slick-slider .slick-slide {
+    padding: 0 15px;
+}
+
+/* input[type=range]::-webkit-slider-thumb {
+	pointer-events: all;
+	width: 24px;
+	height: 24px;
+	-webkit-appearance: none;
+
+} */

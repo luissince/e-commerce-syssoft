@@ -1,17 +1,19 @@
 import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin';
+import { CSSRuleObject, PluginAPI } from 'tailwindcss/types/config';
 
 const config: Config = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
-      backgroundColor:{
+      backgroundColor: {
         'qgray-border': 'rgb(239 239 239/1)',
         'search-btn': 'rgb(255 187 56/1)',
-        'qyellow': 'rgb(255 187 56/1)'
+        'qyellow': 'rgb(255 187 56/1)',
       },
       backgroundImage: {
         'portada': "url('/assets/section-category-1.jpg')",
@@ -33,7 +35,8 @@ const config: Config = {
         'newArrivals10': "url('/assets/product-img-10.jpg')",
         'newArrivals11': "url('/assets/product-img-1.jpg')",
         'newArrivals12': "url('/assets/product-img-2.jpg')",
-        'discount': "url('/assets/discount-banner-1.jpg')"
+        'discount': "url('/assets/discount-banner-1.jpg')",
+        'newLetter': "url(/assets/new-letter.jpg)"
       },
       colors: {
         primary: "#00040f",
@@ -49,13 +52,14 @@ const config: Config = {
         qblacktext: "rgb(29 29 29/1)",
         qyellow: "rgb(255 187 56/1)",
         qred: "rgb(239 38 44/1)",
-        primarygray: "rgb(248 248 248/1)"
+        primarygray: "rgb(248 248 248/1)",
+        qgraytwo: 'rgb(142 142 142/1)'
       },
       fontFamily: {
         poppins: ["Roboto", "sans-serif"],
         primaSans: ["sans-serif"],
       },
-      borderColor:{
+      borderColor: {
         'qgray-border': "rgb(239 239 239/1)"
       },
       fontWeight: {
@@ -76,8 +80,11 @@ const config: Config = {
         "spin-reverse": {
           'to': { transform: 'rotate(-1turn)' },
         }
+      },
+      transitionProperty: {
+        'height': 'all .5s ease-in-out',
       }
-    }, 
+    },
     screens: {
       "xxs": "280px",
       "xs": "320px",
@@ -90,6 +97,44 @@ const config: Config = {
       "2xl": "1536px",
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }: PluginAPI) {
+      const newUtilities: CSSRuleObject = {
+        ".separator": {
+          "width": "130px",
+          "display": "flex",
+          "font-size": "19px",
+          "align-items": "center",
+          "justify-content": "center",
+        },
+        ".slider": {
+          "height": "5px",
+          "position": "relative",
+          "background": "#d4d4d4",
+          "border-radius": "5px",
+        },
+        ".slider .progress": {
+          "height": "100%",
+          "left": "25%",
+          "right": "25%",
+          "position": "absolute",
+          "border-radius": ".3rem",
+          "background": "#ffbb38",
+    
+        },
+        ".range-input": {
+          "position": "absolute",
+          "width": "100%",
+          "height": "5px",
+          "top": "-5px",
+          "background": "none",
+          "pointer-events": "none",
+          "-webkit-appearance": "none",
+          "-moz-appearance": "none",
+        }
+      };
+      addUtilities(newUtilities);
+    })
+  ],
 }
 export default config
