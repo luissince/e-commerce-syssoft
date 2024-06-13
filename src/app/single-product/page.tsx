@@ -1,6 +1,6 @@
 'use client'
-import ProductCard from "@/src/components/common/product-card";
 import Discount from "@/src/components/discount";
+import ProductCard from "@/src/components/product-card";
 import { ChevronDownIcon, FlagIcon } from "@heroicons/react/20/solid";
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { StarIcon } from "@heroicons/react/24/solid";
