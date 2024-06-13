@@ -1,37 +1,8 @@
 'use client'
 import Discount from "@/src/components/discount";
+import Title, { BreadItem } from "@/src/components/title";
 import { CurveIcon } from "@/src/helper/icons";
 import React, { useState } from "react";
-
-const Title = () => {
-    return (
-        <div className="title-area w-full mb-10">
-            <div className="page-title-wrapper bg-[#FFFAEF] w-full h-[173px] py-10">
-                <div className="container max-w-screen-x mx-auto md:px-6">
-                    <div className="mb-5">
-                        <div className="breadcrumb-wrapper font-400 text-[13px] text-qblack mb-[23px]">
-                            <span>
-                                <a href="/">
-                                    <span className="mx-1 capitalize">home</span>
-                                </a>
-                                <span className="sperator">/</span>
-                            </span>
-                            <span>
-                                <a href="/blogs">
-                                    <span className="mx-1 capitalize">faq</span>
-                                </a>
-                                <span className="sperator">/</span>
-                            </span>
-                        </div>
-                    </div>
-                    <div className="flex justify-center">
-                        <h1 className="text-3xl font-semibold text-qblack">Frequently Asked Questions</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-}
 
 interface AccordionItem {
     title: string;
@@ -152,7 +123,21 @@ const Faq = () => {
     return (
         <>
             <div className="w-full pt-0 pb-0">
-                <Title />
+                <Title
+                    breadCrumds={
+                        <>
+                            <BreadItem
+                                href={"/"}
+                                title={"home"}
+                                isSeparator={true} />
+
+                            <BreadItem
+                                href={"/faq"}
+                                title={"faq"}
+                                isSeparator={false} />
+                        </>
+                    }
+                    title={"Frequently Asked Questions"} />
                 <Body />
             </div>
             <Discount />

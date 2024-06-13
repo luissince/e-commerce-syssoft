@@ -60,6 +60,16 @@ input[type="range"]::-moz-range-thumb {
     height: 100%;
 }
 
+.gray-btn {
+    align-items: center;
+    background: #f0f1f3;
+    display: flex;
+    font-size: .875rem;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25rem;
+}
+
 /* .my-select-box .my-select-box-btn span {
     --tw-text-opacity: 1;
     color: rgb(34 34 34/var(--tw-text-opacity));
