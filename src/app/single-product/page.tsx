@@ -1,6 +1,6 @@
 'use client'
-import Discount from "@/src/components/discount";
-import ProductCard from "@/src/components/product-card";
+import Discount from "@/src/components/common/discount";
+import ProductCard from "@/src/components/common/product-card";
 import { ChevronDownIcon, FlagIcon } from "@heroicons/react/20/solid";
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { StarIcon } from "@heroicons/react/24/solid";
@@ -131,7 +131,7 @@ const SingleProduct = () => {
                                             <div data-aos="fade-up" className="product-size mb-[30px]" ref={dropdownSizeRef}>
                                                 <span className="text-sm font-normal uppercase text-qgray mb-[14px] inline-block">SIZE</span>
                                                 <div className="w-full">
-                                                    <div className="border border-qgray-border h-[50px] flex justify-between items-center cursor-pointer">
+                                                    <div className="border border-qgray-border h-[50px] flex justify-between items-center px-6 cursor-pointer">
                                                         <div className="my-select-box w-full">
                                                             <button type="button" className="my-select-box-btn px-6"
                                                                 onClick={() => setOpenSize(!openSize)}>
@@ -145,7 +145,7 @@ const SingleProduct = () => {
                                                                     </span>
                                                                 </div>
                                                             </button>
-                                                            <div className={`my-select-box-section  ${openSize ? 'open' : ''}`} >
+                                                            <div className={`my-select-box-section w-full left-0 ${openSize ? 'open' : ''}`} >
                                                                 <ul className="list shadow">
                                                                     <li className="selected">Small</li>
                                                                     <li className="">Medium</li>

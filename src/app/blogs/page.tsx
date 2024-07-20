@@ -1,5 +1,5 @@
-import Discount from "@/src/components/discount";
-import Title, { BreadItem } from "@/src/components/title";
+import Discount from "@/src/components/common/discount";
+import Title, { BreadItem } from "@/src/components/common/title";
 import { UserIcon } from "@heroicons/react/20/solid";
 import { ArrowRightIcon, ChatBubbleBottomCenterIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";

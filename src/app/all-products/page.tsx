@@ -1,6 +1,6 @@
 'use client'
-import Discount from "@/src/components/discount";
-import ProductCard from "@/src/components/product-card";
+import Discount from "@/src/components/common/discount";
+import ProductCard from "@/src/components/common/product-card";
 import Image from "next/image";
 import React, { RefObject, useEffect, useRef, useState } from "react";
 
@@ -143,9 +143,14 @@ const AllProducts = () => {
             <div className="w-full pt-[30px] pb-[60px]">
                 <div className="w-full">
                     <div className="container max-w-screen-x mx-auto px-2 md:px-6">
-                        <div className="font-normal text-[13px] text-qblack mb-[23px]"><span>
-                            <a href="/"><span className="mx-1 capitalize">home</span></a>
-                            <span>/</span></span>
+                        <div className="font-normal text-[13px] text-qblack mb-[23px]">
+                            <span>
+                                <a href="/"><span className="mx-1 capitalize">home</span></a>
+                                <span>/</span>
+                            </span>
+                            <span><a href="/profile">
+                                <span className="mx-1 capitalize">productos</span></a>
+                            </span>
                         </div>
 
                         <div className="w-full lg:flex lg:space-x-[30px]">

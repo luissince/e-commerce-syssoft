@@ -71,6 +71,8 @@ const config: Config = {
       boxShadow: {
         // x y opacidad tamaño de profundidad color, borde-> x y opacidad tamaño color
         shadowPilares: "-5px 20px 25px 10px rgb(223 36 36 / 0.1), 0 4px 6px -4px rgb(223 36 36 / 0.1)",
+        shadowProduct: "rgba(0, 0, 0, 0.05) 0px 15px 64px"
+
       },
       animation: {
         'animate-spin': 'spin 4s linear infinite',

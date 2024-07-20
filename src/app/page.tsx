@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Discount from "@/src/components/discount";
+import Discount from "@/src/components/common/discount";
 import React from "react";
-import ProductCard from "../components/product-card";
+import ProductCard from "../components/common/product-card";
 
 
 function BannerCard() {

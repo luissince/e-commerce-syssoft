@@ -1,6 +1,6 @@
 'use client'
-import Discount from "@/src/components/discount";
-import Title, { BreadItem } from "@/src/components/title";
+import Discount from "@/src/components/common/discount";
+import Title, { BreadItem } from "@/src/components/common/title";
 import { CurveIcon } from "@/src/helper/icons";
 import React, { useState } from "react";
 

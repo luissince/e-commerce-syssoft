@@ -310,6 +310,71 @@ const CartWrapper = () => {
     );
 }
 
+interface ItemListLeftProps {
+    title: string;
+    selected: string;
+}
+
+interface ItemHeaderLeftProps {
+    title: string;
+    image?: string | null;
+    icon: React.ReactElement;
+    list: ItemListLeftProps[];
+}
+
+const ItemHeaderLeft: React.FC<ItemHeaderLeftProps> = ({ title, image, list, icon }) => {
+
+    const [openSize, setOpenSize] = useState<boolean>(false);
+    const dropdownSizeRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownSizeRef.current && !dropdownSizeRef.current.contains(event.target as Node)) {
+                setOpenSize(false);
+            }
+        };
+
+        const rootElement = document.querySelector("#root") as HTMLDivElement;
+
+        if (openSize && rootElement) {
+            rootElement.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            if (openSize && rootElement) {
+                rootElement.removeEventListener('mousedown', handleClickOutside);
+            }
+        };
+    }, [openSize])
+
+    return (
+        <div className="country-select flex space-x-1 items-center" ref={dropdownSizeRef}>
+            <div>
+                {image && <Image src={image}
+                    width={22} height={22}
+                    alt="country logo"
+                    className="overflow-hidden rounded-full text-transparent" />}
+            </div>
+            <div className="my-select-box w-fit">
+                <button type="button" className="my-select-box-btn"
+                    onClick={() => setOpenSize(!openSize)}>
+                    <span className="text-[#222222] text-xs font-medium">{title}</span>
+                </button>
+                <div className={`my-select-box-section left-auto right-0 w-[150px] ${openSize ? 'open' : ''}`} >
+                    <ul className="list">
+                        {list.map((item: ItemListLeftProps, index) => (
+                            <li key={index} className={`${item.selected} text-xs`}>{item.title}</li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+            <div>
+                {icon}
+            </div>
+        </div>
+    );
+}
+
 export default function Header() {
     // let navegador = navigator.userAgent;
     // if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i) || window.innerWidth <= 780) {
@@ -317,6 +382,7 @@ export default function Header() {
     // } else {
     //     console.log("No estás usando un móvil");
     // }
+
 
     return (
         <header className="header-section-wrapper relative">
@@ -339,63 +405,55 @@ export default function Header() {
 
                         <div className="topbar-dropdowns sm:block hidden">
                             <div className="flex space-x-6">
-                                <div className="country-select flex space-x-1 items-center">
-                                    <div>
-                                        <Image src="/assets/country-logo-16x16.png"
-                                            width={16} height={16}
-                                            alt="country logo"
-                                            className="overflow-hidden rounded-full text-transparent" />
-                                    </div>
-                                    <div className=" w-fit">
-                                        <button type="button" className="my-select-box-btn">
-                                            <span className="text-[#222222] text-xs font-medium">United State</span>
-                                        </button>
-                                        {/* <div className="my-select-box-section text-xs">
-                                            <ul className="list">
-                                                <li className="selected">United State</li>
-                                                <li className="">Bangladesh</li>
-                                                <li className="">India</li>
-                                            </ul>
-                                        </div> */}
-                                    </div>
-                                    <div>
-                                        <ChevronDownIcon width={10} height={5} />
-                                    </div>
-                                </div>
-                                <div className="currency-select flex space-x-1 items-center">
-                                    <div className=" w-fit">
-                                        <button type="button" className="my-select-box-btn">
-                                            <span className="text-[#222222] text-xs font-medium">USD</span>
-                                        </button>
-                                        {/* <div className="my-select-box-section ">
-                                            <ul className="list text-xs">
-                                                <li className="selected">USD</li>
-                                                <li className="">BDT</li>
-                                            </ul>
-                                        </div> */}
-                                    </div>
-                                    <div>
-                                        <ChevronDownIcon width={10} height={5} />
-                                    </div>
-                                </div>
-                                <div className="language-select flex space-x-1 items-center">
-                                    <div className=" w-fit">
-                                        <button type="button" className="my-select-box-btn">
-                                            <span className="text-[#222222] text-xs font-medium">Bangla</span>
-                                        </button>
-                                        {/* <div className="my-select-box-section ">
-                                            <ul className="list text-xs">
-                                                <li className="selected">Bangla</li>
-                                                <li className="">english</li>
-                                            </ul>
-                                        </div> */}
-                                    </div>
-                                    <div>
-                                        <ChevronDownIcon width={10} height={5} />
-                                    </div>
-                                </div>
-                            </div>
 
+                                <ItemHeaderLeft
+                                    title={"United State"}
+                                    image={"/assets/country-logo-16x16.png"}
+                                    list={[
+                                        {
+                                            "title": "United State",
+                                            "selected": "selected"
+                                        },
+                                        {
+                                            "title": "Bangladesh",
+                                            "selected": ""
+                                        },
+                                        {
+                                            "title": "India",
+                                            "selected": ""
+                                        },
+                                    ]}
+                                    icon={<ChevronDownIcon width={10} height={5} />}
+                                />
+                                <ItemHeaderLeft
+                                    title={"USD"}
+                                    list={[
+                                        {
+                                            "title": "USD",
+                                            "selected": "selected"
+                                        },
+                                        {
+                                            "title": "BDT",
+                                            "selected": ""
+                                        },
+                                    ]}
+                                    icon={<ChevronDownIcon width={10} height={5} />}
+                                />
+                                <ItemHeaderLeft
+                                    title={"Bangla"}
+                                    list={[
+                                        {
+                                            "title": "Bangla",
+                                            "selected": "selected"
+                                        },
+                                        {
+                                            "title": "english",
+                                            "selected": ""
+                                        },
+                                    ]}
+                                    icon={<ChevronDownIcon width={10} height={5} />}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

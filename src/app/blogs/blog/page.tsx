@@ -1,4 +1,4 @@
-import Title, { BreadItem } from "@/src/components/title";
+import Title, { BreadItem } from "@/src/components/common/title";
 import Image from "next/image";
 
 

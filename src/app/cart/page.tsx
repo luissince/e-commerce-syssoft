@@ -1,5 +1,5 @@
-import Discount from "@/src/components/discount";
-import Title, { BreadItem } from "@/src/components/title";
+import Discount from "@/src/components/common/discount";
+import Title, { BreadItem } from "@/src/components/common/title";
 import { ChevronDownIcon, CloseIcon } from "@/src/helper/icons";
 import Image from "next/image";
 
