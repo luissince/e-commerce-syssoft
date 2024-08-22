@@ -1,6 +1,7 @@
-import Discount from '@/src/components/common/discount';
-import NavProfile from '@/src/components/profile/nav';
-import SwitchProfile from '@/src/components/profile/switch';
+
+import NavProfile from '@/app/ui/profile/nav';
+import SwitchProfile from '@/app/ui/profile/switch';
+import Discount from '../ui/component/discount';
 
 export default async function Layout({ children }: { children: React.ReactNode }) {
     return (

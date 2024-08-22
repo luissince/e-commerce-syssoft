@@ -1,7 +1,8 @@
-import Discount from "@/src/components/common/discount";
-import Title, { BreadItem } from "@/src/components/common/title";
-import { CloseIcon } from "@/src/helper/icons";
+
+import { CloseIcon } from "@/app/ui/component/icons";
 import Image from "next/image";
+import Title, { BreadItem } from "../ui/component/title";
+import Discount from "../ui/component/discount";
 
 const Body = () => {
     return (
@@ -222,10 +223,12 @@ const Body = () => {
                 </div>
                 <div className="w-full mt-[30px] flex sm:justify-end justify-start">
                     <div className="sm:flex sm:space-x-[30px] items-center">
-                        <button type="button"><div className="w-full text-sm font-semibold text-qred mb-5 sm:mb-0">Clean Wishlist</div></button>
-                        <div className="w-[180px] h-[50px]">
-                            <button type="button" className="yellow-btn"><div className="w-full text-sm font-semibold">Add to Cart All</div></button>
-                        </div>
+                        <button type="button">
+                            <div className="w-full text-sm font-semibold text-qred mb-5 sm:mb-0">Clean Wishlist</div>
+                        </button>
+                        <button type="button" className="w-[180px] h-[50px] bg-qyellow text-sm font-semibold text-black outline-0">
+                            <div className="w-full text-sm font-semibold">Add to Cart All</div>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -233,7 +236,7 @@ const Body = () => {
     );
 }
 
-const WishList = () => {
+export default function WishList() {
 
     return (
         <div className="w-full pt-0 pb-0">
@@ -259,5 +262,3 @@ const WishList = () => {
         </div>
     );
 }
-
-export default WishList;

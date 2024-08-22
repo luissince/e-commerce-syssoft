@@ -1,4 +1,4 @@
-import { StarIcon } from "@/src/helper/icons";
+import { StarIcon } from "@/app/ui/component/icons";
 import Image from "next/image";
 import React from "react";
 

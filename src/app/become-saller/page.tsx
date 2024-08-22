@@ -1,7 +1,8 @@
-import Discount from "@/src/components/common/discount";
-import Title, { BreadItem } from "@/src/components/common/title";
-import { ChevronDownIcon, EditIcon, QuestionIcon } from "@/src/helper/icons";
+
 import Image from "next/image";
+import Title, { BreadItem } from "../ui/component/title";
+import Discount from "../ui/component/discount";
+import { ChevronDownIcon, EditIcon, QuestionIcon } from "../ui/component/icons";
 
 const Body = () => {
     return (
@@ -111,7 +112,7 @@ const Body = () => {
 
                                 <div className="signin-area mb-3">
                                     <div className="flex justify-center">
-                                        <button type="button" className="black-btn text-sm text-white w-[490px] h-[50px] font-semibold flex justify-center bg-purple items-center">
+                                        <button type="button" className="bg-black text-sm text-white w-[490px] h-[50px] font-semibold flex justify-center bg-purple items-center">
                                             <span>Create Seller Account</span>
                                         </button>
                                     </div>
@@ -206,8 +207,7 @@ const Body = () => {
     );
 }
 
-const Profile = () => {
-
+export default function Profile() {
     return (
         <>
             <div className="w-full pt-0 pb-0">
@@ -231,5 +231,3 @@ const Profile = () => {
         </>
     );
 }
-
-export default Profile;

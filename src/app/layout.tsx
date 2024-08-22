@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Header from '../components/common/header'
-import Footer from '../components/common/footer'
-import { AOSInit } from '../components/common/aos'
+import Header from './ui/main/header'
+import Footer from './ui/main/footer'
+import { ThemesProviders, AOSProviders, ReduxProviders } from './providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,16 +14,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <AOSInit />
-      <body className={inter.className}>
-        <div id='root'>
-          <Header />
-          <main>
-            {children}
-          </main>
-          <Footer />
-        </div>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} bg-[#f8f8f8] dark:bg-[#1a1a1a] `}>
+        <ReduxProviders>
+          <ThemesProviders>
+            <AOSProviders>
+              <div id='root'>
+                <Header />
+                <main>
+                  {children}
+                </main>
+                <Footer />
+              </div>
+            </AOSProviders>
+          </ThemesProviders>
+        </ReduxProviders>
       </body>
     </html>
   )

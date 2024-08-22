@@ -1,6 +1,7 @@
-import Discount from "@/src/components/common/discount";
-import Title, { BreadItem } from "@/src/components/common/title";
-import { CardIcon } from "@/src/helper/icons";
+
+import { CardIcon } from "@/app/ui/component/icons";
+import Title, { BreadItem } from "../ui/component/title";
+import Discount from "../ui/component/discount";
 
 const Body = () => {
   return (
@@ -28,7 +29,7 @@ const Body = () => {
                 </div>
               </div>
             </div>
-            <a href="#"><div className="w-[142px] h-[50px] black-btn flex justify-center items-center"><span>Track Now</span></div></a>
+            <a href="#"><div className="w-[142px] h-[50px] bg-black text-white flex justify-center items-center"><span>Track Now</span></div></a>
           </div>
           <div className="flex-1 flex justify-center mt-5 lg:mt-0">
             <CardIcon />

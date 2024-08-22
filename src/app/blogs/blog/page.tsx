@@ -1,6 +1,6 @@
-import Title, { BreadItem } from "@/src/components/common/title";
-import Image from "next/image";
 
+import Image from "next/image";
+import Title, { BreadItem } from "../../ui/component/title";
 
 const Body = () => {
 
@@ -160,7 +160,7 @@ const Body = () => {
                                             </div>
 
                                             <div className="flex justify-end">
-                                                <button type="button" className="black-btn w-[300px] h-[50px]  flex justify-center">
+                                                <button type="button" className="bg-black text-white w-[300px] h-[50px]  flex justify-center">
                                                     <span className="flex space-x-1 items-center h-full">
                                                         <span className="text-sm font-semibold">Submit Review</span>
                                                     </span>
@@ -388,7 +388,7 @@ const Body = () => {
                                     <input type="text" className="w-full h-[60px] bg-[#ECEAEC] pl-5 focus:outline-none focus:ring-0 placeholder:text-[#9A9A9A]" placeholder="Enter Your Email Address" />
                                 </div>
                                     <button type="button" className="w-full h-[60px]">
-                                        <span className="yellow-btn w-full h-full text-lg">Subscribe</span>
+                                        <span className="flex items-center justify-center text-[#1d1d1d] bg-[#ffbb38] w-full h-full text-base">Subscribe</span>
                                     </button>
                                 </div>
                             </div>
@@ -402,32 +402,30 @@ const Body = () => {
     );
 }
 
-const Blog = () => {
-
+export default function Blog() {
     return (
-        <div className="w-full pt-0 pb-0">
-            <Title
-                breadCrumds={
-                    <>
-                        <BreadItem
-                            href={"/"}
-                            title={"home"}
-                            isSeparator={true} />
-                        <BreadItem
-                            href={"/blogs"}
-                            title={"Blogs"}
-                            isSeparator={true} />
-                        <BreadItem
-                            href={"/blogs/blog"}
-                            title={"Blog Details"}
-                            isSeparator={false} />
-                    </>
-                }
-                title={"Contact"} />
-            <Body />
-        </div>
+        <>
+            <div className="w-full pt-0 pb-0">
+                <Title
+                    breadCrumds={
+                        <>
+                            <BreadItem
+                                href={"/"}
+                                title={"home"}
+                                isSeparator={true} />
+                            <BreadItem
+                                href={"/blogs"}
+                                title={"Blogs"}
+                                isSeparator={true} />
+                            <BreadItem
+                                href={"/blogs/blog"}
+                                title={"Blog Details"}
+                                isSeparator={false} />
+                        </>
+                    }
+                    title={"Contact"} />
+                <Body />
+            </div>
+        </>
     );
-
 }
-
-export default Blog;

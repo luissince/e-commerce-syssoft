@@ -1,7 +1,9 @@
-import Discount from "@/src/components/common/discount";
-import Title, { BreadItem } from "@/src/components/common/title";
-import { ChevronDownIcon, CloseIcon } from "@/src/helper/icons";
+
+import { ChevronDownIcon, CloseIcon } from "@/app/ui/component/icons";
 import Image from "next/image";
+import Title, { BreadItem } from "../ui/component/title";
+import Discount from "../ui/component/discount";
+import Link from "next/link";
 
 const Body = () => {
     return (
@@ -229,18 +231,16 @@ const Body = () => {
                                 </div>
                             </div>
                         </div>
-                        <button type="button" className="w-[90px] h-[50px] black-btn"><span className="text-sm font-semibold">Apply</span></button>
+                        <button type="button" className="w-[90px] h-[50px] bg-black text-white "><span className="text-sm font-semibold">Apply</span></button>
                     </div>
                     <div className="flex space-x-2.5 items-center">
-                        <a href="#"><div className="w-[220px] h-[50px] bg-[#F6F6F6] flex justify-center items-center"><span className="text-sm font-semibold">Continue Shopping</span></div></a>
-                        <a href="#"><div className="w-[140px] h-[50px] bg-[#F6F6F6] flex justify-center items-center"><span className="text-sm font-semibold">Update Cart</span></div></a>
+                        <Link href="/all-products">
+                            <div className="w-[220px] h-[50px] bg-[#F6F6F6] flex justify-center items-center">
+                                <span className="text-sm font-semibold">Continue Shopping</span>
+                            </div>
+                        </Link>
+                        {/* <a href="#"><div className="w-[140px] h-[50px] bg-[#F6F6F6] flex justify-center items-center"><span className="text-sm font-semibold">Update Cart</span></div></a> */}
                     </div>
-                    {/* <div className="sm:flex sm:space-x-[30px] items-center">
-                        <button type="button"><div className="w-full text-sm font-semibold text-qred mb-5 sm:mb-0">Clean Wishlist</div></button>
-                        <div className="w-[180px] h-[50px]">
-                            <button type="button" className="yellow-btn"><div className="w-full text-sm font-semibold">Add to Cart All</div></button>
-                        </div>
-                    </div> */}
                 </div>
                 <div className="w-full mt-[30px] flex sm:justify-end">
                     <div className="sm:w-[370px] w-full border border-[#EDEDED] px-[30px] py-[26px]">
@@ -252,7 +252,15 @@ const Body = () => {
                             <div className="w-full h-[1px] bg-[#EDEDED]"></div>
                         </div>
 
-                        <div className="shipping mb-6">
+                        <div className="sub-total mb-6">
+                            <div className=" flex justify-between mb-6">
+                                <p className="text-[15px] font-medium text-qblack">IGV</p>
+                                <p className="text-[15px] font-medium text-qred">$365</p>
+                            </div>
+                            <div className="w-full h-[1px] bg-[#EDEDED]"></div>
+                        </div>
+
+                        {/* <div className="shipping mb-6">
                             <span className="text-[15px] font-medium text-qblack mb-[18px] block">Shipping</span>
                             <ul className="flex flex-col space-y-1">
                                 <li>
@@ -289,9 +297,9 @@ const Body = () => {
                                     </div>
                                 </li>
                             </ul>
-                        </div>
+                        </div> */}
 
-                        <div className="shipping-calculation w-full mb-3">
+                        {/* <div className="shipping-calculation w-full mb-3">
                             <div className="title mb-[17px]">
                                 <h1 className="text-[15px] font-medium">Calculate Shipping</h1>
                             </div>
@@ -308,15 +316,15 @@ const Body = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <button type="button" className="w-full mb-10">
+                        </div> */}
+                        {/* <button type="button" className="w-full mb-10">
                             <div className="w-full h-[50px] bg-[#F6F6F6] flex justify-center items-center">
                                 <span className="text-sm font-semibold">Update Cart</span>
                             </div>
-                        </button>
+                        </button> */}
                         <div className="total mb-6"><div className=" flex justify-between"><p className="text-[18px] font-medium text-qblack">Total</p><p className="text-[18px] font-medium text-qred">$365</p></div></div>
                         <a href="/checkout">
-                            <div className="w-full h-[50px] black-btn flex justify-center items-center">
+                            <div className="w-full h-[50px] bg-black text-white flex justify-center items-center">
                                 <span className="text-sm font-semibold">Proceed to Checkout</span>
                             </div>
                         </a>
@@ -327,31 +335,31 @@ const Body = () => {
     );
 }
 
-const Cart = () => {
+export default function Cart() {
 
     return (
-        <div className="w-full pt-0 pb-0">
-            <div className="products-compaire-wrapper w-full bg-white pb-[40px]">
-                <Title
-                    breadCrumds={
-                        <>
-                            <BreadItem
-                                href={"/"}
-                                title={"home"}
-                                isSeparator={true} />
-                            <BreadItem
-                                href={"/cart"}
-                                title={"Your Cart"}
-                                isSeparator={false} />
-                        </>
-                    }
-                    title={"Your Cart"} />
-                <Body />
-            </div>
+        <>
+            <div className="w-full pt-0 pb-0">
+                <div className="products-compaire-wrapper w-full bg-white pb-[40px]">
+                    <Title
+                        breadCrumds={
+                            <>
+                                <BreadItem
+                                    href={"/"}
+                                    title={"home"}
+                                    isSeparator={true} />
+                                <BreadItem
+                                    href={"/cart"}
+                                    title={"Your Cart"}
+                                    isSeparator={false} />
+                            </>
+                        }
+                        title={"Your Cart"} />
+                    <Body />
+                </div>
 
-            <Discount />
-        </div>
+                <Discount />
+            </div>
+        </>
     );
 }
-
-export default Cart;

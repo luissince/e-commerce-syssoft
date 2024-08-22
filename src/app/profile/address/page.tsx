@@ -1,6 +1,6 @@
-import { RemoveIcon } from "@/src/helper/icons";
+import { RemoveIcon } from "@/app/ui/component/icons";
 
-const Address = () => {
+export default function Address() {
     return (
         <>
             <div className="grid grid-cols-2 gap-[30px]">
@@ -122,9 +122,8 @@ const Address = () => {
                 </div>
             </div>
             <div className="w-[180px] h-[50px] mt-4">
-                <button type="button" className="yellow-btn"><div className="w-full text-sm font-semibold">Add New Address</div></button>
+                <button type="button" className="sm:w-[158px] w-[80px]  h-full bg-qyellow text-sm font-semibold text-black outline-0"><div className="w-full text-sm font-semibold">Add New Address</div></button>
             </div>
         </>
     );
 }
-export default Address;

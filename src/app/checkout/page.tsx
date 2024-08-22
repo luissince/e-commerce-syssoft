@@ -1,6 +1,7 @@
-import Discount from "@/src/components/common/discount";
-import Title, { BreadItem } from "@/src/components/common/title";
-import { ChevronDownIcon } from "@/src/helper/icons";
+
+import { ChevronDownIcon } from "@/app/ui/component/icons";
+import Title, { BreadItem } from "../ui/component/title";
+import Discount from "../ui/component/discount";
 
 const Body = () => {
     return (
@@ -239,7 +240,7 @@ const Body = () => {
                             </div>
 
                             <a href="#">
-                                <div className="w-full h-[50px] black-btn flex justify-center items-center">
+                                <div className="w-full h-[50px] bg-black text-white flex justify-center items-center">
                                     <span className="text-sm font-semibold">Place Order Now</span>
                                 </div>
                             </a>
@@ -252,7 +253,7 @@ const Body = () => {
         </div>
     );
 }
-const Checkout = () => {
+export default function Checkout() {
 
     return (
         <>
@@ -279,5 +280,3 @@ const Checkout = () => {
         </>
     );
 }
-
-export default Checkout;

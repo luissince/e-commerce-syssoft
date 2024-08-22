@@ -1,10 +1,10 @@
-import { DiscussionIcon, RemoveIcon } from "@/src/helper/icons";
+import { DiscussionIcon, RemoveIcon } from "@/app/ui/component/icons";
 
 const Support = () => {
     return (
         <div className="support-tab w-full">
             <div className="w-[180px] h-[50px] mb-4">
-                <button type="button" className="yellow-btn"><div className="w-full text-sm font-semibold">Add New Support</div></button>
+                <button type="button" className="sm:w-[158px] w-[80px]  h-full bg-qyellow text-sm font-semibold text-black outline-0"><div className="w-full text-sm font-semibold">Add New Support</div></button>
             </div>
 
             <div className="relative w-full overflow-x-auto sm:rounded-lg">

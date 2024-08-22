@@ -1,8 +1,9 @@
-import Discount from "@/src/components/common/discount";
-import Title, { BreadItem } from "@/src/components/common/title";
-import { SearchIcon, StarIcon } from "@/src/helper/icons";
+
+import { SearchIcon, StarIcon } from "@/app/ui/component/icons";
 import Image from "next/image";
-import React from "react";
+import React, { Suspense } from "react";
+import Discount from "../ui/component/discount";
+import Title, { BreadItem } from "../ui/component/title";
 
 interface CardProps {
     src: string;
@@ -104,16 +105,16 @@ const Body = () => {
                                     </div>
                                 </td>
                                 <td className="product w-[235px] bg-white px-6 border-r border-qgray-border pb-[20px] align-top">
-                                    <span className="text-[13px] font-normal text-qgraytwo">Apple MacBook Air 13"</span>
+                                    <span className="text-[13px] font-normal text-qgraytwo">Apple MacBook Air 13&quot;</span>
                                 </td>
                                 <td className="product w-[235px] bg-white px-6 border-r border-qgray-border pb-[20px] align-top">
-                                    <span className="text-[13px] font-normal text-qgraytwo">Apple MacBook Air 13"</span>
+                                    <span className="text-[13px] font-normal text-qgraytwo">Apple MacBook Air 13&quot;</span>
                                 </td>
                                 <td className="product w-[235px] bg-white px-6 border-r border-qgray-border pb-[20px] align-top">
-                                    <span className="text-[13px] font-normal text-qgraytwo">Apple MacBook Air 13"</span>
+                                    <span className="text-[13px] font-normal text-qgraytwo">Apple MacBook Air 13&quot;</span>
                                 </td>
                                 <td className="product w-[235px] bg-white px-6 pb-[20px] align-top">
-                                    <span className="text-[13px] font-normal text-qgraytwo">Apple MacBook Air 13"</span>
+                                    <span className="text-[13px] font-normal text-qgraytwo">Apple MacBook Air 13&quot;</span>
                                 </td>
                             </tr>
 
@@ -400,31 +401,31 @@ const Body = () => {
     );
 }
 
-const ProductCompaire = () => {
+export default function ProductCompaire() {
 
     return (
-        <div className="w-full pt-0 pb-0">
-            <div className="products-compaire-wrapper w-full bg-white pb-[40px]">
-                <Title
-                    breadCrumds={
-                        <>
-                            <BreadItem
-                                href={"/"}
-                                title={"home"}
-                                isSeparator={true} />
-                            <BreadItem
-                                href={"/products-compaire"}
-                                title={"products compaire"}
-                                isSeparator={false} />
-                        </>
-                    }
-                    title={"Products Compaire"} />
-                <Body />
-            </div>
+        <>
+            <div className="w-full pt-0 pb-0">
+                <div className="products-compaire-wrapper w-full bg-white pb-[40px]">
+                    <Title
+                        breadCrumds={
+                            <>
+                                <BreadItem
+                                    href={"/"}
+                                    title={"home"}
+                                    isSeparator={true} />
+                                <BreadItem
+                                    href={"/products-compaire"}
+                                    title={"products compaire"}
+                                    isSeparator={false} />
+                            </>
+                        }
+                        title={"Products Compaire"} />
+                    <Body />
+                </div>
 
-            <Discount />
-        </div>
+                <Discount />
+            </div>
+        </>
     );
 }
-
-export default ProductCompaire;

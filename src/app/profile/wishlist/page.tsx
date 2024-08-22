@@ -1,4 +1,4 @@
-import { CloseIcon } from "@/src/helper/icons";
+import { CloseIcon } from "@/app/ui/component/icons";
 import Image from "next/image";
 
 const Wishlist = () => {
@@ -120,7 +120,7 @@ const Wishlist = () => {
                 <div className="sm:flex sm:space-x-[30px] items-center">
                     <button type="button"><div className="w-full text-sm font-semibold text-qred mb-5 sm:mb-0">Clean Wishlist</div></button>
                     <div className="w-[180px] h-[50px]">
-                        <button type="button" className="yellow-btn"><div className="w-full text-sm font-semibold">Add to Cart All</div></button>
+                        <button type="button" className="sm:w-[158px] w-[80px]  h-full bg-qyellow text-sm font-semibold text-black outline-0"><div className="w-full text-sm font-semibold">Add to Cart All</div></button>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import { EyeIcon } from "@/src/helper/icons";
+import { EyeIcon } from "@/app/ui/component/icons";
 import Image from "next/image";
 
 const Password = () => {
@@ -53,7 +53,11 @@ const Password = () => {
 
                     <div className="w-full mt-[30px] flex justify-start">
                         <div className="sm:flex sm:space-x-[30px] items-center">
-                            <div className="w-[180px] h-[50px]"><button type="button" className="yellow-btn"><div className="w-full text-sm font-semibold">Upldate Password</div></button></div>
+                            <div className="w-[180px] h-[50px]">
+                                <button type="button" className="sm:w-[158px] w-[80px]  h-full bg-qyellow text-sm font-semibold text-black outline-0">
+                                    <div className="w-full text-sm font-semibold">Upldate Password</div>
+                                </button>
+                            </div>
                             <button type="button"><div className="w-full text-sm font-semibold text-qblack mb-5 sm:mb-0">Cancel</div></button>
                         </div>
                     </div>
