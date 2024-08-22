@@ -24,7 +24,8 @@ const nextConfig = {
                 port: '5002',
             },
         ],
-    }
+    },
+    output: 'standalone'
 }
 
 module.exports = nextConfig
