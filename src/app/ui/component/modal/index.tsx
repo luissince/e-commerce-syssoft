@@ -51,7 +51,7 @@ export const CustomModalForm: React.FC<CustomModalForm> = ({
                 }}
                 onKeyDown={(event: React.KeyboardEvent<HTMLFormElement>) => {
                     const target = event.target as HTMLElement;
-                    console.log(target)
+                    // console.log(target)
                     // const inputEvent = event as unknown as React.KeyboardEvent<HTMLInputElement>;
                     // if (target.role === 'float') {
                     //   keyNumberFloat(event, () => {
@@ -73,7 +73,7 @@ export const CustomModalForm: React.FC<CustomModalForm> = ({
                 }}
             >
                 <div className="header-cm" onMouseDown={(event) => contentRef!.current!.handleMouseDown(event)}>
-                    <p className='m-0 h6'>{titleHeader}</p>
+                    <p className='m-0 h6 text-black'>{titleHeader}</p>
                     <button
                         type="button"
                         className='p-2 font-semibold bg-black text-white text-3xl'

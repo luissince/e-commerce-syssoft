@@ -45,21 +45,17 @@ const TrackingOrder = () => {
     <div className="w-full pt-0 pb-0">
       <div className="tracking-page-wrapper w-full">
         <Title
-          breadCrumds={
-            <>
-              <BreadItem
-                href={"/"}
-                title={"home"}
-                isSeparator={true} />
+          title={"Track Order"}>
+          <BreadItem
+            href={"/"}
+            title={"home"}
+            isSeparator={true} />
 
-              <BreadItem
-                href={"/tracking-order"}
-                title={"Track Order"}
-                isSeparator={false} />
-            </>
-          }
-          title={"Track Order"} />
-
+          <BreadItem
+            href={"/tracking-order"}
+            title={"Track Order"}
+            isSeparator={false} />
+        </Title>
         <Body />
         <Discount />
       </div>

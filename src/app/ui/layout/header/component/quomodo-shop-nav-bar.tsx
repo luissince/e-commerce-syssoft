@@ -106,10 +106,10 @@ const Nav = () => {
                         href="/terms-condition"
                     />
 
-                    <SubMenuItem
+                    {/* <SubMenuItem
                         label="FAQ"
                         href="/faq"
-                    />
+                    /> */}
 
                     {/* <SubMenuItem
                         label="Shop Category Icon"
@@ -127,10 +127,10 @@ const Nav = () => {
                     href="/about"
                 />
 
-                <MenuItem
+                {/* <MenuItem
                     label="Blog"
                     href="/blogs"
-                />
+                /> */}
 
                 <MenuItem
                     label="Contact"
@@ -243,7 +243,7 @@ const QuomodoShopNavBar = () => {
                             <Nav />
                         </div>
 
-                        <Link href={"/become-saller"}>
+                        {/* <Link href={"/become-saller"}>
                             <div className="bg-black text-white w-[161px] h-[40px] flex justify-center items-center cursor-pointer">
                                 <div className="flex space-x-1 items-center">
                                     <span className="text-sm font-semibold">Become a Seller</span>
@@ -252,7 +252,7 @@ const QuomodoShopNavBar = () => {
                                     </span>
                                 </div>
                             </div>
-                        </Link>
+                        </Link> */}
                     </div>
 
                 </div>

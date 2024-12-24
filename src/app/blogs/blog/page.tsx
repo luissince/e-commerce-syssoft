@@ -407,23 +407,20 @@ export default function Blog() {
         <>
             <div className="w-full pt-0 pb-0">
                 <Title
-                    breadCrumds={
-                        <>
-                            <BreadItem
-                                href={"/"}
-                                title={"home"}
-                                isSeparator={true} />
-                            <BreadItem
-                                href={"/blogs"}
-                                title={"Blogs"}
-                                isSeparator={true} />
-                            <BreadItem
-                                href={"/blogs/blog"}
-                                title={"Blog Details"}
-                                isSeparator={false} />
-                        </>
-                    }
-                    title={"Contact"} />
+                    title={"Contact"}>
+                    <BreadItem
+                        href={"/"}
+                        title={"home"}
+                        isSeparator={true} />
+                    <BreadItem
+                        href={"/blogs"}
+                        title={"Blogs"}
+                        isSeparator={true} />
+                    <BreadItem
+                        href={"/blogs/blog"}
+                        title={"Blog Details"}
+                        isSeparator={false} />
+                </Title>
                 <Body />
             </div>
         </>

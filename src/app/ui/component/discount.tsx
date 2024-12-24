@@ -16,11 +16,11 @@ function Discount() {
 
     return (
         <div className="discount-banner w-full h-[307px] bg-cover flex justify-center items-center bg-discount bg-no-repeat">
-            <div>
+            <div className="flex flex-col items-center">
                 <div data-aos="fade-up">
-                    <h1 className="sm:text-3xl text-xl font-bold text-qblack mb-2 text-center">Get <span className="mx-1 text-qyellow">20%</span> Off Discount Coupon</h1>
+                    <h1 className="sm:text-3xl text-xl font-bold text-qblack mb-2 text-center">Obtenga un cupón del <span className="mx-1 text-qyellow">20%</span> de descuento</h1>
                     <p className="text-center sm:text-[18px] text-sm font-400 dark:text-black">
-                        by Subscribe our Newsletter
+                        Suscribiéndote a nuestro boletín de noticias, podrás recibir un cupón del 20% de descuento en tu compra.
                     </p>
                 </div>
                 <div
@@ -42,7 +42,7 @@ function Discount() {
                         type="button"
                         className="sm:w-[158px] w-[80px]  h-full bg-qyellow text-sm font-semibold text-black outline-0"
                     >
-                        Get the Coupon
+                        Obtener el cupón
                     </button>
                 </div>
             </div>

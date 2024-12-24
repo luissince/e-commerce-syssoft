@@ -212,19 +212,17 @@ export default function Profile() {
         <>
             <div className="w-full pt-0 pb-0">
                 <Title
-                    breadCrumds={
-                        <>
-                            <BreadItem
-                                href={"/"}
-                                title={"home"}
-                                isSeparator={true} />
-                            <BreadItem
-                                href={"/become-saller"}
-                                title={"Become Saller"}
-                                isSeparator={false} />
-                        </>
-                    }
-                    title={"Seller Application"} />
+                    title={"Seller Application"} 
+                >
+                    <BreadItem
+                        href={"/"}
+                        title={"home"}
+                        isSeparator={true} />
+                    <BreadItem
+                        href={"/become-saller"}
+                        title={"Become Saller"}
+                        isSeparator={false} />
+                </Title>
                 <Body />
             </div>
             <Discount />

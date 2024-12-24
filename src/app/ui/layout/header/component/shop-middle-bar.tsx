@@ -1,18 +1,21 @@
 'use client'
 import Link from "next/link";
-import { BagIcon, CloseIcon, CompareIcon, HeartIcon, UserIcon } from "../../../component/icons";
+import { CloseIcon, HeartIcon, UserIcon } from "../../../component/icons";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce';
 import { searchAction } from "@/app/lib/actions";
-import { useAppSelector } from "@/app/lib/hooks";
-import { selectCart } from "@/app/lib/features/shoppingCardSlice";
+import { useAppDispatch, useAppSelector } from "@/app/lib/hooks";
+import { removeFromCart, selectCart } from "@/app/lib/features/shoppingCardSlice";
 import { CartModel } from "@/app/lib/definitions";
 import { formatDecimal, rounded } from "@/helper/util";
+import { BsBag } from "react-icons/bs";
 
 const CartWrapper: React.FC<CartModel> = (cart) => {
+    const dispatch = useAppDispatch();
+
     const [isHovered, setIsHovered] = useState(false);
     const { resolvedTheme } = useTheme();
 
@@ -21,11 +24,11 @@ const CartWrapper: React.FC<CartModel> = (cart) => {
             <div className="cart relative cursor-pointer"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}>
-                <a rel="noopener noreferrer" href="/cart">
+                <Link rel="noopener noreferrer" href="/cart">
                     <span>
-                        <BagIcon fill={resolvedTheme === 'light' ? "#000" : "#fff"} />
+                        <BsBag fill={resolvedTheme === 'light' ? "#000" : "#fff"} size={22} />
                     </span>
-                </a>
+                </Link>
                 <span className="w-[18px] h-[18px] rounded-full  absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px] bg-qyellow">{cart.items.length}</span>
             </div>
             <div className={`w-[300px] bg-white border-t-[3px] border-[#FFBB38] cart-wrappwer ${isHovered ? 'block' : 'hidden'}  absolute -right-[45px] top-11 z-50 group-hover:block shadow-2xl`}>
@@ -36,23 +39,28 @@ const CartWrapper: React.FC<CartModel> = (cart) => {
                                 cart.items.map((item, key) => {
                                     return (
                                         <li key={key} className="w-full h-full flex">
-                                            <div className="flex space-x-[6px] justify-center items-center px-4 my-[20px]">
+                                            <div className="flex flex-1 space-x-[6px] justify-center items-center px-4 my-[20px]">
                                                 <div className="w-[65px] h-full">
                                                     <Image
-                                                    src={item.producto.imagen ?? "/assets/noimage.jpg"}
-                                                    alt={item.producto.nombre}
-                                                    className="w-full h-full object-contain"
-                                                    width={65}
-                                                    height={65} />
+                                                        src={item.producto.imagen ?? "/assets/noimage.jpg"}
+                                                        alt={item.producto.nombre}
+                                                        className="w-full h-full object-contain"
+                                                        width={65}
+                                                        height={65} />
                                                 </div>
                                                 <div className="flex-1 h-full flex flex-col justify-center ">
                                                     <p className="title mb-2 text-[13px] font-semibold text-qblack leading-4 line-clamp-2 hover:text-blue-600">{item.producto.nombre}</p>
                                                     <p className="price"><span className="offer-price text-qred font-semibold text-[15px] ml-2">${rounded(item.producto.precio)} x {item.cantidad}</span></p>
                                                 </div>
                                             </div>
-                                            <span className="mt-[20px] mr-[15px] inline-flex cursor-pointer ">
+                                            <button className="mt-[20px] mr-[15px] inline-flex cursor-pointer"
+                                            onClick={()=>{
+                                                dispatch(removeFromCart({
+                                                    idProducto: item.producto.idProducto
+                                                }));
+                                            }}>
                                                 <CloseIcon />
-                                            </span>
+                                            </button>
                                         </li>
                                     );
                                 })
@@ -68,8 +76,18 @@ const CartWrapper: React.FC<CartModel> = (cart) => {
                             <span className="text-[15px] font-medium text-qred ">${formatDecimal(cart.totalPrecio)}</span>
                         </div>
                         <div className="product-action-btn">
-                            <a href="#"><div className="w-full h-[50px] mb-[10px] flex items-center justify-center bg-gray-200 text-sm font-semibold"><span>View Cart</span></div></a>
-                            <a href="#"><div className="w-full h-[50px]"><div className="w-full h-full flex items-center justify-center text-sm font-semibold bg-search-btn text-black"><span className="text-sm">Checkout Now</span></div></div></a>
+                            <Link href="/cart">
+                                <div className="w-full h-[50px] mb-[10px] flex items-center justify-center bg-gray-200 text-sm font-semibold">
+                                    <span>View Cart</span>
+                                </div>
+                            </Link>
+                            <Link href="/checkout">
+                                <div className="w-full h-[50px]">
+                                    <div className="w-full h-full flex items-center justify-center text-sm font-semibold bg-search-btn text-black">
+                                        <span className="text-sm">Checkout Now</span>
+                                    </div>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                     <div className="w-full px-4 mt-[20px]">
@@ -118,7 +136,7 @@ export default function ShopMiddleBar() {
             <div className="container max-w-screen-x mx-auto md:px-6 h-full">
                 <div className="flex justify-between items-center h-full">
                     <Link href={"/"} className="cursor-pointer">
-                        <Image width="152" height="36" src="/assets/logo.svg" alt="logo" priority={true} />
+                        <Image width="152" height="36" src={resolvedTheme === 'dark' ? '/assets/logo-light.webp' : '/assets/logo-dark.webp'} alt="logo" priority={true} />
                     </Link>
 
                     <form action={searchAction} className="w-[517px] h-[44px]">

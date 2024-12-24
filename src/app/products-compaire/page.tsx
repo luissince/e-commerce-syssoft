@@ -408,19 +408,16 @@ export default function ProductCompaire() {
             <div className="w-full pt-0 pb-0">
                 <div className="products-compaire-wrapper w-full bg-white pb-[40px]">
                     <Title
-                        breadCrumds={
-                            <>
-                                <BreadItem
-                                    href={"/"}
-                                    title={"home"}
-                                    isSeparator={true} />
-                                <BreadItem
-                                    href={"/products-compaire"}
-                                    title={"products compaire"}
-                                    isSeparator={false} />
-                            </>
-                        }
-                        title={"Products Compaire"} />
+                        title={"Products Compaire"}>
+                        <BreadItem
+                            href={"/"}
+                            title={"home"}
+                            isSeparator={true} />
+                        <BreadItem
+                            href={"/products-compaire"}
+                            title={"products compaire"}
+                            isSeparator={false} />
+                    </Title>
                     <Body />
                 </div>
 

@@ -80,7 +80,8 @@ export interface ProductModel {
 
     tallas: AttributeModel[],
 
-    sabores: AttributeModel[]
+    sabores: AttributeModel[],
+    
 }
 
 export interface ProductPagesModel {
@@ -90,4 +91,46 @@ export interface ProductPagesModel {
 export interface ListResponseModel<T> {
     result: T,
     total: number
+}
+
+export interface UbigeoModel {
+    idUbigeo: number;
+    ubigeo: string;
+    departamento: string;
+    provincia: string;
+    distrito: string
+}
+
+export interface BranchModel {
+    idSucursal: string;
+    nombre: string;
+    telefono: string;
+    celular: string;
+    email: string;
+    paginaWeb: string;
+    direccion: string
+    idUbigeo: string;
+    googleMaps: string;
+    ruta: string;
+    estado: boolean;
+    principal: boolean;
+    fecha: string;
+    hora: string;
+
+    ubigeo: UbigeoModel;
+}
+
+export interface CompanyModel {
+    idEmpresa: string;
+    documento: string;
+    razonSocial: string;
+    nombreEmpresa: string;
+    email: string;
+    paginaWeb: string;
+    rutaLogo: string;
+    rutaImage: string;
+    horarioAtencion: string;
+    acercaNosotros: string;
+    politicasPrivacidad: string;
+    terminosCondiciones: string;
 }

@@ -90,7 +90,7 @@ const ShopTopBar = () => {
             <div className="container max-w-screen-x mx-auto px-2 md:px-6 h-full">
                 <div className="flex justify-between items-center h-full">
                     <div className="">
-                        <ul className="flex space-x-6">
+                        {/* <ul className="flex space-x-6">
                             <li>
                                 <span className={`text-xs leading-6 text-qblack dark:text-white font-medium`}>Account</span>
                             </li>
@@ -100,7 +100,7 @@ const ShopTopBar = () => {
                             <li>
                                 <span className="text-xs leading-6 text-qblack dark:text-white font-medium">Support</span>
                             </li>
-                        </ul>
+                        </ul> */}
                     </div>
 
                     <div className="topbar-dropdowns sm:block hidden">

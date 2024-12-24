@@ -122,19 +122,17 @@ export default function Blogs() {
         <>
             <div className="w-full pt-0 pb-0">
                 <Title
-                    breadCrumds={
-                        <>
-                            <BreadItem
-                                href={"/"}
-                                title={"home"}
-                                isSeparator={true} />
-                            <BreadItem
-                                href={"/blogs"}
-                                title={"blogs"}
-                                isSeparator={false} />
-                        </>
-                    }
-                    title={"Our Blogs"} />
+                    title={"Our Blogs"}
+                >
+                    <BreadItem
+                        href={"/"}
+                        title={"home"}
+                        isSeparator={true} />
+                    <BreadItem
+                        href={"/blogs"}
+                        title={"blogs"}
+                        isSeparator={false} />
+                </Title>
                 <Body />
             </div>
             <Discount />

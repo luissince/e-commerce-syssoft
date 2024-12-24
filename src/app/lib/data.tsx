@@ -1,5 +1,5 @@
 import axios from "axios"
-import { AttributeModel, BrandModel, CategoryModel, ListResponseModel, ProductModel, ProductPagesModel, RangePriceModel } from "./definitions";
+import { AttributeModel, BranchModel, BrandModel, CategoryModel, CompanyModel, ProductModel, ProductPagesModel, RangePriceModel } from "./definitions";
 import { DarkIcon, LightIcon, SpanishIcon, SystemIcon, UsaIcon } from "../ui/component/icons";
 
 export interface ItemListShopTopBarProps {
@@ -172,12 +172,80 @@ export const fetchProductsPages = async (): Promise<ProductPagesModel | number> 
     }
 }
 
+export const fetchIndexProducts = async (limit: number): Promise<ProductModel[] | []> => {
+    try {
+        const response = await axios.get<ProductModel[]>(`${process.env.APP_BACK_END}/api/producto/filter/web/index`, {
+            params: {
+                limit: limit,
+            },
+            headers: {
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache',
+                'Expires': '0',
+            }
+        });
+
+        return response.data;
+    } catch (error) {
+        return [];
+    }
+}
+
 export const fetchProductByCode = async (code: string, url?: string): Promise<ProductModel | null> => {
     try {
         const response = await axios.get<ProductModel>(`${process.env.APP_BACK_END || url}/api/producto/filter/web/id`, {
             params: {
                 "codigo": code,
             },
+            headers: {
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache',
+                'Expires': '0',
+            }
+        });
+        return response.data;
+    } catch (error) {
+        return null;
+    }
+}
+
+export const fetchProducRelatedtByCode = async (idCategoria: string): Promise<Array<ProductModel>> => {
+    try {
+        const response = await axios.get<ProductModel[]>(`${process.env.APP_BACK_END}/api/producto/filter/web/related/id`, {
+            params: {
+                "idCategoria": idCategoria,
+            },
+            headers: {
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache',
+                'Expires': '0',
+            }
+        });
+        return response.data;
+    } catch (error) {
+        return [];
+    }
+}
+
+
+export async function fetchListBranchs(): Promise<BranchModel[] | null> {
+    try {
+        const response = await axios.get<BranchModel[]>(`${process.env.APP_BACK_END }/api/sucursal/list/web`, {
+            headers: {
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache',
+                'Expires': '0',
+            }
+        });
+        return response.data;
+    } catch (error) {
+        return [];
+    }
+}
+
+export async function fetchLoadCompany(): Promise<CompanyModel | null> {
+    try {
+        const response = await axios.get<CompanyModel>(`${process.env.APP_BACK_END}/api/empresa/load/web`, {
             headers: {
                 'Cache-Control': 'no-cache',
                 'Pragma': 'no-cache',

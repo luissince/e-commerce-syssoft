@@ -1,13 +1,15 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import cartSlice from './features/shoppingCardSlice'
 
+// Combina tus reducers
 const reducer = combineReducers({
     cart: cartSlice
 })
 
+// Crea y exporta una única instancia de la store
 export const makeStore = () => {
     return configureStore({
-        reducer: reducer
+        reducer: reducer,
     })
 }
 

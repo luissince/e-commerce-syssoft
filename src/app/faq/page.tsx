@@ -78,20 +78,18 @@ export default function Faq() {
         <>
             <div className="w-full pt-0 pb-0">
                 <Title
-                    breadCrumds={
-                        <>
-                            <BreadItem
-                                href={"/"}
-                                title={"home"}
-                                isSeparator={true} />
+                    title={"Frequently Asked Questions"}
+                >
+                    <BreadItem
+                        href={"/"}
+                        title={"home"}
+                        isSeparator={true} />
 
-                            <BreadItem
-                                href={"/faq"}
-                                title={"faq"}
-                                isSeparator={false} />
-                        </>
-                    }
-                    title={"Frequently Asked Questions"} />
+                    <BreadItem
+                        href={"/faq"}
+                        title={"faq"}
+                        isSeparator={false} />
+                </Title>
                 <Body />
             </div>
             <Discount />

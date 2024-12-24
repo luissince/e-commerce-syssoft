@@ -242,19 +242,16 @@ export default function WishList() {
         <div className="w-full pt-0 pb-0">
             <div className="products-compaire-wrapper w-full bg-white pb-[40px]">
                 <Title
-                    breadCrumds={
-                        <>
-                            <BreadItem
-                                href={"/"}
-                                title={"home"}
-                                isSeparator={true} />
-                            <BreadItem
-                                href={"/wishlist"}
-                                title={"Wishlist"}
-                                isSeparator={false} />
-                        </>
-                    }
-                    title={"Wishlist"} />
+                    title={"Wishlist"}>
+                    <BreadItem
+                        href={"/"}
+                        title={"home"}
+                        isSeparator={true} />
+                    <BreadItem
+                        href={"/wishlist"}
+                        title={"Wishlist"}
+                        isSeparator={false} />
+                </Title>
                 <Body />
             </div>
 
