@@ -1,0 +1,73 @@
+name: Docker Staging CI - SysSoftIntegra Ecommerce
+
+# Definición de eventos desencadenadores
+on:
+  push:
+    branches: 
+      - "master"
+      - "test"
+
+# Definición de trabajos
+jobs:
+  build-and-deploy-master:
+    if: github.ref == 'refs/heads/master'
+    runs-on: self-hosted
+    strategy:
+      matrix:
+        include:
+          - environment: leatsac
+            service: web-ecommerce-leatsac-services
+
+    environment: ${{ matrix.environment }}
+
+    env:  
+      APP_BACK_END: ${{ secrets.APP_BACK_END }}
+      NEXT_PUBLIC_APP_BACK_END: ${{ secrets.NEXT_PUBLIC_APP_BACK_END }}
+      NODE_ENV: ${{ vars.NODE_ENV }}
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Crear archivo .env
+        run: |
+          cat > .env <<EOL
+          APP_BACK_END="${{env.APP_BACK_END}}"
+          NEXT_PUBLIC_APP_BACK_END="${{env.NEXT_PUBLIC_APP_BACK_END}}"
+          NODE_ENV="${{env.NODE_ENV}}"
+          EOL
+
+      - name: Creando y ejecutando contenedor
+        run: docker compose -f docker-compose.yml up --build ${{ matrix.service }} -d
+
+
+  build-and-deploy-app-test:
+    if: github.ref == 'refs/heads/test'
+    runs-on: self-hosted
+    strategy:
+      matrix:
+        include:
+          - environment: test
+            service: web-ecommerce-sysintegra-services
+
+    environment: ${{ matrix.environment }}
+
+    env:  
+      APP_BACK_END: ${{ secrets.APP_BACK_END }}
+      NEXT_PUBLIC_APP_BACK_END: ${{ secrets.NEXT_PUBLIC_APP_BACK_END }}
+      NODE_ENV: ${{ vars.NODE_ENV }}
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Crear archivo .env
+        run: |
+          cat > .env <<EOL
+          APP_BACK_END="${{env.APP_BACK_END}}"
+          NEXT_PUBLIC_APP_BACK_END="${{env.NEXT_PUBLIC_APP_BACK_END}}"
+          NODE_ENV="${{env.NODE_ENV}}"
+          EOL
+
+      - name: Creando y ejecutando contenedor
+        run: docker compose -f docker-compose.yml up --build ${{ matrix.service }} -d
