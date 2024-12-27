@@ -74,7 +74,7 @@ const Nav = () => {
         <div className="nav">
             <ul className="nav-wrapper flex xl:space-x-10 space-x-5">
                 <MenuItem
-                    label="Homepage"
+                    label="Inicio"
                     href="/"
                 >
                     {/* <SubMenuItem
@@ -89,20 +89,20 @@ const Nav = () => {
                 </MenuItem>
 
                 <MenuItem
-                    label="Shop"
+                    label="Tienda"
                     href="/all-products"
                 />
 
                 <MenuItem
-                    label="Pages"
+                    label="Páginas"
                 >
                     <SubMenuItem
-                        label="Privacy Policy"
+                        label="Politica de Privacidad"
                         href="/privacy-policy"
                     />
 
                     <SubMenuItem
-                        label="Terms and Conditions"
+                        label="Terminos y Condiciones"
                         href="/terms-condition"
                     />
 
@@ -123,7 +123,7 @@ const Nav = () => {
                 </MenuItem>
 
                 <MenuItem
-                    label="About"
+                    label="Acerca de"
                     href="/about"
                 />
 
@@ -133,7 +133,7 @@ const Nav = () => {
                 /> */}
 
                 <MenuItem
-                    label="Contact"
+                    label="Contacto"
                     href="/contact"
                 />
             </ul>
@@ -199,7 +199,21 @@ const Category = () => {
 
     return (
         <div className="category w-[270px] h-[53px] bg-white px-5 rounded-t-md mt-[6px] relative" ref={dropdownRef}>
-            <button
+            <div
+                className="w-full h-full flex justify-between items-center"
+            >
+                <div className="flex space-x-3 items-center">
+                    <span>
+                        <Bars3CenterLeftIcon width={20} fill="#000" />
+                    </span>
+                    <span className="text-sm font-semibold text-black">Todo en un lugar</span>
+                </div>
+                {/* <div>
+                    <ChevronDownIcon width={22} fill="#000" />
+                </div> */}
+            </div>
+
+            {/* <button
                 type="button" className="w-full h-full flex justify-between items-center"
                 onClick={() => setIsClicked(!isClicked)}>
                 <div className="flex space-x-3 items-center">
@@ -211,7 +225,7 @@ const Category = () => {
                 <div>
                     <ChevronDownIcon width={22} fill="#000" />
                 </div>
-            </button>
+            </button> */}
 
             <div className={`category-dropdown w-full absolute left-0 top-[53px] overflow-hidden ${isClicked ? 'opacity-100 visible' : 'opacity-0 invisible'} transition-all duration-500 ease-in-out shadow-xl`}>
                 <ul className="categories-list">

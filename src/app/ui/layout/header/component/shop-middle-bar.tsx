@@ -50,7 +50,7 @@ const CartWrapper: React.FC<CartModel> = (cart) => {
                                                 </div>
                                                 <div className="flex-1 h-full flex flex-col justify-center ">
                                                     <p className="title mb-2 text-[13px] font-semibold text-qblack leading-4 line-clamp-2 hover:text-blue-600">{item.producto.nombre}</p>
-                                                    <p className="price"><span className="offer-price text-qred font-semibold text-[15px] ml-2">${rounded(item.producto.precio)} x {item.cantidad}</span></p>
+                                                    <p className="price"><span className="offer-price text-qred font-semibold text-[15px] ml-2">S/ {rounded(item.producto.precio)} x {item.cantidad}</span></p>
                                                 </div>
                                             </div>
                                             <button className="mt-[20px] mr-[15px] inline-flex cursor-pointer"
@@ -72,19 +72,19 @@ const CartWrapper: React.FC<CartModel> = (cart) => {
                     </div>
                     <div className="product-actions px-4 mb-[30px]">
                         <div className="total-equation flex justify-between items-center mb-[28px]">
-                            <span className="text-[15px] font-medium text-qblack">Subtotal</span>
-                            <span className="text-[15px] font-medium text-qred ">${formatDecimal(cart.totalPrecio)}</span>
+                            <span className="text-[15px] font-medium text-qblack">Sub Total</span>
+                            <span className="text-[15px] font-medium text-qred ">S/ {formatDecimal(cart.totalPrecio)}</span>
                         </div>
                         <div className="product-action-btn">
                             <Link href="/cart">
                                 <div className="w-full h-[50px] mb-[10px] flex items-center justify-center bg-gray-200 text-sm font-semibold">
-                                    <span>View Cart</span>
+                                    <span>Mostrar Carrito</span>
                                 </div>
                             </Link>
                             <Link href="/checkout">
                                 <div className="w-full h-[50px]">
                                     <div className="w-full h-full flex items-center justify-center text-sm font-semibold bg-search-btn text-black">
-                                        <span className="text-sm">Checkout Now</span>
+                                        <span className="text-sm">Checkout Ahora</span>
                                     </div>
                                 </div>
                             </Link>
@@ -136,7 +136,8 @@ export default function ShopMiddleBar() {
             <div className="container max-w-screen-x mx-auto md:px-6 h-full">
                 <div className="flex justify-between items-center h-full">
                     <Link href={"/"} className="cursor-pointer">
-                        <Image width="152" height="36" src={resolvedTheme === 'dark' ? '/assets/logo-light.webp' : '/assets/logo-dark.webp'} alt="logo" priority={true} />
+                        <Image width="152" height="36" src="/assets/logo.svg" alt="logo" priority={true} />
+                        {/* <Image width="152" height="36" src={resolvedTheme === 'dark' ? '/assets/logo-light.webp' : '/assets/logo-dark.webp'} alt="logo" priority={true} /> */}
                     </Link>
 
                     <form action={searchAction} className="w-[517px] h-[44px]">
@@ -147,7 +148,7 @@ export default function ShopMiddleBar() {
                                         type="text"
                                         name="search"
                                         className="search-input border-0 outline-none text-[#000] dark:text-[#fff] w-full h-full p-5 font-normal text-sm bg-white dark:bg-black"
-                                        placeholder="Search Product..."
+                                        placeholder="Buscar producto..."
                                         onChange={(event) => handleSearch(event.target.value)}
                                         defaultValue={searchParams.get('query')?.toString()}
                                     />
@@ -172,7 +173,7 @@ export default function ShopMiddleBar() {
                                 type="submit"
                             // onClick={handleSearch}
                             >
-                                Search
+                                Buscar
                             </button>
                         </div>
                     </form>

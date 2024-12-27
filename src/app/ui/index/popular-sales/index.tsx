@@ -4,9 +4,10 @@ import { IoIosArrowForward } from "react-icons/io";
 import { fetchIndexProducts } from "@/app/lib/data";
 import { ProductModel } from "@/app/lib/definitions";
 import { numberFormat } from "@/helper/util";
+import Link from "next/link";
 
 async function PopularSales() {
-    const products = await fetchIndexProducts(3) as ProductModel[];
+    const products = await fetchIndexProducts(4) as ProductModel[];
     
     return (
         <div
@@ -17,24 +18,24 @@ async function PopularSales() {
                     <div className="section-title flex justify-between items-center mb-5">
                         <div>
                             <h1 className="sm:text-3xl text-xl font-semibold text-qblacktext dark:text-white leading-none">
-                                Popular Sales
+                                Productos Polulares
                             </h1>
                         </div>
 
                         <div>
-                            <a href="/all-products">
+                            <Link href="/all-products">
                                 <div className="flex space-x-2 items-center">
-                                    <p className="text-base font-semibold text-qblacktext dark:text-white">View More</p>
+                                    <p className="text-base font-semibold text-qblacktext dark:text-white">Ver Más</p>
                                     <FaArrowRightLong size={22} />
                                 </div>
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
                     <div className="section-content">
                         <div className="products-section w-full">
                             <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-[30px] gap-5">
-                                <div className="category-card hidden xl:block w-full">
+                                {/* <div className="category-card hidden xl:block w-full">
                                     <div className="category-card-wrappwer w-full h-full p-[30px] bg-popularSaleLeft bg-cover bg-no-repeat">
                                         <div>
                                             <h1 className="text-base font-semibold tracking-wide mb-2 text-black">
@@ -82,7 +83,7 @@ async function PopularSales() {
                                             </a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
 
                                 {
                                     products.map((item, index) => {

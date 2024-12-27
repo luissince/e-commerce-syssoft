@@ -9,7 +9,7 @@ on:
 
 # Definición de trabajos
 jobs:
-  build-and-deploy-master:
+  build-and-deploy-production:
     if: github.ref == 'refs/heads/master'
     runs-on: self-hosted
     strategy:

@@ -21,7 +21,8 @@ export default function Logo () {
         <div className="w-full flex flex-col items-center mb-[50px]">
             <div className="mb-[40px]">
                 <Link href="/">
-                    <Image width="152" height="36" src={resolvedTheme === 'dark' ? '/assets/logo-light.webp' : '/assets/logo-dark.webp'} alt="logo" priority={true} />
+                    <Image width="152" height="36" src="/assets/logo.svg" alt="logo" priority={true} />
+                    {/* <Image width="152" height="36" src={resolvedTheme === 'dark' ? '/assets/logo-light.webp' : '/assets/logo-dark.webp'} alt="logo" priority={true} /> */}
                 </Link>
             </div>
             <div className="w-full h-[1px] bg-[#E9E9E9]"></div>

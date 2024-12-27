@@ -145,9 +145,9 @@ function BestServices() {
                     </div>
                     <div>
                         <p className="text-black text-[15px] font-bold tracking-wide mb-1">
-                            Free Shipping
+                            Envío Gratis
                         </p>
-                        <p className="text-sm text-qgray">When ordering over $100</p>
+                        <p className="text-sm text-qgray">Compra superior a S/ 100.00</p>
                     </div>
                 </div>
             </div>
@@ -181,9 +181,9 @@ function BestServices() {
                     </div>
                     <div>
                         <p className="text-black text-[15px] font-bold tracking-wide mb-1">
-                            Free Return
+                            Devolución 
                         </p>
-                        <p className="text-sm text-qgray">Get Return within 30 days</p>
+                        <p className="text-sm text-qgray">Plazo de un día.</p>
                     </div>
                 </div>
             </div>
@@ -225,9 +225,9 @@ function BestServices() {
                     </div>
                     <div>
                         <p className="text-black text-[15px] font-bold tracking-wide mb-1">
-                            Secure Payment
+                            Seguridad de Pago
                         </p>
-                        <p className="text-sm text-qgray">100% Secure Online Payment</p>
+                        <p className="text-sm text-qgray">100% de seguridad en el pago</p>
                     </div>
                 </div>
             </div>
@@ -280,9 +280,9 @@ function BestServices() {
                     </div>
                     <div>
                         <p className="text-black text-[15px] font-bold tracking-wide mb-1">
-                            Best Quality
+                            Calidad
                         </p>
-                        <p className="text-sm text-qgray">Original Product Guarenteed</p>
+                        <p className="text-sm text-qgray">Producto garantizado</p>
                     </div>
                 </div>
             </div>

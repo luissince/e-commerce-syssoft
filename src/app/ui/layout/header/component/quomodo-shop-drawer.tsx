@@ -137,19 +137,19 @@ const QuomodoShopDrawer = () => {
                     <div className="category-item mt-5 w-full">
                         <ul className="categories-list">
 
-                            <MenuItem label={"Home"} href="/" icon={<MdHome />} />
+                            <MenuItem label={"Inicio"} href="/" icon={<MdHome />} />
 
-                            <MenuItem label={"Shop"} href="/all-products" icon={<FaShoppingCart />} />
+                            <MenuItem label={"Tienda"} href="/all-products" icon={<FaShoppingCart />} />
 
-                            <MenuItem type="button" label={"Pages"} icon={<IoDocumentText />}>
-                                <MenuItem label={"Privacy Policy"} href="/privacy-policy" icon={<FiMinus />} />
-                                <MenuItem label={"Terms And Condition"} href="/terms-condition" icon={<FiMinus />} />
+                            <MenuItem type="button" label={"Páginas"} icon={<IoDocumentText />}>
+                                <MenuItem label={"Politica de Privacidad"} href="/privacy-policy" icon={<FiMinus />} />
+                                <MenuItem label={"Terminos y Condiciones"} href="/terms-condition" icon={<FiMinus />} />
                             </MenuItem>
 
 
-                            <MenuItem label={"About"} href="/about" icon={<IoIosBusiness />} />
+                            <MenuItem label={"Acerca de"} href="/about" icon={<IoIosBusiness />} />
 
-                            <MenuItem label={"Contact"} href="/contact" icon={<RiContactsBook2Fill />} />
+                            <MenuItem label={"Contacto"} href="/contact" icon={<RiContactsBook2Fill />} />
                         </ul>
                     </div>
                 </div>

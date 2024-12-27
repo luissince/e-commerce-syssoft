@@ -2,6 +2,7 @@ import { fetchIndexProducts } from "@/app/lib/data";
 import { ProductModel } from "@/app/lib/definitions";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Product from "./component/llist";
+import Link from "next/link";
 
 async function SellingProducts() {
     const products = await fetchIndexProducts(4) as ProductModel[];
@@ -12,16 +13,16 @@ async function SellingProducts() {
                 <div className="section-title flex justify-between items-center mb-5">
                     <div>
                         <h1 className="sm:text-3xl text-xl font-semibold text-qblacktext dark:text-white leading-none">
-                            Top Selling Products
+                            Productos Más Vendidos
                         </h1>
                     </div>
                     <div>
-                        <a href="/all-products">
+                        <Link href="/all-products">
                             <div className="flex space-x-2 items-center">
-                                <p className="text-base font-semibold text-qblacktext dark:text-white">View More</p>
+                                <p className="text-base font-semibold text-qblacktext dark:text-white">Ver Más</p>
                                 <FaArrowRightLong size={22} />
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
