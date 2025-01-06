@@ -5,7 +5,7 @@ function BannerCard() {
         <div className="banner-card xl:flex xl:space-x-[30px] xl:h-[600px] mb-[30px]">
             <div className="xl:w-[740px] w-full h-full">
                 <Image
-                    src="/assets/banner-1.2.png"
+                    src="/assets/banner-1.png"
                     width={740}
                     height={600}
                     alt=""
