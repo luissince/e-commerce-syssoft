@@ -257,3 +257,18 @@ export async function fetchLoadCompany(): Promise<CompanyModel | null> {
         return null;
     }
 }
+
+export async function fetchImagesCompany(): Promise<CompanyModel | null> {
+    try {
+        const response = await axios.get<CompanyModel>(`${process.env.APP_BACK_END}/api/empresa/images/web`, {
+            headers: {
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache',
+                'Expires': '0',
+            }
+        });
+        return response.data;
+    } catch (error) {
+        return null;
+    }
+}

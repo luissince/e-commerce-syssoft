@@ -1,46 +1,47 @@
 import Image from "next/image";
 import Link from "next/link";
-import { fetchListBranchs, fetchLoadCompany } from "@/app/lib/data";
+import { fetchImagesCompany, fetchListBranchs, fetchLoadCompany } from "@/app/lib/data";
 import { BranchModel, CompanyModel } from "@/app/lib/definitions";
 import React from "react";
 import Logo from "./component/logo";
 
 export default async function Footer() {
 
-  const resultBranchs = await fetchListBranchs() as BranchModel[];
-  const resultCompany = await fetchLoadCompany() as CompanyModel;
+  const branchs = await fetchListBranchs() as BranchModel[];
+  const company = await fetchLoadCompany() as CompanyModel;
+  const images = await fetchImagesCompany() as CompanyModel;
 
   return (
     <footer className="footer-section-wrapper bg-white dark:bg-black ">
       <div className="container max-w-screen-x mx-auto px-2 md:px-6 pt-[56px]">
        {/* Start Logo */}
-          <Logo />
+          <Logo {...images} />
        {/* End Logo */}
         <div className="lg:flex justify-between mb-[50px]">
           <div className="flex-1 lg:flex">
             <div className="lg:w-1/3 lg:flex lg:flex-col w-full mb-10 lg:mb-0">
               <div className="mb-5">
                 <h6 className="text-base font-medium text-[#2F2F2F] dark:text-[#8b8b8b]">
-                {resultCompany.nombreEmpresa}
+                {company.nombreEmpresa}
                 </h6>
               </div>
 
               <div className="flex flex-col space-y-4">
                 <div className="text-qgray  dark:text-[#ffffff] text-sm">
                   <span>
-                    {resultCompany.email}
+                    {company.email}
                   </span>
                 </div>
 
                 <div className="text-qgray  dark:text-[#ffffff] text-sm">
                   <span>
-                    {resultCompany.paginaWeb}
+                    {company.paginaWeb}
                   </span>
                 </div>
 
                 <div className="text-qgray  dark:text-[#ffffff] text-sm">
                   <span>
-                    {resultCompany.horarioAtencion}
+                    {company.horarioAtencion}
                   </span>
                 </div>
               </div>
@@ -126,7 +127,7 @@ export default async function Footer() {
                 <div>
                   <ul className="flex flex-col space-y-3">
                     {
-                      resultBranchs.map((item, index) => (
+                      branchs.map((item, index) => (
                         <React.Fragment key={index}>
                           <li>
                             <p className="text-black dark:text-[#ffffff] text-sm capitalize mb-1.5">

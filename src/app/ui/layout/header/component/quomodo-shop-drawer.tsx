@@ -1,4 +1,5 @@
 'use client'
+import { CompanyModel } from "@/app/lib/definitions";
 import { HeartIcon } from "@/app/ui/component/icons";
 import Image from "next/image";
 import Link from "next/link";
@@ -83,19 +84,29 @@ const MenuItem: React.FC<MenuItemProps> = ({ type = "link", label, href, icon, c
     );
 }
 
-const QuomodoShopDrawer = () => {
+const QuomodoShopDrawer = (company: CompanyModel) => {
     const [isClicked, setIsClicked] = useState(false);
 
     return (
         <>
-            <div className="lg:hidden block w-full h-[60px] bg-white dark:bg-black">
-                <div className="w-full h-full flex justify-between items-center px-5">
+            <div className="lg:hidden block w-full bg-white dark:bg-black">
+                <div className="w-full h-full flex justify-between items-center p-5">
                     <button className="" onClick={() => setIsClicked(true)}>
                         <HiOutlineMenu size={24} />
                     </button>
-                    <div>
-                        <Image width="152" height="36" src="/assets/logo.svg" alt="logo" priority={true} />
+
+                    <div className="relative flex items-center h-full">
+                        <div className="relative w-[152px] h-[48px]">
+                            <Image
+                                src={company.rutaImage ?? "/assets/logo.svg"}
+                                alt={company.nombreEmpresa ?? "logo"}
+                                fill
+                                className="object-contain"
+                                priority
+                            />
+                        </div>
                     </div>
+
                     <div className="relative cursor-pointer">
                         <Link rel="noopener noreferrer" href="/cart">
                             <BsBag size={20} />

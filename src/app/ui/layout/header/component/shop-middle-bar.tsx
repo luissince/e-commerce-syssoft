@@ -9,7 +9,7 @@ import { useDebouncedCallback } from 'use-debounce';
 import { searchAction } from "@/app/lib/actions";
 import { useAppDispatch, useAppSelector } from "@/app/lib/hooks";
 import { removeFromCart, selectCart } from "@/app/lib/features/shoppingCardSlice";
-import { CartModel } from "@/app/lib/definitions";
+import { CartModel, CompanyModel } from "@/app/lib/definitions";
 import { formatDecimal, rounded } from "@/helper/util";
 import { BsBag } from "react-icons/bs";
 
@@ -54,11 +54,11 @@ const CartWrapper: React.FC<CartModel> = (cart) => {
                                                 </div>
                                             </div>
                                             <button className="mt-[20px] mr-[15px] inline-flex cursor-pointer"
-                                            onClick={()=>{
-                                                dispatch(removeFromCart({
-                                                    idProducto: item.producto.idProducto
-                                                }));
-                                            }}>
+                                                onClick={() => {
+                                                    dispatch(removeFromCart({
+                                                        idProducto: item.producto.idProducto
+                                                    }));
+                                                }}>
                                                 <CloseIcon />
                                             </button>
                                         </li>
@@ -102,7 +102,7 @@ const CartWrapper: React.FC<CartModel> = (cart) => {
     );
 }
 
-export default function ShopMiddleBar() {
+export default function ShopMiddleBar(company: CompanyModel) {
     const cart = useAppSelector(selectCart);
 
     const [mounted, setMounted] = useState<boolean>(false);
@@ -132,13 +132,22 @@ export default function ShopMiddleBar() {
     }
 
     return (
-        <div className="w-full h-[86px] bg-white dark:bg-black lg:block hidden">
+        <div className="w-full bg-white dark:bg-black lg:block hidden py-5">
             <div className="container max-w-screen-x mx-auto md:px-6 h-full">
                 <div className="flex justify-between items-center h-full">
-                    <Link href={"/"} className="cursor-pointer">
-                        <Image width="152" height="36" src="/assets/logo.svg" alt="logo" priority={true} />
-                        {/* <Image width="152" height="36" src={resolvedTheme === 'dark' ? '/assets/logo-light.webp' : '/assets/logo-dark.webp'} alt="logo" priority={true} /> */}
-                    </Link>
+                    <div className="relative flex items-center h-full">
+                        <Link href={"/"} className="cursor-pointer">
+                            <div className="relative w-[152px] h-[48px]">
+                                <Image
+                                    src={company.rutaImage ?? "/assets/logo.svg"} alt={company.nombreEmpresa ?? "logo"}
+                                    fill
+                                    className="object-contain"
+                                    priority
+                                />
+                                {/* <Image width="152" height="36" src={resolvedTheme === 'dark' ? '/assets/logo-light.webp' : '/assets/logo-dark.webp'} alt="logo" priority={true} /> */}
+                            </div>
+                        </Link>
+                    </div>
 
                     <form action={searchAction} className="w-[517px] h-[44px]">
                         <div className="w-full h-full flex items-center  border border-gray-300">

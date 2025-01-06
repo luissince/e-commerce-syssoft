@@ -129,6 +129,7 @@ export interface CompanyModel {
     paginaWeb: string;
     rutaLogo: string;
     rutaImage: string;
+    rutaIcon: string;
     horarioAtencion: string;
     acercaNosotros: string;
     politicasPrivacidad: string;
