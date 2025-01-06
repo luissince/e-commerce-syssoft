@@ -1,4 +1,3 @@
-import axios from "axios"
 import { AttributeModel, BranchModel, BrandModel, CategoryModel, CompanyModel, ProductModel, ProductPagesModel, RangePriceModel } from "./definitions";
 import { DarkIcon, LightIcon, SpanishIcon, SystemIcon, UsaIcon } from "../ui/component/icons";
 
@@ -41,14 +40,11 @@ export const listThemes: ItemListShopTopBarProps[] = [
 
 export const fetchListCategories = async (): Promise<CategoryModel[]> => {
     try {
-        const response = await axios.get<CategoryModel[]>(`${process.env.APP_BACK_END}/api/categoria/combo`, {
-            headers: {
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
-                'Expires': '0',
-            }
+        const response = await fetch(`${process.env.APP_BACK_END}/api/categoria/combo`, {
+            next: { revalidate: 0 }
         });
-        return response.data;
+        const data = await response.json();
+        return data;
     } catch (error) {
         return [];
     }
@@ -56,14 +52,9 @@ export const fetchListCategories = async (): Promise<CategoryModel[]> => {
 
 export const fetchListBrands = async (): Promise<BrandModel[]> => {
     try {
-        const response = await axios.get<BrandModel[]>(`${process.env.APP_BACK_END}/api/marca/combo`, {
-            headers: {
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
-                'Expires': '0',
-            }
-        });
-        return response.data;
+        const response = await fetch(`${process.env.APP_BACK_END}/api/marca/combo`);
+        const data = await response.json();
+        return data;
     } catch (error) {
         return [];
     }
@@ -71,14 +62,11 @@ export const fetchListBrands = async (): Promise<BrandModel[]> => {
 
 export const fetchListColor = async (): Promise<AttributeModel[]> => {
     try {
-        const response = await axios.get<AttributeModel[]>(`${process.env.APP_BACK_END}/api/atributo/combo?idTipoAtributo=TA0001`, {
-            headers: {
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
-                'Expires': '0',
-            }
+        const response = await fetch(`${process.env.APP_BACK_END}/api/atributo/combo?idTipoAtributo=TA0001`, {
+            next: { revalidate: 0 }
         });
-        return response.data;
+        const data = await response.json();
+        return data;
     } catch (error) {
         return [];
     }
@@ -86,14 +74,11 @@ export const fetchListColor = async (): Promise<AttributeModel[]> => {
 
 export const fetchListSize = async (): Promise<AttributeModel[]> => {
     try {
-        const response = await axios.get<AttributeModel[]>(`${process.env.APP_BACK_END}/api/atributo/combo?idTipoAtributo=TA0002`, {
-            headers: {
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
-                'Expires': '0',
-            }
+        const response = await fetch(`${process.env.APP_BACK_END}/api/atributo/combo?idTipoAtributo=TA0002`, {
+            next: { revalidate: 0 }
         });
-        return response.data;
+        const data = await response.json();
+        return data;
     } catch (error) {
         return [];
     }
@@ -101,14 +86,11 @@ export const fetchListSize = async (): Promise<AttributeModel[]> => {
 
 export const fetchListFlavor = async (): Promise<AttributeModel[]> => {
     try {
-        const response = await axios.get<AttributeModel[]>(`${process.env.APP_BACK_END}/api/atributo/combo?idTipoAtributo=TA0003`, {
-            headers: {
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
-                'Expires': '0',
-            }
+        const response = await fetch(`${process.env.APP_BACK_END}/api/atributo/combo?idTipoAtributo=TA0003`, {
+            next: { revalidate: 0 }
         });
-        return response.data;
+        const data = await response.json();
+        return data;
     } catch (error) {
         return [];
     }
@@ -116,14 +98,11 @@ export const fetchListFlavor = async (): Promise<AttributeModel[]> => {
 
 export const fetchRangePrice = async (): Promise<RangePriceModel> => {
     try {
-        const response = await axios.get<RangePriceModel>(`${process.env.APP_BACK_END}/api/producto/filter/web/rangeprice`, {
-            headers: {
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
-                'Expires': '0',
-            }
+        const response = await fetch(`${process.env.APP_BACK_END}/api/producto/filter/web/rangeprice`, {
+            next: { revalidate: 0 }
         });
-        return response.data;
+        const data = await response.json();
+        return data;
     } catch (error) {
         const response: RangePriceModel = {
             minimo: 0,
@@ -135,19 +114,22 @@ export const fetchRangePrice = async (): Promise<RangePriceModel> => {
 
 export const fetchFilteredProducts = async (query: string, currentPage: number, totalPage: number): Promise<ProductModel[] | []> => {
     try {
-        const response = await axios.get<ProductModel[]>(`${process.env.APP_BACK_END}/api/producto/filter/web`, {
-            params: {
-                "buscar": query,
-                "posicionPagina": currentPage,
-                "filasPorPagina": totalPage
-            },
-            headers: {
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
-                'Expires': '0',
-            }
+        const params = new URLSearchParams({
+            buscar: query,
+            posicionPagina: currentPage.toString(),
+            filasPorPagina: totalPage.toString()
         });
-        return response.data;
+
+        const response = await fetch(
+            `${process.env.APP_BACK_END}/api/producto/filter/web?${params}`, {
+            next: { revalidate: 0 }
+        });
+
+        if (!response.ok) {
+            return [];
+        }
+
+        return response.json();
     } catch (error) {
         return [];
     }
@@ -155,18 +137,21 @@ export const fetchFilteredProducts = async (query: string, currentPage: number, 
 
 export const fetchProductsPages = async (): Promise<ProductPagesModel | number> => {
     try {
-        const response = await axios.get<ProductPagesModel>(`${process.env.APP_BACK_END}/api/producto/filter/web/pages`, {
-            params: {
-                "opcion": 0,
-                "buscar": ""
-            },
-            headers: {
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
-                'Expires': '0',
-            }
+        const params = new URLSearchParams({
+            opcion: '0',
+            buscar: ''
         });
-        return response.data;
+
+        const response = await fetch(
+            `${process.env.APP_BACK_END}/api/producto/filter/web/pages?${params}`, {
+            next: { revalidate: 0 }
+        });
+
+        if (!response.ok) {
+            return 0;
+        }
+
+        return response.json();
     } catch (error) {
         return 0;
     }
@@ -174,18 +159,20 @@ export const fetchProductsPages = async (): Promise<ProductPagesModel | number> 
 
 export const fetchIndexProducts = async (limit: number): Promise<ProductModel[] | []> => {
     try {
-        const response = await axios.get<ProductModel[]>(`${process.env.APP_BACK_END}/api/producto/filter/web/index`, {
-            params: {
-                limit: limit,
-            },
-            headers: {
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
-                'Expires': '0',
-            }
+        const params = new URLSearchParams({
+            limit: limit.toString(),
         });
 
-        return response.data;
+        const response = await fetch(
+            `${process.env.APP_BACK_END}/api/producto/filter/web/index?${params}`, {
+            next: { revalidate: 0 }
+        });
+
+        if (!response.ok) {
+            return [];
+        }
+
+        return response.json();
     } catch (error) {
         return [];
     }
@@ -193,17 +180,20 @@ export const fetchIndexProducts = async (limit: number): Promise<ProductModel[] 
 
 export const fetchProductByCode = async (code: string, url?: string): Promise<ProductModel | null> => {
     try {
-        const response = await axios.get<ProductModel>(`${process.env.APP_BACK_END || url}/api/producto/filter/web/id`, {
-            params: {
-                "codigo": code,
-            },
-            headers: {
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
-                'Expires': '0',
-            }
+        const params = new URLSearchParams({
+            "codigo": code,
         });
-        return response.data;
+
+        const response = await fetch(
+            `${process.env.APP_BACK_END || url}/api/producto/filter/web/id?${params}`, {
+            next: { revalidate: 0 }
+        });
+
+        if (!response.ok) {
+            return null;
+        }
+
+        return response.json();
     } catch (error) {
         return null;
     }
@@ -211,33 +201,35 @@ export const fetchProductByCode = async (code: string, url?: string): Promise<Pr
 
 export const fetchProducRelatedtByCode = async (idCategoria: string): Promise<Array<ProductModel>> => {
     try {
-        const response = await axios.get<ProductModel[]>(`${process.env.APP_BACK_END}/api/producto/filter/web/related/id`, {
-            params: {
-                "idCategoria": idCategoria,
-            },
-            headers: {
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
-                'Expires': '0',
-            }
+        const params = new URLSearchParams({
+            "idCategoria": idCategoria,
         });
-        return response.data;
+
+        const response = await fetch(
+            `${process.env.APP_BACK_END}/api/producto/filter/web/related/id?${params}`, {
+            next: { revalidate: 0 }
+        });
+
+        if (!response.ok) {
+            return [];
+        }
+
+        return response.json();
     } catch (error) {
         return [];
     }
 }
 
-
-export async function fetchListBranchs(): Promise<BranchModel[] | null> {
+export async function fetchListBranchs(): Promise<BranchModel[]> {
     try {
-        const response = await axios.get<BranchModel[]>(`${process.env.APP_BACK_END }/api/sucursal/list/web`, {
-            headers: {
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
-                'Expires': '0',
-            }
+        const response = await fetch(`${process.env.APP_BACK_END}/api/sucursal/list/web`, {
+            next: { revalidate: 0 }
         });
-        return response.data;
+
+        if (!response.ok) {
+            return [];
+        }
+        return response.json();
     } catch (error) {
         return [];
     }
@@ -245,14 +237,15 @@ export async function fetchListBranchs(): Promise<BranchModel[] | null> {
 
 export async function fetchLoadCompany(): Promise<CompanyModel | null> {
     try {
-        const response = await axios.get<CompanyModel>(`${process.env.APP_BACK_END}/api/empresa/load/web`, {
-            headers: {
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
-                'Expires': '0',
-            }
+        const response = await fetch(`${process.env.APP_BACK_END}/api/empresa/load/web`, {
+            next: { revalidate: 0 }
         });
-        return response.data;
+
+        if (!response.ok) {
+            return null;
+        }
+        
+        return response.json();
     } catch (error) {
         return null;
     }
@@ -260,14 +253,15 @@ export async function fetchLoadCompany(): Promise<CompanyModel | null> {
 
 export async function fetchImagesCompany(): Promise<CompanyModel | null> {
     try {
-        const response = await axios.get<CompanyModel>(`${process.env.APP_BACK_END}/api/empresa/images/web`, {
-            headers: {
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
-                'Expires': '0',
-            }
+        const response = await fetch(`${process.env.APP_BACK_END}/api/empresa/images/web`, {
+            next: { revalidate: 0 }
         });
-        return response.data;
+
+        if (!response.ok) {
+            return null;
+        }
+
+        return response.json();
     } catch (error) {
         return null;
     }
