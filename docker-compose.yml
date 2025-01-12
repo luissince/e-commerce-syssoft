@@ -54,7 +54,7 @@ services:
       - luis
     # Mapeo de puertos: Mapea el puerto 6504 del host al puerto 80 del contenedor
     ports:
-      - 6506:3000
+      - 6507:3000
     # Nombre del contenedor
     container_name: web-ecommerce-importmuneli
     # Configuración para reiniciar siempre el contenedor
