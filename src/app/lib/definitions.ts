@@ -135,3 +135,13 @@ export interface CompanyModel {
     politicasPrivacidad: string;
     terminosCondiciones: string;
 }
+
+export interface TypeOfDocumentModel {
+    idTipoDocumento: string;
+    nombre: string;
+    descripcion: string;
+    longitud: number;
+    obligado: boolean;
+    codigo: string;
+    estado: boolean;
+}

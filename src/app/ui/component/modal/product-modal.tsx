@@ -287,7 +287,7 @@ const ProductoModal: React.FC<ProductoModal> = ({ isOpen, code, onClose }) => {
                         className="px-5 h-10 text-sm font-semibold bg-search-btn text-black"
                         type="submit"
                     >
-                        Add to Cart
+                        Agregar al carrito
                     </button>
                     <p className="px-4"></p>
                     <button

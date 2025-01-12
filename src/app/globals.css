@@ -43,46 +43,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .my-select-box .my-select-box-section {
-    border-radius: 5px;
-    box-shadow: 0 0 0 1px rgba(68,68,68,.11);
-    box-sizing: border-box;
-    margin-top: 4px;
-    opacity: 0;
-    padding: 0;
-    position: absolute;
-    top: 100%;
-    -webkit-transform: scale(.75) translateY(-21px);
-    transform: scale(.75) translateY(-21px);
-    position: absolute;
-    -webkit-transform-origin: 50% 0;
-    transform-origin: 50% 0;
     transition: all .2s cubic-bezier(.5, 0, 0, 1.25), opacity .15s ease-out;
-    visibility: hidden;
-    z-index: 9999;
-}
-
-.my-select-box .my-select-box-section ul {
-    padding: 0;
-}
-
-.my-select-box .my-select-box-section li {
-    cursor: pointer;
-    font-weight: 400;
-    line-height: 40px;
-    list-style: none;
-    min-height: 40px;
-    outline: none;
-    padding-left: 18px;
-    padding-right: 29px;
-    text-align: left;
-    transition: all .2s;
-}
-
-.my-select-box .my-select-box-section.open {
-    opacity: 1;
-    -webkit-transform: scale(1) translateY(0);
-    transform: scale(1) translateY(0);
-    visibility: visible;
 }
 
 .slick-slider .slick-slide {

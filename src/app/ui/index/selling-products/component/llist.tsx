@@ -82,7 +82,7 @@ function Product({ codigo, nombre, imagen, precio }: ProductModel) {
                                 >
                                     <div className="flex items-center justify-center space-x-3">
                                         <BagIcon />
-                                        <span>Add To Cart</span>
+                                        <span>Agregar al carrito</span>
                                     </div>
                                 </button>
                             </div>

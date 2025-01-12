@@ -224,10 +224,10 @@ const Body = () => {
                 <div className="w-full mt-[30px] flex sm:justify-end justify-start">
                     <div className="sm:flex sm:space-x-[30px] items-center">
                         <button type="button">
-                            <div className="w-full text-sm font-semibold text-qred mb-5 sm:mb-0">Clean Wishlist</div>
+                            <div className="w-full text-sm font-semibold text-qred mb-5 sm:mb-0">Limpiar lista de deseos</div>
                         </button>
                         <button type="button" className="w-[180px] h-[50px] bg-qyellow text-sm font-semibold text-black outline-0">
-                            <div className="w-full text-sm font-semibold">Add to Cart All</div>
+                            <div className="w-full text-sm font-semibold">Agregar todo al carrito</div>
                         </button>
                     </div>
                 </div>

@@ -7,6 +7,9 @@ import { useFormState, useFormStatus } from "react-dom";
 import { submitCheckoutForm } from "@/app/lib/actions";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { IoCloseCircle } from "react-icons/io5";
+import Select, { OptionSelect } from "../single-product/main-product/component/select";
+import { TypeOfDocumentModel } from "@/app/lib/definitions";
+import { MdError } from "react-icons/md";
 
 interface ErrorItemProps {
     name: string;
@@ -96,12 +99,39 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({ ...props }, ref) => {
 
 Input.displayName = 'Input';
 
+interface TextAreaProps extends React.InputHTMLAttributes<HTMLTextAreaElement> {
+    label?: string;
+}
+
+const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({ ...props }, ref) => {
+    return (
+        <div className="input-com w-full h-full">
+            <label className="input-label capitalize block mb-2 text-qgray text-[13px] font-normal">
+                {props.label}
+            </label>
+            <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative">
+                <textarea
+                    ref={ref}
+                    {...props}
+                    rows={4}
+                    className="placeholder:text-sm text-sm py-3 px-6 text-dark-gray font-normal bg-white focus:ring-0 focus:outline-none w-full"
+                />
+            </div>
+        </div>
+    );
+});
+
+TextArea.displayName = 'TextArea';
+
+
 interface Props {
     inputType: string;
+    listTypeOfDocument: TypeOfDocumentModel[];
 }
 
 const Body = (props: Props) => {
     const [mounted, setMounted] = useState(false);
+    const [typeDocument, setTypeDocument] = useState<string | number>('');
     const cart = useAppSelector((state: RootState) => state!.cart);
 
     const initialState: InitialProps = {
@@ -122,9 +152,14 @@ const Body = (props: Props) => {
         return null;
     }
 
+    const handleSelectChange = (value: OptionSelect) => {
+        setTypeDocument(value.id);
+    };
+
     return (
         <div className="w-full">
             <form ref={ref} action={(formData: FormData) => {
+                formData.append('typeDocument', typeDocument.toString());
                 formData.append('orders', JSON.stringify(cart.items));
                 formAction(formData);
             }} className="container max-w-screen-x mx-auto md:px-6">
@@ -171,13 +206,92 @@ const Body = (props: Props) => {
                         <div className="form-area">
                             <div className="flex space-x-5 items-center mb-6">
                                 <div className="w-full">
+                                    <Select
+                                        title="Tipo de Documento*"
+                                        options={props.listTypeOfDocument.map((item) => (
+                                            { id: item.idTipoDocumento, name: item.nombre }
+                                        ))}
+                                        onChange={handleSelectChange}
+                                    />
+
+                                    {
+                                        state.errors && state.errors.find(item => item.name === 'typeDocument')?.errors.map((error, index) => (
+                                            <div key={index} className="flex items-center space-x-1 bg-red-100 text-red-800 mb-2 px-3 py-2">
+                                                <MdError size={16} />
+                                                <span className="text-xs">{error}</span>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                            </div>
+
+                            <div className="flex space-x-5 items-center mb-6">
+                                <div className="w-full">
                                     <Input
                                         label="Documento de Identidad*"
                                         placeholder="10909034223"
-                                        id="id"
-                                        name="id"
+                                        id="numberIdentity"
+                                        name="numberIdentity"
                                         autoFocus={true}
+                                        onPaste={(event: React.ClipboardEvent<HTMLInputElement>) => {
+                                            const clipboardData = event.clipboardData;
+                                            const pastedData = clipboardData.getData("text");
+
+                                            // Validar el formato completo para texto pegado
+                                            const isValidFormat = /^[0-9]+$/.test(pastedData);
+
+                                            if (!isValidFormat) {
+                                                // Bloquear el pegado si no es válido
+                                                event.preventDefault();
+                                            } else {
+                                                // O puedes validar todo el valor resultante si se pega
+                                                const target = event.target as HTMLInputElement;
+                                                const newValue = target.value + pastedData;
+                                                if (!/^[0-9]*$/.test(newValue)) {
+                                                    event.preventDefault();
+                                                }
+                                            }
+                                        }}
+                                        onKeyDown={(event: React.KeyboardEvent<HTMLInputElement>) => {
+                                            const target = event.target as HTMLInputElement;
+                                            const key = event.key;
+
+                                            // Lista de teclas permitidas
+                                            const allowedKeys = [
+                                                "Backspace",
+                                                "Delete",
+                                                "ArrowLeft",
+                                                "ArrowRight",
+                                                "Tab",
+                                            ];
+
+                                            // Verifica si la tecla es un número, permitida o un atajo de teclado
+                                            const isNumber = /^[0-9]$/.test(key);
+                                            const isAllowedKey = allowedKeys.includes(key);
+                                            const isShortcut =
+                                                (event.ctrlKey || event.metaKey) && (key === "c" || key === "v" || key === "x");
+
+                                            // Si es una tecla "muerta" o no está permitida, se bloquea
+                                            if (key === "Dead" || !(isNumber || isAllowedKey || isShortcut)) {
+                                                event.preventDefault();
+                                                return;
+                                            }
+                                        }}
+                                        onInput={(event) => {
+                                            const target = event.target as HTMLInputElement;
+                                            const cleanValue = target.value.replace(/[[\]`´'\\]/g, '');
+                                            target.value = cleanValue;
+                                        }}
                                     />
+
+                                    {
+                                        state.errors && state.errors.find(item => item.name === 'numberIdentity')?.errors.map((error, index) => (
+                                            <div key={index} className="flex items-center space-x-1 bg-red-100 text-red-800 mb-2 px-3 py-2">
+                                                <MdError size={16} />
+                                                <span className="text-xs">{error}</span>
+                                            </div>
+                                        ))
+                                    }
                                 </div>
                             </div>
 
@@ -189,6 +303,15 @@ const Body = (props: Props) => {
                                         id="firstname"
                                         name="firstname"
                                     />
+
+                                    {
+                                        state.errors && state.errors.find(item => item.name === 'firstname')?.errors.map((error, index) => (
+                                            <div key={index} className="flex items-center space-x-1 bg-red-100 text-red-800 mb-2 px-3 py-2">
+                                                <MdError size={16} />
+                                                <span className="text-xs">{error}</span>
+                                            </div>
+                                        ))
+                                    }
                                 </div>
 
                                 <div className="flex-1">
@@ -198,6 +321,15 @@ const Body = (props: Props) => {
                                         id="lastname"
                                         name="lastname"
                                     />
+
+                                    {
+                                        state.errors && state.errors.find(item => item.name === 'lastname')?.errors.map((error, index) => (
+                                            <div key={index} className="flex items-center space-x-1 bg-red-100 text-red-800 mb-2 px-3 py-2">
+                                                <MdError size={16} />
+                                                <span className="text-xs">{error}</span>
+                                            </div>
+                                        ))
+                                    }
                                 </div>
                             </div>
 
@@ -209,22 +341,31 @@ const Body = (props: Props) => {
                                         id="email"
                                         name="email"
                                     />
+
+                                    {
+                                        state.errors && state.errors.find(item => item.name === 'email')?.errors.map((error, index) => (
+                                            <div key={index} className="flex items-center space-x-1 bg-red-100 text-red-800 mb-2 px-3 py-2">
+                                                <MdError size={16} />
+                                                <span className="text-xs">{error}</span>
+                                            </div>
+                                        ))
+                                    }
                                 </div>
 
                                 <div className="flex-1">
                                     <Input
                                         type={props.inputType}
-                                        label="Teléfono*"
+                                        label="Celular*"
                                         placeholder="+51 999999999"
                                         id="phone"
                                         name="phone"
                                         onPaste={(event: React.ClipboardEvent<HTMLInputElement>) => {
                                             const clipboardData = event.clipboardData;
                                             const pastedData = clipboardData.getData("text");
-            
+
                                             // Validar el formato completo para texto pegado
                                             const isValidFormat = /^[0-9+()-]+$/.test(pastedData);
-            
+
                                             if (!isValidFormat) {
                                                 // Bloquear el pegado si no es válido
                                                 event.preventDefault();
@@ -241,7 +382,7 @@ const Body = (props: Props) => {
                                             const target = event.target as HTMLInputElement;
                                             const key = event.key;
                                             const inputValue = target.value;
-            
+
                                             // Lista de teclas permitidas
                                             const allowedKeys = [
                                                 "Backspace",
@@ -254,19 +395,19 @@ const Body = (props: Props) => {
                                                 "(",
                                                 ")"
                                             ];
-            
+
                                             // Verifica si la tecla es un número, permitida o un atajo de teclado
                                             const isNumber = /^[0-9]$/.test(key);
                                             const isAllowedKey = allowedKeys.includes(key);
                                             const isShortcut =
                                                 (event.ctrlKey || event.metaKey) && (key === "c" || key === "v" || key === "x");
-            
+
                                             // Si es una tecla "muerta" o no está permitida, se bloquea
                                             if (key === "Dead" || !(isNumber || isAllowedKey || isShortcut)) {
                                                 event.preventDefault();
                                                 return;
                                             }
-            
+
                                             // Evitar duplicados de caracteres únicos como "+" y "-"
                                             if ((key === "+" || key === "-") && inputValue.includes(key)) {
                                                 event.preventDefault();
@@ -278,6 +419,15 @@ const Body = (props: Props) => {
                                             target.value = cleanValue;
                                         }}
                                     />
+
+                                    {
+                                        state.errors && state.errors.find(item => item.name === 'phone')?.errors.map((error, index) => (
+                                            <div key={index} className="flex items-center space-x-1 bg-red-100 text-red-800 mb-2 px-3 py-2">
+                                                <MdError size={16} />
+                                                <span className="text-xs">{error}</span>
+                                            </div>
+                                        ))
+                                    }
                                 </div>
                             </div>
 
@@ -285,6 +435,26 @@ const Body = (props: Props) => {
                                 <div className="w-full">
                                     <Input
                                         label="Dirección*"
+                                        placeholder="Calle 123, 123 123"
+                                        id="address"
+                                        name="address"
+                                    />
+
+                                    {
+                                        state.errors && state.errors.find(item => item.name === 'address')?.errors.map((error, index) => (
+                                            <div key={index} className="flex items-center space-x-1 bg-red-100 text-red-800 mb-2 px-3 py-2">
+                                                <MdError size={16} />
+                                                <span className="text-xs">{error}</span>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                            </div>
+
+                            <div className="flex space-x-5 items-center mb-6">
+                                <div className="w-full">
+                                    <TextArea
+                                        label="Mensaje del pedido"
                                         placeholder="Calle 123, 123 123"
                                         id="address"
                                         name="address"
