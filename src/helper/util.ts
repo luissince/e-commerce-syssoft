@@ -122,11 +122,13 @@ export const numberFormat = (value: number, currency: string = 'PEN'): string =>
 };
 
 export function isEmpty(object: any) {
+  const isBrowser = typeof window !== 'undefined';
+
   if (object === null || typeof object === 'undefined') {
     return true;
   }
 
-  if (Array.isArray(object) || object instanceof FileList) {
+  if (Array.isArray(object) || ( isBrowser && object instanceof FileList)) {
     return object.length === 0;
   }
 
@@ -139,7 +141,11 @@ export function isEmpty(object: any) {
   }
 
   return false;
-};
+}
+
+export function isEmail(email: string) {
+  return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+}
 
 export function keyNumberFloat(event: React.KeyboardEvent<HTMLInputElement>, enterCallback: () => void): void {
   const key: string = event.key;

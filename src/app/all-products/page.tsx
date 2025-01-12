@@ -41,11 +41,11 @@ export default async function AllProducts({ searchParams }: AllProductsProps) {
           <div className="container max-w-screen-x mx-auto px-2 md:px-6">
             <div className="font-normal text-[13px] text-qblack mb-[23px]">
               <span>
-                <a href="/"><span className="mx-1 capitalize">home</span></a>
+                <a href="/"><span className="mx-1 capitalize">Inicio</span></a>
                 <span>/</span>
               </span>
               <span><a href="/profile">
-                <span className="mx-1 capitalize">productos</span></a>
+                <span className="mx-1 capitalize">Productos</span></a>
               </span>
             </div>
 
@@ -55,7 +55,7 @@ export default async function AllProducts({ searchParams }: AllProductsProps) {
 
                   <div className="filter-subject-item pb-10 border-b border-qgray-border">
                     <div className="subject-title mb-[30px]">
-                      <h1 className="text-black text-base font-medium">Product categories</h1>
+                      <h1 className="text-black text-base font-medium">Categorías</h1>
                     </div>
                     <div className="filter-items">
                       <Suspense fallback={<ListCategorySkeleton />}>
@@ -66,7 +66,7 @@ export default async function AllProducts({ searchParams }: AllProductsProps) {
 
                   <div className="filter-subject-item pb-10 border-b border-qgray-border mt-10">
                     <div className="subject-title mb-[30px]">
-                      <h1 className="text-black text-base font-500">Price Range</h1>
+                      <h1 className="text-black text-base font-500">Rango de precios</h1>
                     </div>
                     <Suspense fallback={<ListCategorySkeleton />}>
                       <ListRange />
@@ -75,7 +75,7 @@ export default async function AllProducts({ searchParams }: AllProductsProps) {
 
                   <div className="filter-subject-item pb-10 border-b border-qgray-border mt-10">
                     <div className="subject-title mb-[30px]">
-                      <h1 className="text-black text-base font-500">Brands</h1>
+                      <h1 className="text-black text-base font-500">Marcas</h1>
                     </div>
                     <div className="filter-items">
                       <Suspense fallback={<ListCategorySkeleton />}>
@@ -86,7 +86,7 @@ export default async function AllProducts({ searchParams }: AllProductsProps) {
 
                   <div className="filter-subject-item pb-10 border-b border-qgray-border mt-10">
                     <div className="subject-title mb-[30px]">
-                      <h1 className="text-black text-base font-500">Colors</h1>
+                      <h1 className="text-black text-base font-500">Colores</h1>
                     </div>
                     <div className="filter-items">
                       <Suspense fallback={<ListCategorySkeleton />}>
@@ -97,7 +97,7 @@ export default async function AllProducts({ searchParams }: AllProductsProps) {
 
                   <div className="filter-subject-item pb-10 border-b border-qgray-border mt-10">
                     <div className="subject-title mb-[30px]">
-                      <h1 className="text-black text-base font-500">Sizes</h1>
+                      <h1 className="text-black text-base font-500">Tamaños</h1>
                     </div>
                     <div className="filter-items">
                       <Suspense fallback={<ListCategorySkeleton />}>
@@ -108,7 +108,7 @@ export default async function AllProducts({ searchParams }: AllProductsProps) {
 
                   <div className="filter-subject-item pb-10 border-b border-qgray-border mt-10">
                     <div className="subject-title mb-[30px]">
-                      <h1 className="text-black text-base font-500">Flavors</h1>
+                      <h1 className="text-black text-base font-500">Sabores</h1>
                     </div>
                     <div className="filter-items">
                       <Suspense fallback={<ListCategorySkeleton />}>

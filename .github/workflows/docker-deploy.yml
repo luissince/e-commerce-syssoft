@@ -17,6 +17,8 @@ jobs:
         include:
           - environment: leatsac
             service: web-ecommerce-leatsac-services
+          - environment: importmuneli
+            service: web-ecommerce-importmuneli-services
 
     environment: ${{ matrix.environment }}
 

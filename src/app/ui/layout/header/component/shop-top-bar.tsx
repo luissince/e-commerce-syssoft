@@ -42,13 +42,13 @@ const ItemShopTopBar: React.FC<ItemShopTopBarProps> = ({ title, iconRight, iconL
             <div>
                 {iconRight}
             </div>
-            <div className="my-select-box text-sm font-norma relative w-fit">
-                <button type="button" className="my-select-box-btn"
+            <div className="my-select-box text-sm font-norma relative w-fit h-fit">
+                <button type="button" className="my-select-box-btn w-full h-full"
                     onClick={() => setOpenSize(!openSize)}>
                     <span className="text-[#222222] dark:text-white text-xs font-medium">{title}</span>
                 </button>
-                <div className={`my-select-box-section bg-white dark:bg-[#1a1a1a] left-auto right-0 w-[150px] ${openSize ? 'open' : ''}`} >
-                    <ul className="list">
+                <div className={`my-select-box-section w-40 absolute top-[100%]  origin-[50%_0%] border bg-white dark:bg-[#1a1a1a] mt-1 z-20 right-0 left-auto  ${openSize ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-75 translate-y-[-21px] invisible'}`} >
+                    <ul className="list shadow">
                         {children}
                     </ul>
                 </div>
@@ -131,7 +131,12 @@ const ShopTopBar = () => {
                             >
                                 <>
                                     {listThemes.map((item: ItemListShopTopBarProps, index: number) => (
-                                        <li key={index} className={`${item.value === theme ? "bg-[#f6f6f6] font-bold dark:bg-[#474545]" : ""} text-xs `} onClick={() => {
+                                        <li 
+                                        key={index} 
+                                        // className={`${item.value === theme ? "bg-[#f6f6f6] font-bold dark:bg-[#474545]" : ""} text-xs `} 
+                                        className={`cursor-pointer text-left outline-none py-2 px-2  
+                                            font-normal hover:bg-gray-100`}
+                                        onClick={() => {
                                             setTheme(item.value);
                                         }}>
                                             <div className="flex items-center">

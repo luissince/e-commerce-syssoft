@@ -101,7 +101,7 @@ const ProductCard = ({ image, width = 196, height = 196, code, title, priceOld, 
                             <span>
                                 <BagIcon />
                             </span>
-                            <span>Add To Cart</span>
+                            <span>Agregar al carrito</span>
                         </div>
                     </button>
                 </div>

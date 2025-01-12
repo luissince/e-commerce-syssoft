@@ -89,7 +89,7 @@ const Pagination: React.FC<PaginationProps> = ({ loading, data, totalPages, curr
         setPrevAndNextBtnClass(page);
     }
 
-    messagePaginacion.current = <p className="text-base text-gray-700">Showing <span className="font-medium">{data.length}</span> to <span className="font-medium">{totalPages}</span> paginations</p>;
+    messagePaginacion.current = <p className="text-base text-gray-700">Mostrando <span className="font-medium">{data.length}</span> de <span className="font-medium">{totalPages}</span> paginas</p>;
 
     const pageNumbers = [] as number[];
     for (let index = 1; index <= totalPages; index++) {

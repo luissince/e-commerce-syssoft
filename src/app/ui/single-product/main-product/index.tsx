@@ -338,7 +338,7 @@ const MainProduct: React.FC<ProductModel> = (product) => {
                                             </button>
                                         </div>
                                         <div className="flex-1 h-full">
-                                            <button type="button" className="bg-black text-white text-sm font-semibold w-full h-full" onClick={handleAddToCart}>Add To Cart</button>
+                                            <button type="button" className="bg-black text-white text-sm font-semibold w-full h-full" onClick={handleAddToCart}>Agregar al carrito</button>
                                         </div>
                                     </div>
                                     <div data-aos="fade-up" className="mb-[20px]">

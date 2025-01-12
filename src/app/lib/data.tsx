@@ -1,4 +1,4 @@
-import { AttributeModel, BranchModel, BrandModel, CategoryModel, CompanyModel, ProductModel, ProductPagesModel, RangePriceModel } from "./definitions";
+import { AttributeModel, BranchModel, BrandModel, CategoryModel, CompanyModel, ProductModel, ProductPagesModel, RangePriceModel, TypeOfDocumentModel } from "./definitions";
 import { DarkIcon, LightIcon, SpanishIcon, SystemIcon, UsaIcon } from "../ui/component/icons";
 
 export interface ItemListShopTopBarProps {
@@ -264,5 +264,21 @@ export async function fetchImagesCompany(): Promise<CompanyModel | null> {
         return response.json();
     } catch (error) {
         return null;
+    }
+}
+
+export async function fetchListTypeOfDocument(): Promise<TypeOfDocumentModel[]> {
+    try {
+        const response = await fetch(`${process.env.APP_BACK_END}/api/tipodocumento/combo`, {
+            next: { revalidate: 0 }
+        });
+
+        if (!response.ok) {
+            return [];
+        }
+
+        return response.json();
+    } catch (error) {
+        return [];
     }
 }

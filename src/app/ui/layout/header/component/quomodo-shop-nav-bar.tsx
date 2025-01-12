@@ -248,7 +248,7 @@ const Category = () => {
 
 const QuomodoShopNavBar = () => {
     return (
-        <div className="w-full h-[60px] relative z-30 bg-qyellow lg:block hidden">
+        <div className="w-full h-[60px] relative bg-qyellow lg:block hidden">
             <div className="container max-w-screen-x mx-auto md:px-6 h-full">
                 <div className="w-full h-full relative">
                     <div className="w-full h-full flex justify-between items-center">

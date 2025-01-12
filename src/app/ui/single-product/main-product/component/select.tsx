@@ -1,10 +1,20 @@
-'use client'
-
 import { useEffect, useRef, useState } from "react";
-import { ChevronDownIcon } from "../../../component/icons";
+import { IoIosArrowDown } from "react-icons/io";
 
-const Select = () => {
+export interface OptionSelect {
+    id: string | number;
+    name: string;
+}
+
+interface Props {
+    title: string;
+    options: OptionSelect[];
+    onChange?: (value: OptionSelect) => void;
+}
+
+const Select = ({ title, options, onChange }: Props) => {
     const [openSize, setOpenSize] = useState<boolean>(false);
+    const [selectedValue, setSelectedValue] = useState<OptionSelect | null>(null);
     const dropdownSizeRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -25,32 +35,47 @@ const Select = () => {
                 rootElement.removeEventListener('mousedown', handleClickOutside);
             }
         };
-    }, [openSize])
+    }, [openSize]);
+
+    const handleSelect = (value: OptionSelect) => {
+        setSelectedValue(value); // Actualiza el valor seleccionado
+        setOpenSize(false); // Cierra el dropdown
+        if (onChange) {
+            onChange(value); // Llama a la función onChange del padre si existe
+        }
+    };
 
     return (
-        <div data-aos="fade-up" className="product-size mb-[30px]" ref={dropdownSizeRef}>
-            <span className="text-sm font-normal uppercase text-qgray mb-[14px] inline-block">SIZE</span>
+        <div className="product-size" ref={dropdownSizeRef}>
+            <span className="text-sm font-normal text-qgray mb-[14px] inline-block">{title}</span>
             <div className="w-full">
-                <div className="border border-qgray-border h-[50px] flex justify-between items-center px-6 cursor-pointer">
-                    <div className="my-select-box text-sm font-normal relative w-full">
-                        <button type="button" className="my-select-box-btn px-6"
+                <div className="border border-qgray-border h-[50px] flex justify-between items-center cursor-pointer">
+                    <div className="my-select-box text-sm font-normal relative w-full h-full">
+                        <button type="button" className="w-full h-full flex justify-between items-center px-6"
                             onClick={() => setOpenSize(!openSize)}>
                             <div>
-                                <span className="text-[13px] text-qblack">Small</span>
-                            </div>
-                            <div className="flex space-x-10 items-center">
-                                <span className="text-[13px] text-qblack">3”W x 3”D x 7”H</span>
-                                <span>
-                                    <ChevronDownIcon width={22} color="#222222" />
+                                <span className="text-[13px] text-qblack">
+                                    {selectedValue?.name || "Selecciona una opción"} {/* Mostrar el valor seleccionado o un placeholder */}
                                 </span>
                             </div>
+                            <span>
+                                <IoIosArrowDown color="#000" size={20} />
+                            </span>
                         </button>
-                        <div className={`my-select-box-section bg-white dark:bg-[#1a1a1a] w-full left-0 ${openSize ? 'open' : ''}`} >
-                            <ul className="list shadow">
-                                <li className="bg-[#f6f6f6] font-bold">Small</li>
-                                <li className="">Medium</li>
-                                <li className="">Large</li>
-                                <li className="">Extra Large</li>
+                        <div className={`my-select-box-section shadow absolute top-[100%]  origin-[50%_0%]  p-0 mt-1 z-10  bg-white dark:bg-[#1a1a1a] w-full left-0 ${openSize ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-75 translate-y-[-21px] invisible'}`} >
+                            <ul className="list">
+                                {options.map((option, index) => (
+                                    <li
+                                        key={index}
+                                        className={`py-3 cursor-pointer text-left outline-none px-5  hover:bg-gray-100 
+                                            ${selectedValue?.id === option.id ? "bg-gray-200 font-bold" : "font-normal"
+                                            }`}
+                                        onClick={() => handleSelect(option)} // Seleccionar opción
+                                    >
+                                        {option.name}
+                                    </li>
+                                ))}
+                                {/* <li className="bg-[#f6f6f6] font-bold">Small</li> */}
                             </ul>
                         </div>
                     </div>
