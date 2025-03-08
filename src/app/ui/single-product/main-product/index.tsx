@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { HeartIcon } from "../../component/icons";
 import Tab from "./component/tab";
 import { CartItemModel, ProductModel } from "@/app/lib/definitions";
 import { isEmpty, numberFormat } from "@/helper/util";
 import { CheckCircleIcon, MinusCircleIcon } from "@heroicons/react/20/solid";
 import { useAppDispatch } from "@/app/lib/hooks";
 import { addToCart } from "@/app/lib/features/shoppingCardSlice";
+import { HeartIcon } from "../../component/icons";
 
 const MainProduct: React.FC<ProductModel> = (product) => {
     const dispatch = useAppDispatch();
@@ -316,7 +316,7 @@ const MainProduct: React.FC<ProductModel> = (product) => {
 
                                     {/* <Select /> */}
 
-                                    <div data-aos="fade-up" className="quantity-card-wrapper w-full flex items-center h-[50px] space-x-[10px] mb-[30px]">
+                                    <div data-aos="fade-up" className="quantity-card-wrapper w-full flex items-center h-[50px] space-x-6 mb-[30px]">
                                         <div className="w-[120px] h-full px-[26px] flex items-center border border-qgray-border">
                                             <div className="flex justify-between items-center w-full">
                                                 <button

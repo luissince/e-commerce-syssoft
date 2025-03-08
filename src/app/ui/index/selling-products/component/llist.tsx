@@ -1,7 +1,7 @@
 'use client'
 
 import { ProductModel } from "@/app/lib/definitions";
-import { BagIcon } from "@/app/ui/component/icons";
+import { BagIcon, HeartIcon } from "@/app/ui/component/icons";
 import ProductoModal from "@/app/ui/component/modal/product-modal";
 import { numberFormat } from "@/helper/util";
 import Image from "next/image";
@@ -75,7 +75,7 @@ function Product({ codigo, nombre, imagen, precio }: ProductModel) {
                                     {numberFormat(precio)}
                                 </span>
                             </p>
-                            <div className="product-card-add w-full h-10">
+                            <div className="product-card-add w-full flex space-x-6 items-center h-10">
                                 <button type="button"
                                     className="w-full h-full text-sm font-semibold bg-search-btn text-black"
                                     onClick={onOpenModal}
@@ -84,6 +84,14 @@ function Product({ codigo, nombre, imagen, precio }: ProductModel) {
                                         <BagIcon />
                                         <span>Agregar al carrito</span>
                                     </div>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    className="w-[60px] h-full flex justify-center items-center border border-qgray-border">
+                                    <span>
+                                        <HeartIcon width={24} color="#000000" />
+                                    </span>
                                 </button>
                             </div>
                         </div>
