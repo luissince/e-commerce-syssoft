@@ -98,8 +98,8 @@ const HeaderMuneliMobil = (company: CompanyModel) => {
                     <div className="relative flex items-center h-full">
                         <Link href={"/"} className="cursor-pointer">
                             <Image
-                                src={"/assets/sliders/logo.png"}
-                                alt={"logo"}
+                                src={company.rutaImage ?? "/assets/sliders/logo.png"}
+                                alt={company.nombreEmpresa ?? "logo"}
                                 width={132}
                                 height={36}
                                 priority

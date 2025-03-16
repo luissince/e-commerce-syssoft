@@ -42,8 +42,8 @@ export default function SearchBar(company: CompanyModel) {
                 <div className="flex items-center space-x-5">
                     <Link href={"/"} className="cursor-pointer">
                         <Image
-                            src={"/assets/sliders/logo.png"}
-                            alt={"logo"}
+                            src={company.rutaImage ?? "/assets/sliders/logo.png"}
+                            alt={company.nombreEmpresa ?? "logo"}
                             width="172"
                             height="36"
                             priority

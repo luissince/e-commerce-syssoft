@@ -9,13 +9,13 @@ export default async function Footer() {
 
   const branchs = await fetchListBranchs() as BranchModel[];
   const company = await fetchLoadCompany() as CompanyModel;
-  const images = await fetchImagesCompany() as CompanyModel;
+  const image = await fetchImagesCompany() as CompanyModel;
 
   return (
     <footer className="footer-section-wrapper bg-white dark:bg-black ">
       <div className="container max-w-screen-x mx-auto px-2 md:px-6 pt-[56px]">
        {/* Start Logo */}
-          <Logo {...images} />
+          <Logo {...image} />
        {/* End Logo */}
         <div className="lg:flex justify-between mb-[50px]">
           <div className="flex-1 lg:flex">

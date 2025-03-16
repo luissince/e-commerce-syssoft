@@ -9,7 +9,7 @@ import { FaCcVisa, FaCcMastercard, FaCcPaypal, FaInstagram } from "react-icons/f
 export default async function Footer() {
   const branchs = await fetchListBranchs() as BranchModel[];
   const company = await fetchLoadCompany() as CompanyModel;
-  const images = await fetchImagesCompany() as CompanyModel;
+  const image = await fetchImagesCompany() as CompanyModel;
 
   return (
     <footer className="footer-section-wrapper bg-white pt-10">
@@ -19,7 +19,13 @@ export default async function Footer() {
             <div className="lg:w-1/3 lg:flex lg:flex-col w-full mb-10 lg:mb-0">
               <div>
                 <Link href="/">
-                  <Image width="152" height="36" src={'/assets/sliders/logo.png'} alt="logo" priority={true} />
+                  <Image
+                    width="152"
+                    height="36"
+                    src={image.rutaImage ?? "/assets/sliders/logo.png"}
+                    alt={image.nombreEmpresa ?? "logo"}
+                    priority={true}
+                  />
                 </Link>
                 <div className="flex space-x-4 items-center mt-4">
                   <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
