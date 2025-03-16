@@ -1,4 +1,4 @@
-import { CardIcon, ConfigurationIcon, ShoppingCartIcon } from "@/app/ui/component/icons";
+import { CardIcon, ConfigurationIcon, ShoppingCartIcon } from "@/app/ui/component/default/icons";
 
 const Dashboard = () => {
     return (

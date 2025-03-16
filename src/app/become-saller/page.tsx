@@ -1,8 +1,8 @@
 
 import Image from "next/image";
-import Title, { BreadItem } from "../ui/component/title";
-import Discount from "../ui/component/discount";
-import { ChevronDownIcon, EditIcon, QuestionIcon } from "../ui/component/icons";
+import BreadTitle, { BreadItem } from "../ui/component/default/title";
+import Discount from "../ui/component/default/discount";
+import { ChevronDownIcon, EditIcon, QuestionIcon } from "../ui/component/default/icons";
 
 const Body = () => {
     return (
@@ -211,7 +211,7 @@ export default function Profile() {
     return (
         <>
             <div className="w-full pt-0 pb-0">
-                <Title
+                <BreadTitle
                     title={"Seller Application"} 
                 >
                     <BreadItem
@@ -222,7 +222,7 @@ export default function Profile() {
                         href={"/become-saller"}
                         title={"Become Saller"}
                         isSeparator={false} />
-                </Title>
+                </BreadTitle>
                 <Body />
             </div>
             <Discount />

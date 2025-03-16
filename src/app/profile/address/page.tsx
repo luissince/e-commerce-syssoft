@@ -1,4 +1,4 @@
-import { RemoveIcon } from "@/app/ui/component/icons";
+import { RemoveIcon } from "@/app/ui/component/default/icons";
 
 export default function Address() {
     return (

@@ -1,9 +1,9 @@
 
-import { SearchIcon, StarIcon } from "@/app/ui/component/icons";
+import { SearchIcon, StarIcon } from "@/app/ui/component/default/icons";
 import Image from "next/image";
 import React, { Suspense } from "react";
-import Discount from "../ui/component/discount";
-import Title, { BreadItem } from "../ui/component/title";
+import Discount from "../ui/component/default/discount";
+import BreadTitle, { BreadItem } from "../ui/component/default/title";
 
 interface CardProps {
     src: string;
@@ -407,7 +407,7 @@ export default function ProductCompaire() {
         <>
             <div className="w-full pt-0 pb-0">
                 <div className="products-compaire-wrapper w-full bg-white pb-[40px]">
-                    <Title
+                    <BreadTitle
                         title={"Products Compaire"}>
                         <BreadItem
                             href={"/"}
@@ -417,7 +417,7 @@ export default function ProductCompaire() {
                             href={"/products-compaire"}
                             title={"products compaire"}
                             isSeparator={false} />
-                    </Title>
+                    </BreadTitle>
                     <Body />
                 </div>
 

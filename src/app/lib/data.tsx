@@ -1,5 +1,5 @@
 import { AttributeModel, BranchModel, BrandModel, CategoryModel, CompanyModel, ProductModel, ProductPagesModel, RangePriceModel, TypeOfDocumentModel } from "./definitions";
-import { DarkIcon, LightIcon, SpanishIcon, SystemIcon, UsaIcon } from "../ui/component/icons";
+import { DarkIcon, LightIcon, SpanishIcon, SystemIcon, UsaIcon } from "../ui/component/default/icons";
 
 export interface ItemListShopTopBarProps {
     title: string;

@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Header from './ui/layout/header'
-import Footer from './ui/layout/footer'
+import { importClientComponents } from '@/app/lib/utils/importClientComponents'
 import { ThemesProviders, AOSProviders, ReduxProviders } from './providers'
 import { fetchImagesCompany } from './lib/data'
 import { CompanyModel } from './lib/definitions'
@@ -49,7 +48,9 @@ export const viewport: Viewport = {
   userScalable: false,
 }
 
-export default function RootLayout({ children, }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const { Header, Footer } = await importClientComponents();
+  
   return (
     <html lang="es" suppressHydrationWarning>
         <body className={`${inter.className} bg-[#f8f8f8] dark:bg-[#1a1a1a] `}>

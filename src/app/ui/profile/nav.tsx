@@ -10,7 +10,7 @@ import {
     PersonAddresIcon,
     PersonIcon,
     ShoppingCartIcon
-} from "@/app/ui/component/icons";
+} from "@/app/ui/component/default/icons";
 import Link from "next/link";
 import React from "react";
 

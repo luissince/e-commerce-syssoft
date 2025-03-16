@@ -1,8 +1,8 @@
 
-import { CloseIcon } from "@/app/ui/component/icons";
+import { CloseIcon } from "@/app/ui/component/default/icons";
 import Image from "next/image";
-import Title, { BreadItem } from "../ui/component/title";
-import Discount from "../ui/component/discount";
+import BreadTitle, { BreadItem } from "../ui/component/default/title";
+import Discount from "../ui/component/default/discount";
 
 const Body = () => {
     return (
@@ -226,7 +226,7 @@ const Body = () => {
                         <button type="button">
                             <div className="w-full text-sm font-semibold text-qred mb-5 sm:mb-0">Limpiar lista de deseos</div>
                         </button>
-                        <button type="button" className="w-[180px] h-[50px] bg-qyellow text-sm font-semibold text-black outline-0">
+                        <button type="button" className=" px-5 h-[50px] bg-qyellow text-sm font-semibold text-black outline-0">
                             <div className="w-full text-sm font-semibold">Agregar todo al carrito</div>
                         </button>
                     </div>
@@ -241,7 +241,7 @@ export default function WishList() {
     return (
         <div className="w-full pt-0 pb-0">
             <div className="products-compaire-wrapper w-full bg-white pb-[40px]">
-                <Title
+                <BreadTitle
                     title={"Wishlist"}>
                     <BreadItem
                         href={"/"}
@@ -251,7 +251,7 @@ export default function WishList() {
                         href={"/wishlist"}
                         title={"Wishlist"}
                         isSeparator={false} />
-                </Title>
+                </BreadTitle>
                 <Body />
             </div>
 

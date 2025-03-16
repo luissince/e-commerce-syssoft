@@ -1,4 +1,4 @@
-import { DiscussionIcon, RemoveIcon } from "@/app/ui/component/icons";
+import { DiscussionIcon, RemoveIcon } from "@/app/ui/component/default/icons";
 
 const Support = () => {
     return (

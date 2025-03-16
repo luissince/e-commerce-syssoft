@@ -1,4 +1,4 @@
-import { EditIcon, QuestionIcon } from "@/app/ui/component/icons";
+import { EditIcon, QuestionIcon } from "@/app/ui/component/default/icons";
 import Image from "next/image";
 
 const Profile = () => {

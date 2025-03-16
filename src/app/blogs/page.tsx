@@ -3,8 +3,8 @@ import { ArrowRightIcon, ChatBubbleBottomCenterIcon } from "@heroicons/react/24/
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Title, { BreadItem } from "../ui/component/title";
-import Discount from "../ui/component/discount";
+import BreadTitle, { BreadItem } from "../ui/component/default/title";
+import Discount from "../ui/component/default/discount";
 
 interface BlogCardItemProps {
     image: string;
@@ -121,7 +121,7 @@ export default function Blogs() {
     return (
         <>
             <div className="w-full pt-0 pb-0">
-                <Title
+                <BreadTitle
                     title={"Our Blogs"}
                 >
                     <BreadItem
@@ -132,7 +132,7 @@ export default function Blogs() {
                         href={"/blogs"}
                         title={"blogs"}
                         isSeparator={false} />
-                </Title>
+                </BreadTitle>
                 <Body />
             </div>
             <Discount />

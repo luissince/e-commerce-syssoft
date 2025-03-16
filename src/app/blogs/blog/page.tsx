@@ -1,6 +1,6 @@
 
 import Image from "next/image";
-import Title, { BreadItem } from "../../ui/component/title";
+import BreadTitle, { BreadItem } from "../../ui/component/default/title";
 
 const Body = () => {
 
@@ -406,7 +406,7 @@ export default function Blog() {
     return (
         <>
             <div className="w-full pt-0 pb-0">
-                <Title
+                <BreadTitle
                     title={"Contact"}>
                     <BreadItem
                         href={"/"}
@@ -420,7 +420,7 @@ export default function Blog() {
                         href={"/blogs/blog"}
                         title={"Blog Details"}
                         isSeparator={false} />
-                </Title>
+                </BreadTitle>
                 <Body />
             </div>
         </>

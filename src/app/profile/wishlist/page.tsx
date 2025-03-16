@@ -1,4 +1,4 @@
-import { CloseIcon } from "@/app/ui/component/icons";
+import { CloseIcon } from "@/app/ui/component/default/icons";
 import Image from "next/image";
 
 const Wishlist = () => {

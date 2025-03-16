@@ -1,7 +1,7 @@
-import { CurveIcon } from "@/app/ui/component/icons";
+import { CurveIcon } from "@/app/ui/component/default/icons";
 import React from "react";
-import Discount from "../ui/component/discount";
-import Title, { BreadItem } from "../ui/component/title";
+import Discount from "../ui/component/default/discount";
+import BreadTitle, { BreadItem } from "../ui/component/default/title";
 import AccordionItem from "../ui/faq/accordion-item";
 
 const Body = () => {
@@ -77,7 +77,7 @@ export default function Faq() {
     return (
         <>
             <div className="w-full pt-0 pb-0">
-                <Title
+                <BreadTitle
                     title={"Frequently Asked Questions"}
                 >
                     <BreadItem
@@ -89,7 +89,7 @@ export default function Faq() {
                         href={"/faq"}
                         title={"faq"}
                         isSeparator={false} />
-                </Title>
+                </BreadTitle>
                 <Body />
             </div>
             <Discount />

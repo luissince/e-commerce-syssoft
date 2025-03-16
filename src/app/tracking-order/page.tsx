@@ -1,7 +1,7 @@
 
-import { CardIcon } from "@/app/ui/component/icons";
-import Title, { BreadItem } from "../ui/component/title";
-import Discount from "../ui/component/discount";
+import { CardIcon } from "@/app/ui/component/default/icons";
+import BreadTitle, { BreadItem } from "../ui/component/default/title";
+import Discount from "../ui/component/default/discount";
 
 const Body = () => {
   return (
@@ -44,7 +44,7 @@ const TrackingOrder = () => {
   return (
     <div className="w-full pt-0 pb-0">
       <div className="tracking-page-wrapper w-full">
-        <Title
+        <BreadTitle
           title={"Track Order"}>
           <BreadItem
             href={"/"}
@@ -55,7 +55,7 @@ const TrackingOrder = () => {
             href={"/tracking-order"}
             title={"Track Order"}
             isSeparator={false} />
-        </Title>
+        </BreadTitle>
         <Body />
         <Discount />
       </div>

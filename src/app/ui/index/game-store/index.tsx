@@ -1,4 +1,4 @@
-import ProductCard from "../../component/product-card";
+import ProductCard from "../../component/default/product-card";
 
 function GameStore() {
     return (

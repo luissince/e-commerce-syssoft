@@ -1,4 +1,4 @@
-import { EyeIcon } from "@/app/ui/component/icons";
+import { EyeIcon } from "@/app/ui/component/default/icons";
 import Image from "next/image";
 
 const Password = () => {

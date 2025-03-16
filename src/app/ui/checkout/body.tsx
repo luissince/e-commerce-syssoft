@@ -1,15 +1,15 @@
 'use client'
 import { forwardRef, useEffect, useRef, useState } from "react";
-import { useAppSelector } from "@/app/lib/hooks";
-import { RootState } from "@/app/lib/store";
+import { useAppSelector } from "@/app/lib/hooks/storeHooks";
 import { formatDecimal } from "@/helper/util";
 import { useFormState, useFormStatus } from "react-dom";
 import { submitCheckoutForm } from "@/app/lib/actions";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { IoCloseCircle } from "react-icons/io5";
-import Select, { OptionSelect } from "../single-product/main-product/component/select";
+import Select, { OptionSelect } from "../single-product/default/main-product/component/select";
 import { TypeOfDocumentModel } from "@/app/lib/definitions";
 import { MdError } from "react-icons/md";
+import { selectCart } from "@/app/lib/store/slices/shoppingCardSlice";
 
 interface ErrorItemProps {
     name: string;
@@ -132,7 +132,7 @@ interface Props {
 const Body = (props: Props) => {
     const [mounted, setMounted] = useState(false);
     const [typeDocument, setTypeDocument] = useState<string | number>('');
-    const cart = useAppSelector((state: RootState) => state!.cart);
+    const cart = useAppSelector(selectCart);
 
     const initialState: InitialProps = {
         errors: null,

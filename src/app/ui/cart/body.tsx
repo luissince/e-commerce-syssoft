@@ -1,16 +1,17 @@
 'use client'
 import Image from "next/image";
-import { CloseIcon } from "../component/icons";
+import { CloseIcon } from "../component/default/icons";
 import Link from "next/link";
-import { useAppDispatch, useAppSelector } from "@/app/lib/hooks";
-import { RootState } from "@/app/lib/store";
+import { useAppDispatch, useAppSelector } from "@/app/lib/hooks/storeHooks";
+import { selectCart } from '@/app/lib/store/slices/shoppingCardSlice';
 import { formatDecimal } from "@/helper/util";
 import { useEffect, useState } from "react";
-import { removeFromCart, updateQuantity } from "@/app/lib/features/shoppingCardSlice";
+import { removeFromCart, updateQuantity } from "@/app/lib/store/slices/shoppingCardSlice";
+import { CartItemModel } from "@/app/lib/definitions";
 
 const Body = () => {
     const [mounted, setMounted] = useState(false);
-    const cart = useAppSelector((state: RootState) => state!.cart);
+    const cart = useAppSelector(selectCart);
 
     const dispatch = useAppDispatch();
 
@@ -35,14 +36,14 @@ const Body = () => {
                                     <th className="py-4 whitespace-nowrap text-center">color</th>
                                     <th className="py-4 whitespace-nowrap text-center">tamaño</th>
                                     <th className="py-4 whitespace-nowrap text-center">precio</th>
-                                    <th className="py-4 whitespace-nowrap  text-center">cantidad</th>
-                                    <th className="py-4 whitespace-nowrap  text-center">total</th>
+                                    <th className="py-4 whitespace-nowrap text-center">cantidad</th>
+                                    <th className="py-4 whitespace-nowrap text-center">total</th>
                                     <th className="py-4 whitespace-nowrap text-right w-[114px] block"></th>
                                 </tr>
                             </thead>
                             <tbody>              
                                 {
-                                    cart.items.map((item, index) => {
+                                    cart.items.map((item: CartItemModel, index: number) => {
                                         return (
                                             <tr key={index} className="bg-white border-b hover:bg-gray-50">
                                                 <td className="pl-10  py-4 ">
@@ -101,8 +102,8 @@ const Body = () => {
                                                     <div className="flex space-x-1 items-center justify-center"><span className="text-[15px] font-normal">{formatDecimal(item.producto.precio*item.cantidad)}</span>
                                                     </div>
                                                 </td>
-                                                <td className="text-right py-4">
-                                                    <button className="flex space-x-1 items-center justify-center"
+                                                <td className="text-center py-4">
+                                                    <button
                                                     onClick={() =>{
                                                         dispatch(removeFromCart({
                                                             idProducto: item.producto.idProducto

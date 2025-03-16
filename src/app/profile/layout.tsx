@@ -1,7 +1,7 @@
 
 import NavProfile from '@/app/ui/profile/nav';
 import SwitchProfile from '@/app/ui/profile/switch';
-import Discount from '../ui/component/discount';
+import Discount from '../ui/component/default/discount';
 
 export default async function Layout({ children }: { children: React.ReactNode }) {
     return (

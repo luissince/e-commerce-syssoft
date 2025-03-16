@@ -25,8 +25,11 @@ export const AOSProviders = ({ children }: { children: ReactNode }) => {
 
 
 export const ReduxProviders = ({ children }: { children: ReactNode }) => {
+    // Usa useRef para asegurar que la store persista entre re-renders
+    // pero es única para cada solicitud/sesión
     const storeRef = useRef<AppStore>()
     if (!storeRef.current) {
+        // Inicializa la store en el primer render
         storeRef.current = makeStore()
     }
 

@@ -1,17 +1,14 @@
-import Discount from "../../ui/component/discount";
-import RelatedProduct from "../../ui/single-product/related-product";
-import MainProduct from "../../ui/single-product/main-product";
 import { fetchProducRelatedtByCode, fetchProductByCode } from "../../lib/data";
 import { redirect } from 'next/navigation';
-import { Suspense } from "react";
+import { importClientComponents } from '@/app/lib/utils/importClientComponents'
 
-interface SingleProduct {
+interface SingleProductProps {
     params: {
         code: string;
     }
 }
 
-export default async function SingleProduct({ params }: SingleProduct) {
+export default async function SingleProduct({ params }: SingleProductProps) {
     const code = params.code;
 
     if (!code) {
@@ -27,17 +24,7 @@ export default async function SingleProduct({ params }: SingleProduct) {
     const related = await fetchProducRelatedtByCode(product.categoria.idCategoria)
     const newRelated = related.filter(item => item.idProducto !== product.idProducto);
 
-    return (
-        <>
-            <div className="w-full  pt-0 pb-0">
-                <div className="single-product-wrapper w-full ">
-                    <MainProduct {...product} />
+    const { SingleProduct } = await importClientComponents();
 
-                    <RelatedProduct products={newRelated} />
-                </div>
-            </div>
-
-            <Discount />
-        </>
-    );
+    return (<SingleProduct product={product} newRelated={newRelated} />);
 }
