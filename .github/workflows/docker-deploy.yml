@@ -26,7 +26,7 @@ jobs:
       APP_BACK_END: ${{ secrets.APP_BACK_END }}
       NEXT_PUBLIC_APP_BACK_END: ${{ secrets.NEXT_PUBLIC_APP_BACK_END }}
       NODE_ENV: ${{ vars.NODE_ENV }}
-      NEXT_PUBLIC_CLIENT_NAME: ${{ vars.NEXT_PUBLIC_CLIENT_NAME }}
+      NEXT_PUBLIC_CLIENT_NAME: ${{ secrets.NEXT_PUBLIC_CLIENT_NAME }}
 
     steps:
       - name: Checkout código
@@ -60,7 +60,7 @@ jobs:
       APP_BACK_END: ${{ secrets.APP_BACK_END }}
       NEXT_PUBLIC_APP_BACK_END: ${{ secrets.NEXT_PUBLIC_APP_BACK_END }}
       NODE_ENV: ${{ vars.NODE_ENV }}
-      NEXT_PUBLIC_CLIENT_NAME: ${{ vars.NEXT_PUBLIC_CLIENT_NAME }}
+      NEXT_PUBLIC_CLIENT_NAME: ${{ secrets.NEXT_PUBLIC_CLIENT_NAME }}
 
     steps:
       - name: Checkout código
