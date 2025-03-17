@@ -10,6 +10,7 @@ import BreadTitle, { BreadItem } from "../../component/import-muneli/title";
 import BestServices from "../../best-services/import-muneli";
 import { MdBusinessCenter } from "react-icons/md";
 import Discount from "../../component/import-muneli/discount";
+import Container from "../../component/import-muneli/container";
 
 interface MainProps {
     company: CompanyModel;
@@ -28,7 +29,7 @@ const components = {
 const Main = (props: MainProps) => {
     return (
         <div className="aboutus-wrapper w-full bg-white">
-            <div className="container mx-auto px-2 md:px-6">
+            <Container>
                 <div className="w-full min-h-[665px] lg:flex lg:space-x-12 items-center pb-10 lg:pb-0">
                     <div className="md:w-[570px] w-full md:h-[560px] h-auto rounded overflow-hidden my-5 lg:my-0">
                         <Image src="/assets/about-banner.png" alt="about" className="w-full h" width={570} height={559} />
@@ -58,7 +59,7 @@ const Main = (props: MainProps) => {
                         </Link>
                     </div>
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }

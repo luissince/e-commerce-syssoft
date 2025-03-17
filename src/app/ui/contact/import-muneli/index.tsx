@@ -7,6 +7,7 @@ import ContactForm from "./form";
 import { PhoneIcon } from "@heroicons/react/20/solid";
 import { MdEmail } from "react-icons/md";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import Container from "../../component/import-muneli/container";
 
 interface MainProps {
     inputType: string;
@@ -16,7 +17,7 @@ interface MainProps {
 const Main = (props: MainProps) => {
     return (
         <div className="contact-wrapper bg-white w-full pt-10 pb-10">
-            <div className="container mx-auto md:px-6">
+            <Container>
                 <div className="main-wrapper w-full lg:flex lg:space-x-[30px]">
                     <div className="lg:w-1/2 w-full">
                         <h1 className="text-xl font-semibold text-[#042460] dark:text-white mb-1">Información de contacto</h1>
@@ -74,7 +75,7 @@ const Main = (props: MainProps) => {
                         }
                     </div>
 
-                    <div className="flex-1 bg-white sm:p-10 p-3">
+                    <div className="flex-1 ">
                         <div className="title flex flex-col items-center">
                             <h1 className="text-4xl font-bold text-[#042460]">Ponte en contacto</h1>
                             <span className="-mt-5 block">
@@ -85,7 +86,7 @@ const Main = (props: MainProps) => {
                         <ContactForm inputType={props.inputType} />
                     </div>
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }

@@ -71,10 +71,10 @@ function Body({ inputType, state }: { inputType: string, state: InitialProps }) 
             <div className="mb-4">
                 <div className="input-com w-full h-full">
                     <label className="input-label capitalize block  mb-2 text-[#042460] text-xs font-normal" htmlFor="name">Nombres*</label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+                    <div className="input-wrapper rounded-md border border-[#f76d24] w-full h-full overflow-hidden relative ">
                         <input
                             placeholder="Juan Perez"
-                            className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full font-normal bg-white focus:ring-0 focus:outline-none h-[50px] dark:bg-black"
+                            className="input-field placeholder:text-sm  text-sm px-6 text-dark-gray w-full font-normal bg-white focus:ring-0 focus:outline-none h-[50px] dark:bg-black"
                             id="name"
                             name="name"
                             autoFocus={true}
@@ -95,7 +95,7 @@ function Body({ inputType, state }: { inputType: string, state: InitialProps }) 
             <div className="mb-4">
                 <div className="input-com w-full h-full">
                     <label className="input-label capitalize block  mb-2 text-[#042460] text-xs font-normal" htmlFor="email">Email*</label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+                    <div className="input-wrapper rounded-md border border-[#f76d24] w-full h-full overflow-hidden relative ">
                         <input
                             type="email"
                             placeholder="info@syssoftintegra.com"
@@ -119,7 +119,7 @@ function Body({ inputType, state }: { inputType: string, state: InitialProps }) 
             <div className="mb-4">
                 <div className="input-com w-full h-full">
                     <label className="input-label capitalize block  mb-2 text-[#042460] text-xs font-normal" htmlFor="number">Teléfono*</label>
-                    <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+                    <div className="input-wrapper rounded-md border border-[#f76d24] w-full h-full overflow-hidden relative ">
                         <input
                             type={inputType}
                             placeholder="+51 999999999"
@@ -203,7 +203,7 @@ function Body({ inputType, state }: { inputType: string, state: InitialProps }) 
                 <label className="input-label text-[#042460] capitalize text-xs font-normal block mb-2" htmlFor="message">Mensaje*</label>
                 <textarea
                     placeholder="Ingrese su mensaje aquí"
-                    className="w-full h-[105px] focus:ring-0 focus:outline-none p-3 border border-qgray-border placeholder:text-sm"
+                    className="w-full h-[105px] focus:ring-0 focus:outline-none p-3 rounded-md border border-[#f76d24] placeholder:text-sm"
                     id="message"
                     name="message"
                     disabled={pending}

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ProductModel } from "@/app/lib/definitions";
 import { numberFormat } from "@/helper/util";
 import ProductCard from "@/app/ui/component/import-muneli/product-card";
+import Container from "@/app/ui/component/import-muneli/container";
 
 
 interface RelatedProductProps {
@@ -22,7 +23,7 @@ const RelatedProduct: React.FC<RelatedProductProps> = ({ products }) => {
 
     return (
         <div className="related-product w-full bg-white pb-20">
-            <div className="container mx-auto px-2 md:px-6">
+            <Container>
                 <h1 className="sm:text-3xl text-xl font-semibold text-[#042460] leading-none mb-[30px]">Producto Relacionado</h1>
                 <div data-aos="fade-up" className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-[30px] gap-5">
                     {
@@ -44,7 +45,7 @@ const RelatedProduct: React.FC<RelatedProductProps> = ({ products }) => {
                         })
                     }
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }

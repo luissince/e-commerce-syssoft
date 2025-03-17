@@ -2,7 +2,7 @@
 import React from "react";
 import { BranchModel } from "@/app/lib/definitions";
 import { CurveIcon } from "@/app/ui/component/default/icons";
-import BreadTitle, { BreadItem } from "../../component/import-muneli/title";
+import BreadTitle, { BreadItem } from "../../component/default/title";
 import ContactForm from "./form";
 import { PhoneIcon } from "@heroicons/react/20/solid";
 import { MdEmail } from "react-icons/md";

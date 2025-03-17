@@ -9,6 +9,7 @@ import { useAppDispatch } from "@/app/lib/hooks/storeHooks";
 import { addToCart } from "@/app/lib/store/slices/shoppingCardSlice";
 import Title from "./component/title";
 import Single from "./component/single";
+import Container from "@/app/ui/component/import-muneli/container";
 
 const MainProduct: React.FC<ProductModel> = (product) => {
     const dispatch = useAppDispatch();
@@ -107,7 +108,7 @@ const MainProduct: React.FC<ProductModel> = (product) => {
     return (
         <React.Fragment>
             <div className="single-product-wrapper bg-white pt-[30px] w-full">
-                <div className="container mx-auto px-2 md:px-6">
+                <Container>
                     <Title titleBase={"Inicio"} titleDetail={"Producto Único"} />
 
                     <Single
@@ -134,7 +135,7 @@ const MainProduct: React.FC<ProductModel> = (product) => {
                     />
 
                     <Tab product={product} tabNameOne={"Descripción"} tabNameTwo={"Detalles"} />
-                </div>
+                </Container>
             </div>
         </React.Fragment>
     );

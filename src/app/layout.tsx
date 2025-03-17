@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Open_Sans } from 'next/font/google'
 import './globals.css'
 import { importClientComponents } from '@/app/lib/utils/importClientComponents'
 import { ThemesProviders, AOSProviders, ReduxProviders } from './providers'
 import { fetchImagesCompany } from './lib/data'
 import { CompanyModel } from './lib/definitions'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Open_Sans({ subsets: ['latin'] })
 
 // export const metadata: Metadata = {
 //   title: 'Ecommerse  - SysSoft Integra',

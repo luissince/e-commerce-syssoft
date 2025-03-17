@@ -49,7 +49,7 @@ const Select = ({ title, options, onChange }: Props) => {
         <div className="product-size" ref={dropdownSizeRef}>
             <span className="text-sm font-normal text-qgray mb-[14px] inline-block">{title}</span>
             <div className="w-full">
-                <div className="border border-qgray-border h-[50px] flex justify-between items-center cursor-pointer">
+                <div className="rounded-md border border-[#f76d24] h-[50px] flex justify-between items-center cursor-pointer">
                     <div className="my-select-box text-sm font-normal relative w-full h-full">
                         <button type="button" className="w-full h-full flex justify-between items-center px-6"
                             onClick={() => setOpenSize(!openSize)}>

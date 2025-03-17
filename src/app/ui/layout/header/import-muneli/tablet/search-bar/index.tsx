@@ -9,6 +9,8 @@ import { useEffect, useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { useDebouncedCallback } from "use-debounce";
 import { selectCart } from "@/app/lib/store/slices/shoppingCardSlice";
+import images from "@/app/lib/config/images";
+import Container from "@/app/ui/component/import-muneli/container";
 
 export default function SearchBar(company: CompanyModel) {
     const cart = useAppSelector(selectCart);
@@ -38,11 +40,11 @@ export default function SearchBar(company: CompanyModel) {
 
     return (
         <div className="w-full bg-white">
-            <div className="container mx-auto px-2 md:px-6 py-6">
-                <div className="flex items-center space-x-5">
+           <Container>
+                <div className="flex items-center space-x-5 py-4">
                     <Link href={"/"} className="cursor-pointer">
                         <Image
-                            src={company.rutaImage ?? "/assets/sliders/logo.png"}
+                            src={company.rutaImage ?? images["import-muneli"].logo}
                             alt={company.nombreEmpresa ?? "logo"}
                             width="172"
                             height="36"
@@ -86,7 +88,7 @@ export default function SearchBar(company: CompanyModel) {
                         </span>
                     </Link>
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }

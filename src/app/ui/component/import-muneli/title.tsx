@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Container from "./container";
 
 interface BreadItemProps {
     href: string;
@@ -29,7 +30,7 @@ const BreadTitle: React.FC<BreadTileProps> = ({ title, children }) => {
     return (
         <div className="page-title">
             <div className="page-title-wrapper bg-[#042460] w-full h-[173px] py-10">
-                <div className="container mx-auto md:px-6">
+                <Container>
                     <div className="mb-5">
                         <div className="breadcrumb-wrapper font-medium text-sm text-white mb-4 flex items-center">
                             {children}
@@ -38,7 +39,7 @@ const BreadTitle: React.FC<BreadTileProps> = ({ title, children }) => {
                     <div className="flex justify-center">
                         <h1 className="text-4xl font-bold text-white">{title}</h1>
                     </div>
-                </div>
+                </Container>
             </div>
         </div>
     );

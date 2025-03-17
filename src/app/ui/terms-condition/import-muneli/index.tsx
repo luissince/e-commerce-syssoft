@@ -2,6 +2,7 @@ import { CompanyModel } from '@/app/lib/definitions';
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import BreadTitle, { BreadItem } from '../../component/import-muneli/title';
 import Discount from '../../component/import-muneli/discount';
+import Container from '../../component/import-muneli/container';
 
 interface Props {
     company: CompanyModel;
@@ -20,13 +21,13 @@ const components = {
 const Main = (props: Props) => {
     return (
         <div className="content-area w-full">
-            <div className="container mx-auto px-2 md:px-6">
+            <Container>
 
                 <MDXRemote
                     source={props.company.terminosCondiciones}
                     components={components}
                 />
-            </div>
+            </Container>
         </div>
     );
 }

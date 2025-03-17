@@ -3,8 +3,10 @@ import Link from "next/link";
 import { fetchImagesCompany, fetchListBranchs, fetchLoadCompany } from "@/app/lib/data";
 import { BranchModel, CompanyModel } from "@/app/lib/definitions";
 import React from "react";
-import { CiInstagram, CiFacebook, CiYoutube } from "react-icons/ci";
+import { CiFacebook, CiYoutube } from "react-icons/ci";
 import { FaCcVisa, FaCcMastercard, FaCcPaypal, FaInstagram } from "react-icons/fa";
+import images from "@/app/lib/config/images";
+import Container from "@/app/ui/component/import-muneli/container";
 
 export default async function Footer() {
   const branchs = await fetchListBranchs() as BranchModel[];
@@ -13,7 +15,7 @@ export default async function Footer() {
 
   return (
     <footer className="footer-section-wrapper bg-white pt-10">
-      <div className="container mx-auto px-2 md:px-6">
+      <Container>
         <div className="lg:flex justify-between mb-10">
           <div className="flex-1 lg:flex">
             <div className="lg:w-1/3 lg:flex lg:flex-col w-full mb-10 lg:mb-0">
@@ -22,7 +24,7 @@ export default async function Footer() {
                   <Image
                     width="152"
                     height="36"
-                    src={image.rutaImage ?? "/assets/sliders/logo.png"}
+                    src={image.rutaImage ?? images["import-muneli"].logo}
                     alt={image.nombreEmpresa ?? "logo"}
                     priority={true}
                   />
@@ -172,7 +174,7 @@ export default async function Footer() {
             <FaCcPaypal color="#042460" size={30} />
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

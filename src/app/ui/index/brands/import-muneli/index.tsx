@@ -1,11 +1,12 @@
+import Container from "@/app/ui/component/import-muneli/container";
 import Image from "next/image";
 
 function Brands() {
     return (
         <div
             data-aos="fade-up"
-            className="brand-section-wrapper w-full bg-white pt-10 pb-20">
-            <div className="container mx-auto px-2 md:px-6">
+            className="brand-section-wrapper w-full bg-white pb-10">
+            <Container>
                 <div className="section-title flex justify-between items-center mb-10">
                     <h1 className="sm:text-3xl text-xl font-bold text-[#f76d24]">
                         Marcas Populares
@@ -21,7 +22,7 @@ function Brands() {
                         </div>
                     ))}
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }

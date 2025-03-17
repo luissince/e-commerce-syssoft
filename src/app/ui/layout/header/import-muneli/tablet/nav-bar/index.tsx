@@ -1,4 +1,5 @@
 'use client'
+import Container from "@/app/ui/component/import-muneli/container";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -72,7 +73,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({ label, href, children }) => 
 function NavBar() {
     return (
         <div className="w-full bg-white border-t-[1px] border-[#f76d24]">
-            <div className="container mx-auto px-2 md:px-6">
+            <Container>
                 <ul className="nav-wrapper flex w-full">
                     <MenuItem
                         label="Inicio"
@@ -109,7 +110,7 @@ function NavBar() {
                         href="/contact"
                     />
                 </ul>
-            </div>
+            </Container>
         </div>
     );
 }

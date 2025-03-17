@@ -4,6 +4,7 @@ import Link from "next/link";
 import ProductCard from "@/app/ui/component/import-muneli/product-card";
 import { numberFormat } from "@/helper/util";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
+import Container from "@/app/ui/component/import-muneli/container";
 
 async function SellingProducts() {
     const products = await fetchIndexProducts(4) as ProductModel[];
@@ -11,8 +12,8 @@ async function SellingProducts() {
     return (
         <div
             data-aos="fade-up"
-            className="section-wrapper w-full bg-white top-selling-product pb-10">
-            <div className="container mx-auto px-2 md:px-6">
+            className="section-wrapper w-full bg-white top-selling-product py-10">
+            <Container>
                 <div className="section-title flex justify-between items-center mb-10">
                     <h1 className="sm:text-3xl text-xl font-bold text-[#f76d24]">
                         Productos Más Vendidos
@@ -48,7 +49,7 @@ async function SellingProducts() {
                         }
                     </div>
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }

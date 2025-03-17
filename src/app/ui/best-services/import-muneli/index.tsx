@@ -1,11 +1,12 @@
 import { IoReload, IoShieldCheckmarkOutline } from "react-icons/io5";
 import { CiTrophy } from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import Container from "../../component/import-muneli/container";
 
 function BestServices() {
     return (
-        <div className="best-services w-full bg-white py-10">
-            <div className="container mx-auto px-2 md:px-6">
+        <div className="best-services w-full bg-[rgb(255,246,241)] py-10">
+            <Container>
                 <div className="flex flex-col lg:flex-row justify-between items-center space-y-10 lg:space-y-0">
                     <div className="flex space-x-5 items-center w-full lg:w-auto">
                         <MdOutlineShoppingCart color="#f76d24" size={40} />
@@ -47,7 +48,7 @@ function BestServices() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }

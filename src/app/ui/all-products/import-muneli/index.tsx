@@ -10,6 +10,8 @@ import ListColors from "@/app/ui/all-products/import-muneli/list-colors";
 import ListSizes from "@/app/ui/all-products/import-muneli/list-sizes";
 import ListFlavors from "@/app/ui/all-products/import-muneli/list-flavors";
 import ListProducts from "@/app/ui/all-products/import-muneli/list-products";
+import images from "@/app/lib/config/images";
+import Container from "../../component/import-muneli/container";
 
 const ITEM_PER_PAGE: number = 10;
 
@@ -23,7 +25,7 @@ export default function AllProductsBody({ query, total, currentPage }: BodyProps
   return (
     <>
       <div className="w-full bg-white pt-[30px] pb-[60px]">
-          <div className="container mx-auto px-2 md:px-6">
+          <Container>
             <div className="font-normal text-[13px] text-white mb-[23px] bg-[#042460] rounded-md py-2 px-6">
               <span>
                 <a href="/"><span className="mx-1 capitalize">Inicio</span></a>
@@ -125,7 +127,7 @@ export default function AllProductsBody({ query, total, currentPage }: BodyProps
 
                 <div className="w-full h-64 relative">
                   <Image
-                    src="/assets/sliders/4.webp"
+                    src={images["import-muneli"].sliders.desktop[images["import-muneli"].sliders.desktop.length -1]}
                     alt="Descripción de la imagen"
                     className="w-full h-full object-cover rounded-md"
                     layout="fill"
@@ -133,7 +135,7 @@ export default function AllProductsBody({ query, total, currentPage }: BodyProps
                 </div>
               </div>
             </div>
-          </div>
+          </Container>
       </div>
 
       <Discount />
