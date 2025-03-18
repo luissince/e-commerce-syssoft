@@ -1,15 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { fetchImagesCompany, fetchListBranchs, fetchLoadCompany } from "@/app/lib/data";
 import { BranchModel, CompanyModel } from "@/app/lib/definitions";
 import React from "react";
 import Logo from "./component/logo";
 
-export default async function Footer() {
+interface Props {
+  company: CompanyModel;
+  image: CompanyModel;
+  branchs: BranchModel[];
+}
 
-  const branchs = await fetchListBranchs() as BranchModel[];
-  const company = await fetchLoadCompany() as CompanyModel;
-  const image = await fetchImagesCompany() as CompanyModel;
+export default async function Footer({ company, image, branchs }: Props) {
 
   return (
     <footer className="footer-section-wrapper bg-white dark:bg-black ">

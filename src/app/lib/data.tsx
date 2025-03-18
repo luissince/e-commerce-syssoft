@@ -235,9 +235,9 @@ export async function fetchListBranchs(): Promise<BranchModel[]> {
     }
 }
 
-export async function fetchLoadCompany(): Promise<CompanyModel | null> {
+export async function fetchCompanyInfo(): Promise<CompanyModel | null> {
     try {
-        const response = await fetch(`${process.env.APP_BACK_END}/api/empresa/load/web`, {
+        const response = await fetch(`${process.env.APP_BACK_END}/api/empresa/web/info`, {
             next: { revalidate: 0 }
         });
 
@@ -251,9 +251,25 @@ export async function fetchLoadCompany(): Promise<CompanyModel | null> {
     }
 }
 
-export async function fetchImagesCompany(): Promise<CompanyModel | null> {
+export async function fetchCompanyWhatsapp(): Promise<CompanyModel | null> {
     try {
-        const response = await fetch(`${process.env.APP_BACK_END}/api/empresa/images/web`, {
+        const response = await fetch(`${process.env.APP_BACK_END}/api/empresa/web/whatsapp`, {
+            next: { revalidate: 0 }
+        });
+
+        if (!response.ok) {
+            return null;
+        }
+        
+        return response.json();
+    } catch (error) {
+        return null;
+    }
+}
+
+export async function fetchCompanyImages(): Promise<CompanyModel | null> {
+    try {
+        const response = await fetch(`${process.env.APP_BACK_END}/api/empresa/web/images`, {
             next: { revalidate: 0 }
         });
 

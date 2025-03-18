@@ -130,6 +130,9 @@ export interface CompanyModel {
     rutaLogo: string;
     rutaImage: string;
     rutaIcon: string;
+    numeroWhatsapp: string;
+    tituloWhatsapp: string;
+    mensajeWhatsapp: string;
     horarioAtencion: string;
     acercaNosotros: string;
     politicasPrivacidad: string;

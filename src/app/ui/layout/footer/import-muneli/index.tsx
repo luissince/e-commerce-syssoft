@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { fetchImagesCompany, fetchListBranchs, fetchLoadCompany } from "@/app/lib/data";
 import { BranchModel, CompanyModel } from "@/app/lib/definitions";
 import React from "react";
 import { CiFacebook, CiYoutube } from "react-icons/ci";
@@ -8,10 +7,13 @@ import { FaCcVisa, FaCcMastercard, FaCcPaypal, FaInstagram } from "react-icons/f
 import images from "@/app/lib/config/images";
 import Container from "@/app/ui/component/import-muneli/container";
 
-export default async function Footer() {
-  const branchs = await fetchListBranchs() as BranchModel[];
-  const company = await fetchLoadCompany() as CompanyModel;
-  const image = await fetchImagesCompany() as CompanyModel;
+interface Props {
+  company: CompanyModel;
+  image: CompanyModel;
+  branchs: BranchModel[];
+}
+
+export default async function Footer({ company, image, branchs }: Props) {
 
   return (
     <footer className="footer-section-wrapper bg-white pt-10">

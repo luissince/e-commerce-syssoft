@@ -3,8 +3,9 @@ import { Open_Sans } from 'next/font/google'
 import './globals.css'
 import { importClientComponents } from '@/app/lib/utils/importClientComponents'
 import { ThemesProviders, AOSProviders, ReduxProviders } from './providers'
-import { fetchImagesCompany } from './lib/data'
-import { CompanyModel } from './lib/definitions'
+import { fetchCompanyImages, fetchCompanyInfo, fetchCompanyWhatsapp, fetchListBranchs} from './lib/data'
+import { BranchModel, CompanyModel } from './lib/definitions'
+import Whatsapp from './ui/component/import-muneli/whatsapp'
 
 const inter = Open_Sans({ subsets: ['latin'] })
 
@@ -16,20 +17,20 @@ const inter = Open_Sans({ subsets: ['latin'] })
 
 // Función para obtener los datos del backend
 async function getMetadataFromBackend() {
-      const company = await fetchImagesCompany() as CompanyModel;
-    return {
-      title: company.nombreEmpresa || 'Ecommerse',
-      description: company.acercaNosotros || 'Descripción del negocio',
-      favicon: company.rutaIcon || 'favicon.svg'
-      // favicon: 'https://docs.nestjs.com/assets/logo-small-gradient.svg'
-    };
-  
+  const company = await fetchCompanyInfo() as CompanyModel;
+  return {
+    title: company.nombreEmpresa || 'Ecommerse',
+    description: company.acercaNosotros || 'Descripción del negocio',
+    favicon: company.rutaIcon || 'favicon.svg'
+    // favicon: 'https://docs.nestjs.com/assets/logo-small-gradient.svg'
+  };
+
 }
 
 // Generador dinámico de metadata
 export async function generateMetadata(): Promise<Metadata> {
   const metadata = await getMetadataFromBackend();
-  
+
   return {
     title: metadata.title,
     description: metadata.description,
@@ -49,20 +50,30 @@ export const viewport: Viewport = {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const branchs = await fetchListBranchs() as BranchModel[];
+  const company = await fetchCompanyInfo() as CompanyModel;
+  const image = await fetchCompanyImages() as CompanyModel;
+  const whatsapp = await fetchCompanyWhatsapp() as CompanyModel;
+
   const { Header, Footer } = await importClientComponents();
-  
+
   return (
     <html lang="es" suppressHydrationWarning>
-        <body className={`${inter.className} bg-[#f8f8f8] dark:bg-[#1a1a1a] `}>
+      <body className={`${inter.className} bg-[#f8f8f8] dark:bg-[#1a1a1a] `}>
         <ReduxProviders>
           <ThemesProviders>
             <AOSProviders>
               <div id='root'>
-                <Header />
+                <Header company={company} />
                 <main>
                   {children}
                 </main>
-                <Footer />
+                <Footer company={company} image={image} branchs={branchs} />
+                <Whatsapp
+                  title={whatsapp.tituloWhatsapp}
+                  message={whatsapp.mensajeWhatsapp}
+                  number={whatsapp.numeroWhatsapp}
+                />
               </div>
             </AOSProviders>
           </ThemesProviders>
