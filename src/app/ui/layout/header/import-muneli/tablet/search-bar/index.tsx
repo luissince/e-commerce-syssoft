@@ -4,7 +4,7 @@ import { useAppSelector } from "@/app/lib/hooks/storeHooks";
 import { ShoppingBagIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
 import Link from "next/link";
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState, useTransition } from "react";
 import { FaHeart } from "react-icons/fa";
 import { useDebouncedCallback } from "use-debounce";
@@ -19,7 +19,7 @@ export default function SearchBar(company: CompanyModel) {
     const [searchValue, setSearchValue] = useState('');
     const router = useRouter();
     const [isPending, startTransition] = useTransition();
-    const searchParams = useSearchParams();
+    // const searchParams = useSearchParams();
     // const pathname = usePathname();
     // const { replace } = useRouter();
 
@@ -39,20 +39,16 @@ export default function SearchBar(company: CompanyModel) {
     // }, 300);
 
 
-    const handleSearch = useDebouncedCallback((search: string) => {
+    const handleSearch = (search: string) => {
         setSearchValue(search);
-        if (search.trim()) {
-            // Usar useTransition para no bloquear la UI
-            startTransition(() => {
-                router.push(`/all-products?page=1&query=${encodeURIComponent(search)}`);
-            });
-        }
-    }, 300);
+    }
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (searchValue.trim()) {
-            router.push(`/all-products?page=1&query=${encodeURIComponent(searchValue)}`);
+            startTransition(() => {
+                router.push(`/all-products?page=1&query=${encodeURIComponent(searchValue)}`);
+            });
         }
     };
 
@@ -83,21 +79,22 @@ export default function SearchBar(company: CompanyModel) {
                                     className="search-input border-0 outline-none text-[#000] font-semibold w-full h-full p-5 text-sm bg-white rounded-l-md"
                                     placeholder="Buscar producto..."
                                     onChange={(event) => handleSearch(event.target.value)}
-                                    // value={searchValue}
-                                    defaultValue={searchParams.get('query')?.toString()}
+                                    value={searchValue}
+                                // defaultValue={searchParams.get('query')?.toString()}
                                 />
-                                {isPending && (
-                                    <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                                        <div className="w-4 h-4 border-2 border-[#f76d24] border-t-transparent rounded-full animate-spin"></div>
-                                    </div>
-                                )}
                             </div>
                         </div>
                         <button
-                            className="px-6 h-full text-sm font-semibold border border-[#f76d24] bg-[#f76d24] text-white rounded-r-md"
+                            className="px-6 h-full flex items-center space-x-2 text-sm font-semibold border border-[#f76d24] bg-[#f76d24] text-white rounded-r-md"
                             type="submit"
                         >
-                            Buscar
+                            {isPending && (
+                                <>
+                                    <span>Buscando</span>
+                                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                </>
+                            )}
+                            {!isPending  && <span>Buscar </span> }
                         </button>
                     </form>
 

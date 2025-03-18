@@ -4,7 +4,7 @@ import { CloseIcon, HeartIcon, UserIcon } from "@/app/ui/component/default/icons
 import React, { useEffect, useState, useTransition } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce';
 import { useAppDispatch, useAppSelector } from "@/app/lib/hooks/storeHooks";
 import { removeFromCart, selectCart } from "@/app/lib/store/slices/shoppingCardSlice";
@@ -101,7 +101,7 @@ export default function SearchBar(company: CompanyModel) {
     const router = useRouter();
     const [isPending, startTransition] = useTransition();
     const { resolvedTheme } = useTheme();
-    const searchParams = useSearchParams();
+    // const searchParams = useSearchParams();
     // const pathname = usePathname();
     // const { replace } = useRouter();
 
@@ -120,20 +120,26 @@ export default function SearchBar(company: CompanyModel) {
     //     replace(`${pathname}?${params.toString()}`);
     // }, 300);
 
-    const handleSearch = useDebouncedCallback((search: string) => {
+    // const handleSearch = useDebouncedCallback((search: string) => {
+    //     setSearchValue(search);
+    //     if (search.trim()) {
+    //         // Usar useTransition para no bloquear la UI
+    //         startTransition(() => {
+    //             router.push(`/all-products?page=1&query=${encodeURIComponent(search)}`);
+    //         });
+    //     }
+    // }, 300);
+
+    const handleSearch = (search: string) => {
         setSearchValue(search);
-        if (search.trim()) {
-            // Usar useTransition para no bloquear la UI
-            startTransition(() => {
-                router.push(`/all-products?page=1&query=${encodeURIComponent(search)}`);
-            });
-        }
-    }, 300);
+    }
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (searchValue.trim()) {
-            router.push(`/all-products?page=1&query=${encodeURIComponent(searchValue)}`);
+            startTransition(() => {
+                router.push(`/all-products?page=1&query=${encodeURIComponent(searchValue)}`);
+            });
         }
     };
 
@@ -167,21 +173,22 @@ export default function SearchBar(company: CompanyModel) {
                                         className="search-input border-0 outline-none text-[#000] dark:text-[#fff] w-full h-full p-5 font-normal text-sm bg-white dark:bg-black"
                                         placeholder="Buscar producto..."
                                         onChange={(event) => handleSearch(event.target.value)}
-                                        // value={searchValue}
-                                        defaultValue={searchParams.get('query')?.toString()}
+                                        value={searchValue}
+                                    // defaultValue={searchParams.get('query')?.toString()}
                                     />
-                                    {isPending && (
-                                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                                            <div className="w-4 h-4 border-2 border-[#f76d24] border-t-transparent rounded-full animate-spin"></div>
-                                        </div>
-                                    )}
                                 </div>
                             </div>
                             <button
                                 className="w-[93px] h-full text-sm font-semibold bg-search-btn text-black"
                                 type="submit"
                             >
-                                Buscar
+                                {isPending && (
+                                    <>
+                                        <span>Buscando</span>
+                                        <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
+                                    </>
+                                )}
+                                {!isPending && <span>Buscar </span>}
                             </button>
                         </div>
                     </form>
