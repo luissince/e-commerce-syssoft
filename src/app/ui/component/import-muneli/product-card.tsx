@@ -49,48 +49,49 @@ const ProductCard = ({ image, width = 196, height = 196, code, title, priceOld, 
             />
 
             <div className="product-card-one w-full h-full bg-white rounded-md border border-[#042460] pb-5 relative group overflow-hidden">
-                <div className="product-card-img w-full h-[300px] flex items-center justify-center">
-                    <Image
-                        src={image}
-                        alt={title}
-                        width={width}
-                        height={height}
-                        priority={true}
-                    />
-                    {available && (
-                        <div className="px-[30px] absolute left-0 top-3 w-full">
-                            <div className="progress-title flex justify-between ">
-                                <p className="text-xs text-qblack font-400 leading-6">
-                                    Prodcuts Available
-                                </p>
-                                <span className="text-sm text-qblack font-semibold leading-6">
-                                    {amount}
-                                </span>
+                <Link href={link!}>
+                    <div className="product-card-img w-full h-[300px] flex items-center justify-center">
+                        <Image
+                            src={image}
+                            alt={title}
+                            width={width}
+                            height={height}
+                            priority={true}
+                        />
+                        {available && (
+                            <div className="px-[30px] absolute left-0 top-3 w-full">
+                                <div className="progress-title flex justify-between ">
+                                    <p className="text-xs text-qblack font-400 leading-6">
+                                        Prodcuts Available
+                                    </p>
+                                    <span className="text-sm text-qblack font-semibold leading-6">
+                                        {amount}
+                                    </span>
+                                </div>
+                                <div className="progress w-full h-[5px] rounded-[22px] bg-primarygray relative overflow-hidden">
+                                    <div className="h-full absolute left-0 top-0  bg-qyellow w-[66.6667%]"></div>
+                                </div>
                             </div>
-                            <div className="progress w-full h-[5px] rounded-[22px] bg-primarygray relative overflow-hidden">
-                                <div className="h-full absolute left-0 top-0  bg-qyellow w-[66.6667%]"></div>
-                            </div>
-                        </div>
-                    )}
-                </div>
-
-                <div className="product-card-details px-[30px] mb-5 relative">
-                    <div className="reviews flex space-x-[1px] mb-3">
-                        {Array.from({ length: reviews }).map((_, key) => (
-                            <span key={key}>
-                                <StarIcon />
-                            </span>
-                        ))}
+                        )}
                     </div>
-                    <Link href={link!}>
-                        <span className="text-xs text-qgray">{code}</span>
-                        <p className="title mb-2 text-base font-semibold text-[#042460] line-clamp-2 hover:text-blue-600">{title}</p>
-                    </Link>
-                    <p className="price">
-                        {/* <span className="main-price text-qgray line-through font-semibold text-[18px]">{priceOld}</span> */}
-                        <span className="offer-price text-[#f76d24] font-semibold text-[18px]">{priceNew}</span>
-                    </p>
-                </div>
+
+                    <div className="product-card-details px-[30px] mb-5 relative">
+                        <div className="reviews flex space-x-[1px] mb-3">
+                            {Array.from({ length: reviews }).map((_, key) => (
+                                <span key={key}>
+                                    <StarIcon />
+                                </span>
+                            ))}
+                        </div>
+                        <div>
+                            <span className="text-xs text-qgray">{code}</span>
+                            <p className="title mb-2 text-base font-semibold text-[#042460] line-clamp-2 hover:text-blue-600">{title}</p>
+                        </div>
+                        <p className="price">
+                            <span className="offer-price text-[#f76d24] font-semibold text-[18px]">{priceNew}</span>
+                        </p>
+                    </div>
+                </Link>
 
                 <div className="product-card-add w-full h-10 px-[30px] flex space-x-4">
                     <button
@@ -113,24 +114,6 @@ const ProductCard = ({ image, width = 196, height = 196, code, title, priceOld, 
                         </span>
                     </button>
                 </div>
-
-                {/* <div className="quick-access-btns flex flex-col space-y-2 absolute group-hover:right-4 -right-10 top-20  transition-all duration-300 ease-in-out">
-                    <a href="#">
-                        <span className="w-10 h-10 flex justify-center items-center bg-primarygray rounded">
-                            <ExpandIcon />
-                        </span>
-                    </a>
-                    <a href="#">
-                        <span className="w-10 h-10 flex justify-center items-center bg-primarygray rounded">
-                            <HeartIcon />
-                        </span>
-                    </a>
-                    <a href="#">
-                        <span className="w-10 h-10 flex justify-center items-center bg-primarygray rounded">
-                            <CompareIcon />
-                        </span>
-                    </a>
-                </div> */}
             </div>
         </div>
     );

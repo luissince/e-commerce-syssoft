@@ -1,6 +1,5 @@
 'use client'
 import Image from "next/image";
-import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "@/app/lib/hooks/storeHooks";
 import { selectCart } from '@/app/lib/store/slices/shoppingCardSlice';
 import { formatDecimal } from "@/helper/util";
@@ -127,18 +126,25 @@ const Body = () => {
                     </div>
                 </div>
 
-                <div className="w-full mt-10 flex sm:justify-end">
-                    <div className="sm:w-[370px] w-full border border-[#EDEDED] px-[30px] py-[26px]">
-                        <div className="total mb-6">
-                            <div className=" flex justify-between">
-                                <p className="text-lg font-bold text-[#042460]">TOTAL</p>
-                                <p className="text-lg font-bold text-qred">{formatDecimal(cart.totalPrecio ?? 0)}</p>
-                            </div>
+                <div className="w-full mt-10 flex justify-end">
+                    <div className="flex items-center justify-between space-x-10">
+                        <div>
+                            <button
+                                type="button"
+                                className="text-red-500 flex items-center"
+                            >
+                                <span className="inline-block text-sm font-semibold">Limpiar lista de deseos</span>
+                            </button>
                         </div>
-                        <Link href="/checkout"
-                            className="w-full block bg-[#f76d24] text-white px-6 py-3 rounded-md text-lg text-center font-semibold hover:bg-[#e05a1f] transition duration-300">
-                            <span className="text-sm font-semibold">Continuar a la compra</span>
-                        </Link>
+
+                        <div>
+                            <button
+                                type="button"
+                                className="w-full block bg-[#f76d24] text-white px-6 py-3 rounded-md text-lg text-center font-semibold hover:bg-[#e05a1f] transition duration-300"
+                            >
+                                <span className="text-sm font-semibold">Agregar todo al carrito</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </Container>

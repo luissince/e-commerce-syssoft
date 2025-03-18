@@ -1,5 +1,4 @@
 import React from "react";
-import { ArrowPathIcon, CubeTransparentIcon, ShieldCheckIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
@@ -10,7 +9,8 @@ import BreadTitle, { BreadItem } from "../../component/import-muneli/title";
 import BestServices from "../../best-services/import-muneli";
 import { MdBusinessCenter } from "react-icons/md";
 import Discount from "../../component/import-muneli/discount";
-import Container from "../../component/import-muneli/container";
+import Container from "@/app/ui/component/import-muneli/container";
+import images from "@/app/lib/config/images";
 
 interface MainProps {
     company: CompanyModel;
@@ -32,7 +32,7 @@ const Main = (props: MainProps) => {
             <Container>
                 <div className="w-full min-h-[665px] lg:flex lg:space-x-12 items-center pb-10 lg:pb-0">
                     <div className="md:w-[570px] w-full md:h-[560px] h-auto rounded overflow-hidden my-5 lg:my-0">
-                        <Image src="/assets/about-banner.png" alt="about" className="w-full h" width={570} height={559} />
+                        <Image src={images["import-muneli"].about} alt="about" className="w-full h" width={570} height={559} />
                     </div>
                     <div className="content flex-1">
                         <MDXRemote

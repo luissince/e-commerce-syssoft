@@ -10,7 +10,7 @@ import Select, { OptionSelect } from "@/app/ui/single-product/import-muneli/main
 import { TypeOfDocumentModel } from "@/app/lib/definitions";
 import { MdError } from "react-icons/md";
 import { selectCart } from "@/app/lib/store/slices/shoppingCardSlice";
-import Container from "../../component/import-muneli/container";
+import Container from "@/app/ui/component/import-muneli/container";
 
 interface ErrorItemProps {
     name: string;

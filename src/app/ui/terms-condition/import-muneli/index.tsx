@@ -2,7 +2,7 @@ import { CompanyModel } from '@/app/lib/definitions';
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import BreadTitle, { BreadItem } from '../../component/import-muneli/title';
 import Discount from '../../component/import-muneli/discount';
-import Container from '../../component/import-muneli/container';
+import Container from "@/app/ui/component/import-muneli/container";
 
 interface Props {
     company: CompanyModel;

@@ -1,7 +1,7 @@
 import { IoReload, IoShieldCheckmarkOutline } from "react-icons/io5";
 import { CiTrophy } from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import Container from "../../component/import-muneli/container";
+import Container from "@/app/ui/component/import-muneli/container";
 
 function BestServices() {
     return (

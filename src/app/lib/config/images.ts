@@ -1,6 +1,7 @@
 const images = {
     "import-muneli": {
-        "logo": "/assets/import-muneli/logo.png",
+        "logo": "/assets/import-muneli/logo.webp",
+        "about": "/assets/import-muneli/about.webp",
         "sliders": {
             "mobile": [
                 "/assets/import-muneli/sliders/mobile/1.webp",

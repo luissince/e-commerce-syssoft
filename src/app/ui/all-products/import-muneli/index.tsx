@@ -11,7 +11,8 @@ import ListSizes from "@/app/ui/all-products/import-muneli/list-sizes";
 import ListFlavors from "@/app/ui/all-products/import-muneli/list-flavors";
 import ListProducts from "@/app/ui/all-products/import-muneli/list-products";
 import images from "@/app/lib/config/images";
-import Container from "../../component/import-muneli/container";
+import Container from "@/app/ui/component/import-muneli/container";
+import Title from "../../single-product/import-muneli/main-product/component/title";
 
 const ITEM_PER_PAGE: number = 10;
 
@@ -26,15 +27,7 @@ export default function AllProductsBody({ query, total, currentPage }: BodyProps
     <>
       <div className="w-full bg-white pt-[30px] pb-[60px]">
           <Container>
-            <div className="font-normal text-[13px] text-white mb-[23px] bg-[#042460] rounded-md py-2 px-6">
-              <span>
-                <a href="/"><span className="mx-1 capitalize">Inicio</span></a>
-                <span>/</span>
-              </span>
-              <span><a href="/profile">
-                <span className="mx-1 capitalize">Productos</span></a>
-              </span>
-            </div>
+            <Title titleBase={"Inicio"} titleDetail={"Productos"} />
 
             <div className="w-full lg:flex lg:space-x-[30px]">
               <div className="lg:w-[270px]">

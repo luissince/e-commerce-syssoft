@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import Container from "./container";
+import Container from "@/app/ui/component/import-muneli/container";
 
 interface BreadItemProps {
     href: string;

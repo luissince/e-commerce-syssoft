@@ -7,7 +7,7 @@ import ContactForm from "./form";
 import { PhoneIcon } from "@heroicons/react/20/solid";
 import { MdEmail } from "react-icons/md";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import Container from "../../component/import-muneli/container";
+import Container from "@/app/ui/component/import-muneli/container";
 
 interface MainProps {
     inputType: string;
