@@ -18,7 +18,6 @@ const inter = Open_Sans({ subsets: ['latin'] })
 // Función para obtener los datos del backend
 async function getMetadataFromBackend() {
   const company = await fetchCompanyInfo() as CompanyModel;
-  console.log(company.rutaIcon);
   return {
     title: company.nombreEmpresa || 'Ecommerse',
     description: company.acercaNosotros || 'Descripción del negocio',

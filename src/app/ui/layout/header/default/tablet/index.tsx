@@ -7,12 +7,9 @@ import NavBar from "./nav-bar";
 export default function HeaderMuneliTablet(company: CompanyModel) {
     return (
         <div className="hidden lg:block w-full">
-            
             <TopBar />
 
-            <Suspense fallback={<div>Cargando...</div>}>
-                <SearchBar {...company} />  
-            </Suspense>
+            <SearchBar {...company} />
 
             <NavBar />
         </div>
