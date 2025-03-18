@@ -34,12 +34,13 @@ export default function Whatsapp({ title, message, number }: Props) {
             refInput.current?.focus();
             return;
         }
-
-        const url = `https://api.whatsapp.com/send?phone=${number}&text=${message}: ${valorInput}`;
-        window.open(url + encodeURIComponent(valorInput), '_blank');
+            
+        const url = `https://api.whatsapp.com/send?phone=${number}&text=${encodeURIComponent(message +" "+ valorInput)}`;
+        
+        window.open(url, '_blank');
         setValorInput("");
     };
-
+    
     useEffect(() => {
         const timer = setTimeout(toggleChating, 1500);
         return () => clearTimeout(timer);

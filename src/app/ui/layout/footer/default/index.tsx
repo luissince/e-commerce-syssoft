@@ -6,17 +6,16 @@ import Logo from "./component/logo";
 
 interface Props {
   company: CompanyModel;
-  image: CompanyModel;
   branchs: BranchModel[];
 }
 
-export default async function Footer({ company, image, branchs }: Props) {
+export default async function Footer({ company, branchs }: Props) {
 
   return (
     <footer className="footer-section-wrapper bg-white dark:bg-black ">
       <div className="container max-w-screen-x mx-auto px-2 md:px-6 pt-[56px]">
        {/* Start Logo */}
-          <Logo {...image} />
+          <Logo {...company} />
        {/* End Logo */}
         <div className="lg:flex justify-between mb-[50px]">
           <div className="flex-1 lg:flex">

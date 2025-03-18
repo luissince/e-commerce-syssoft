@@ -3,7 +3,7 @@ import { Open_Sans } from 'next/font/google'
 import './globals.css'
 import { importClientComponents } from '@/app/lib/utils/importClientComponents'
 import { ThemesProviders, AOSProviders, ReduxProviders } from './providers'
-import { fetchCompanyImages, fetchCompanyInfo, fetchCompanyWhatsapp, fetchListBranchs} from './lib/data'
+import { fetchCompanyInfo, fetchCompanyWhatsapp, fetchListBranchs} from './lib/data'
 import { BranchModel, CompanyModel } from './lib/definitions'
 import Whatsapp from './ui/component/import-muneli/whatsapp'
 
@@ -18,6 +18,7 @@ const inter = Open_Sans({ subsets: ['latin'] })
 // Función para obtener los datos del backend
 async function getMetadataFromBackend() {
   const company = await fetchCompanyInfo() as CompanyModel;
+  console.log(company.rutaIcon);
   return {
     title: company.nombreEmpresa || 'Ecommerse',
     description: company.acercaNosotros || 'Descripción del negocio',
@@ -52,7 +53,6 @@ export const viewport: Viewport = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const branchs = await fetchListBranchs() as BranchModel[];
   const company = await fetchCompanyInfo() as CompanyModel;
-  const image = await fetchCompanyImages() as CompanyModel;
   const whatsapp = await fetchCompanyWhatsapp() as CompanyModel;
 
   const { Header, Footer } = await importClientComponents();
@@ -68,7 +68,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                 <main>
                   {children}
                 </main>
-                <Footer company={company} image={image} branchs={branchs} />
+                <Footer company={company} branchs={branchs} />
                 <Whatsapp
                   title={whatsapp.tituloWhatsapp}
                   message={whatsapp.mensajeWhatsapp}

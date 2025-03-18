@@ -9,11 +9,10 @@ import Container from "@/app/ui/component/import-muneli/container";
 
 interface Props {
   company: CompanyModel;
-  image: CompanyModel;
   branchs: BranchModel[];
 }
 
-export default async function Footer({ company, image, branchs }: Props) {
+export default async function Footer({ company, branchs }: Props) {
 
   return (
     <footer className="footer-section-wrapper bg-white pt-10">
@@ -26,8 +25,8 @@ export default async function Footer({ company, image, branchs }: Props) {
                   <Image
                     width="152"
                     height="36"
-                    src={image.rutaImage ?? images["import-muneli"].logo}
-                    alt={image.nombreEmpresa ?? "logo"}
+                    src={company.rutaImage ?? images["import-muneli"].logo}
+                    alt={company.nombreEmpresa ?? "logo"}
                     priority={true}
                   />
                 </Link>
